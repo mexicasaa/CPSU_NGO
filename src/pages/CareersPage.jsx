@@ -1,5 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const opportunityOptions = [
+  "Volunteer Programs",
+  "Internship Opportunities",
+  "Community Outreach Support",
+  "Social Media & Communication Assistance",
+  "Event Coordination",
+  "Research & Awareness Initiatives"
+];
 
 const OPPORTUNITIES = [
   {
@@ -71,6 +80,11 @@ export default function CareersPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', opportunityType: 'Volunteer Programs', resumeLink: '', coverLetter: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -270,20 +284,79 @@ export default function CareersPage() {
                         />
                       </div>
 
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <label style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Opportunity Interest</label>
-                        <select 
-                          value={formData.opportunityType}
-                          onChange={e => setFormData({ ...formData, opportunityType: e.target.value })}
-                          style={{ padding: '12px 0', border: 'none', borderBottom: '1.5px solid rgba(26,58,42,0.15)', borderRadius: '0', background: 'transparent', fontSize: '1rem', color: 'var(--green-dark)', cursor: 'pointer' }}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', position: 'relative' }}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Opportunity Interest</label>
+                        
+                        <div 
+                          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          style={{ 
+                            padding: '12px 0', 
+                            borderBottom: `1.5px solid ${isDropdownOpen ? 'var(--green-dark)' : 'rgba(26,58,42,0.15)'}`, 
+                            background: 'transparent', 
+                            fontSize: '1rem', 
+                            color: 'var(--green-dark)', 
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            transition: 'border-color 0.2s ease'
+                          }}
                         >
-                          <option value="Volunteer Programs">Volunteer Programs</option>
-                          <option value="Internship Opportunities">Internship Opportunities</option>
-                          <option value="Community Outreach Support">Community Outreach Support</option>
-                          <option value="Social Media & Communication Assistance">Social Media & Communication Assistance</option>
-                          <option value="Event Coordination">Event Coordination</option>
-                          <option value="Research & Awareness Initiatives">Research & Awareness Initiatives</option>
-                        </select>
+                          <span>{formData.opportunityType}</span>
+                          <motion.svg 
+                            animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                          >
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </motion.svg>
+                        </div>
+
+                        <AnimatePresence>
+                          {isDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              transition={{ duration: 0.15 }}
+                              style={{
+                                position: 'absolute',
+                                top: '100%',
+                                left: 0,
+                                right: 0,
+                                background: 'var(--bg-card)',
+                                borderRadius: '12px',
+                                border: '1px solid rgba(26,58,42,0.1)',
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+                                zIndex: 10,
+                                marginTop: '4px',
+                                overflow: 'hidden'
+                              }}
+                            >
+                              {opportunityOptions.map((opt, i) => (
+                                <div
+                                  key={i}
+                                  onClick={() => {
+                                    setFormData({ ...formData, opportunityType: opt });
+                                    setIsDropdownOpen(false);
+                                  }}
+                                  style={{
+                                    padding: '12px 16px',
+                                    cursor: 'pointer',
+                                    fontSize: '0.95rem',
+                                    color: formData.opportunityType === opt ? 'var(--green-dark)' : 'var(--text-body)',
+                                    background: formData.opportunityType === opt ? 'rgba(31,71,51,0.05)' : 'transparent',
+                                    fontWeight: formData.opportunityType === opt ? 600 : 400,
+                                    transition: 'background 0.2s ease, color 0.2s ease'
+                                  }}
+                                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(31,71,51,0.03)'}
+                                  onMouseLeave={(e) => e.currentTarget.style.background = formData.opportunityType === opt ? 'rgba(31,71,51,0.05)' : 'transparent'}
+                                >
+                                  {opt}
+                                </div>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
 
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
