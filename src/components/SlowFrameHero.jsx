@@ -227,13 +227,13 @@ export default function SlowFrameHero() {
         style={{
           height: '520vh',
           position: 'relative',
-          background: '#070f0b',
+          background: 'var(--bg-main)',
           overflow: 'clip',
           padding: 0,
           margin: 0,
         }}
       >
-        {/* Sticky viewport viewport lock */}
+        {/* Sticky viewport lock */}
         <div style={{
           position: 'sticky',
           top: 0,
@@ -266,9 +266,9 @@ export default function SlowFrameHero() {
           <div style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(rgba(26,58,42,0.06) 1px, transparent 1px)',
             backgroundSize: '32px 32px',
-            opacity: 0.22,
+            opacity: 0.35,
             transform: 'translateY(calc(var(--slowframe-progress) * -45px))',
             pointerEvents: 'none',
           }} />
@@ -282,7 +282,7 @@ export default function SlowFrameHero() {
             width: '600px',
             height: '600px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(45,110,71,0.2) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(45,110,71,0.08) 0%, transparent 70%)',
             transform: 'translateY(calc(var(--slowframe-progress) * -30px))',
             pointerEvents: 'none',
           }} />
@@ -295,16 +295,16 @@ export default function SlowFrameHero() {
             width: '500px',
             height: '500px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(200,168,74,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(200,168,74,0.06) 0%, transparent 70%)',
             transform: 'translateY(calc(var(--slowframe-progress) * -50px))',
             pointerEvents: 'none',
           }} />
 
-          {/* Dark overlay for rich legibility */}
+          {/* Light overlay for rich legibility */}
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(5,12,9,0.76) 0%, rgba(5,12,9,0.48) 50%, rgba(5,12,9,0.72) 100%)',
+            background: 'linear-gradient(135deg, rgba(245,243,238,0.72) 0%, rgba(245,243,238,0.45) 50%, rgba(245,243,238,0.68) 100%)',
             pointerEvents: 'none',
           }} />
 
@@ -315,7 +315,7 @@ export default function SlowFrameHero() {
             left: 0,
             right: 0,
             height: '35%',
-            background: 'linear-gradient(to top, rgba(7,15,11,0.92) 0%, transparent 100%)',
+            background: 'linear-gradient(to top, var(--bg-main) 0%, transparent 100%)',
             pointerEvents: 'none',
           }} />
 
@@ -378,46 +378,53 @@ export default function SlowFrameHero() {
               willChange: 'opacity, transform',
             }}
           >
+            {/* Soft organic sunlight vignette glow to ensure 100% legibility of text without cards */}
+            <div style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              background: 'radial-gradient(circle, rgba(245, 243, 238, 0.98) 0%, rgba(245, 243, 238, 0.85) 45%, rgba(245, 243, 238, 0) 70%)',
+              zIndex: -1,
+              pointerEvents: 'none',
+            }} />
+
             <span style={{
               fontSize: '0.72rem',
               fontWeight: 600,
               letterSpacing: '0.24em',
               textTransform: 'uppercase',
-              color: '#a8d8b8',
+              color: 'var(--green-icon)',
               display: 'block',
-              marginBottom: '28px',
+              marginBottom: '20px',
               fontFamily: 'Inter, sans-serif',
-              textShadow: '0 2px 8px rgba(0,0,0,0.4)',
             }}>
-              INDIA · SINCE 2018 · A NON-PROFIT FOUNDATION
+              INDIA · REGISTERED IN 2025 · A NON-PROFIT FOUNDATION
             </span>
+            
             <h1 style={{
-              fontSize: 'clamp(2.8rem, 6.2vw, 5.8rem)',
+              fontSize: 'clamp(2.5rem, 5.5vw, 4.8rem)',
               fontWeight: 400,
-              color: '#ffffff',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
+              color: 'var(--green-dark)',
+              lineHeight: 1.15,
+              letterSpacing: '-0.02em',
               textAlign: 'center',
-              marginBottom: '32px',
-              fontFamily: 'Playfair Display, Georgia, serif',
-              textShadow: '0 4px 48px rgba(0,0,0,0.6)',
+              marginBottom: '24px',
+              fontFamily: "'Playfair Display', Georgia, serif",
             }}>
-              Building a cleaner,{' '}
-              <em style={{ fontStyle: 'italic', color: '#a8d8b8' }}>wiser</em>,<br />
-              and stronger India.
+              Building a Healthier, Educated,<br />and <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', color: 'var(--gold-accent)' }}>Value-Driven</span> India
             </h1>
+            
             <p style={{
               fontSize: '1.1rem',
-              color: 'rgba(255,255,255,0.85)',
-              lineHeight: 1.75,
-              maxWidth: '620px',
+              color: '#2d3748',
+              lineHeight: 1.7,
+              maxWidth: '650px',
               textAlign: 'center',
-              fontFamily: 'Inter, sans-serif',
-              textShadow: '0 2px 20px rgba(0,0,0,0.45)',
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 400,
+              margin: 0,
             }}>
-              CSR & Educational India Foundation works at the intersection of environment,
-              education, livelihood and family - building self-reliant communities through
-              awareness, skill, and service.
+              We inspire communities to build a cleaner environment, empower youth through education, and strengthen society through ethical values.
             </p>
 
             {/* Scroll Indicator */}
@@ -434,11 +441,11 @@ export default function SlowFrameHero() {
               opacity: 'calc(1 - var(--slowframe-progress) * 16)',
               pointerEvents: 'none',
             }}>
-              <span style={{ fontSize: '0.68rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.5)', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>Scroll to explore</span>
+              <span style={{ fontSize: '0.68rem', letterSpacing: '0.22em', color: 'var(--text-muted)', fontFamily: 'Inter, sans-serif', textTransform: 'uppercase' }}>Scroll to explore</span>
               <div style={{
                 width: '1px',
                 height: '52px',
-                background: 'linear-gradient(to bottom, rgba(255,255,255,0.6), transparent)',
+                background: 'linear-gradient(to bottom, var(--green-icon), transparent)',
                 animation: 'scrollPulse 2s ease-in-out infinite',
               }} />
             </div>
@@ -469,11 +476,10 @@ export default function SlowFrameHero() {
               fontWeight: 600,
               letterSpacing: '0.24em',
               textTransform: 'uppercase',
-              color: '#a8d8b8',
+              color: 'var(--green-icon)',
               display: 'block',
               marginBottom: '40px',
               fontFamily: 'Inter, sans-serif',
-              textShadow: '0 2px 8px rgba(0,0,0,0.3)',
             }}>
               OUR MEASURED IMPACT
             </span>
@@ -492,13 +498,13 @@ export default function SlowFrameHero() {
               <div 
                 style={{
                   textAlign: 'center',
-                  background: 'rgba(10, 24, 18, 0.45)',
+                  background: 'rgba(255, 255, 255, 0.9)',
                   backdropFilter: 'blur(20px)',
                   WebkitBackdropFilter: 'blur(20px)',
-                  border: '1.5px solid rgba(255, 255, 255, 0.12)',
+                  border: '1.5px solid rgba(26, 58, 42, 0.15)',
                   borderRadius: '24px',
                   padding: '44px 28px',
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
+                  boxShadow: '0 25px 50px rgba(26, 58, 42, 0.04)',
                   willChange: 'transform',
                   // Parallax factor: uniform to keep cards horizontally aligned
                   transform: 'translateY(calc(var(--slowframe-progress) * -130px))',
@@ -506,17 +512,16 @@ export default function SlowFrameHero() {
               >
                 <div style={{
                   fontSize: 'clamp(2.4rem, 3.8vw, 3.6rem)',
-                  fontWeight: 300,
-                  color: '#ffffff',
+                  fontWeight: 600,
+                  color: 'var(--green-dark)',
                   letterSpacing: '-0.03em',
                   lineHeight: 1.1,
                   marginBottom: '12px',
-                  fontFamily: 'Playfair Display, Georgia, serif',
-                  textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-                }}>24,800+</div>
+                  fontFamily: 'Inter, sans-serif',
+                }}>—</div>
                 <div style={{
                   fontSize: '0.8rem',
-                  color: '#a8d8b8',
+                  color: 'var(--green-icon)',
                   fontWeight: 600,
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
@@ -525,7 +530,7 @@ export default function SlowFrameHero() {
                 }}>People Reached</div>
                 <div style={{
                   fontSize: '0.75rem',
-                  color: 'rgba(255,255,255,0.48)',
+                  color: 'var(--text-muted)',
                   fontFamily: 'Inter, sans-serif',
                 }}>across 4 Indian states</div>
               </div>
@@ -534,13 +539,13 @@ export default function SlowFrameHero() {
               <div 
                 style={{
                   textAlign: 'center',
-                  background: 'rgba(10, 24, 18, 0.55)',
+                  background: 'rgba(255, 255, 255, 0.94)',
                   backdropFilter: 'blur(20px)',
                   WebkitBackdropFilter: 'blur(20px)',
-                  border: '1.5px solid rgba(255, 255, 255, 0.18)',
+                  border: '1.5px solid rgba(26, 58, 42, 0.2)',
                   borderRadius: '24px',
                   padding: '44px 28px',
-                  boxShadow: '0 30px 60px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 30px 60px rgba(26, 58, 42, 0.06)',
                   willChange: 'transform',
                   // Parallax factor: uniform to keep cards horizontally aligned
                   transform: 'translateY(calc(var(--slowframe-progress) * -130px))',
@@ -548,17 +553,16 @@ export default function SlowFrameHero() {
               >
                 <div style={{
                   fontSize: 'clamp(2.4rem, 3.8vw, 3.6rem)',
-                  fontWeight: 300,
-                  color: '#ffffff',
+                  fontWeight: 600,
+                  color: 'var(--green-dark)',
                   letterSpacing: '-0.03em',
                   lineHeight: 1.1,
                   marginBottom: '12px',
-                  fontFamily: 'Playfair Display, Georgia, serif',
-                  textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-                }}>3,120</div>
+                  fontFamily: 'Inter, sans-serif',
+                }}>—</div>
                 <div style={{
                   fontSize: '0.8rem',
-                  color: '#a8d8b8',
+                  color: 'var(--green-icon)',
                   fontWeight: 600,
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
@@ -567,7 +571,7 @@ export default function SlowFrameHero() {
                 }}>Students Supported</div>
                 <div style={{
                   fontSize: '0.75rem',
-                  color: 'rgba(255,255,255,0.48)',
+                  color: 'var(--text-muted)',
                   fontFamily: 'Inter, sans-serif',
                 }}>free tuitions & digital access</div>
               </div>
@@ -576,13 +580,13 @@ export default function SlowFrameHero() {
               <div 
                 style={{
                   textAlign: 'center',
-                  background: 'rgba(10, 24, 18, 0.45)',
+                  background: 'rgba(255, 255, 255, 0.9)',
                   backdropFilter: 'blur(20px)',
                   WebkitBackdropFilter: 'blur(20px)',
-                  border: '1.5px solid rgba(255, 255, 255, 0.12)',
+                  border: '1.5px solid rgba(26, 58, 42, 0.15)',
                   borderRadius: '24px',
                   padding: '44px 28px',
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
+                  boxShadow: '0 25px 50px rgba(26, 58, 42, 0.04)',
                   willChange: 'transform',
                   // Parallax factor: uniform to keep cards horizontally aligned
                   transform: 'translateY(calc(var(--slowframe-progress) * -130px))',
@@ -590,17 +594,16 @@ export default function SlowFrameHero() {
               >
                 <div style={{
                   fontSize: 'clamp(2.4rem, 3.8vw, 3.6rem)',
-                  fontWeight: 300,
-                  color: '#ffffff',
+                  fontWeight: 600,
+                  color: 'var(--green-dark)',
                   letterSpacing: '-0.03em',
                   lineHeight: 1.1,
                   marginBottom: '12px',
-                  fontFamily: 'Playfair Display, Georgia, serif',
-                  textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-                }}>67</div>
+                  fontFamily: 'Inter, sans-serif',
+                }}>—</div>
                 <div style={{
                   fontSize: '0.8rem',
-                  color: '#a8d8b8',
+                  color: 'var(--green-icon)',
                   fontWeight: 600,
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',
@@ -609,7 +612,7 @@ export default function SlowFrameHero() {
                 }}>Communities Engaged</div>
                 <div style={{
                   fontSize: '0.75rem',
-                  color: 'rgba(255,255,255,0.48)',
+                  color: 'var(--text-muted)',
                   fontFamily: 'Inter, sans-serif',
                 }}>highly active self-reliant hubs</div>
               </div>
@@ -637,20 +640,28 @@ export default function SlowFrameHero() {
               willChange: 'opacity, transform',
             }}
           >
+            {/* Soft organic sunlight vignette glow to ensure 100% legibility of text without cards */}
+            <div style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              background: 'radial-gradient(circle, rgba(245, 243, 238, 0.98) 0%, rgba(245, 243, 238, 0.85) 45%, rgba(245, 243, 238, 0) 70%)',
+              zIndex: -1,
+              pointerEvents: 'none',
+            }} />
+
             <h2 style={{
-              fontSize: 'clamp(2.2rem, 4vw, 4rem)',
+              fontSize: 'clamp(2rem, 4.5vw, 3.4rem)',
               fontWeight: 400,
-              color: '#ffffff',
+              color: 'var(--green-dark)',
               lineHeight: 1.15,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
               textAlign: 'center',
               marginBottom: '38px',
-              fontFamily: 'Playfair Display, Georgia, serif',
-              textShadow: '0 4px 40px rgba(0,0,0,0.5)',
+              fontFamily: "'Playfair Display', Georgia, serif",
               maxWidth: '780px',
             }}>
-              Join us in shaping a<br />
-              <em style={{ color: '#a8d8b8', fontStyle: 'italic' }}>sustainable tomorrow.</em>
+              Join us in shaping a <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', color: 'var(--gold-accent)' }}>sustainable tomorrow.</span>
             </h2>
 
             <div style={{
@@ -673,18 +684,18 @@ export default function SlowFrameHero() {
                 fontWeight: 500,
                 fontFamily: 'Inter, sans-serif',
                 letterSpacing: '0.02em',
-                boxShadow: '0 12px 36px rgba(31,71,51,0.4)',
+                boxShadow: '0 12px 36px rgba(31,71,51,0.2)',
                 border: '1.5px solid rgba(255,255,255,0.06)',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 16px 42px rgba(31,71,51,0.6)';
+                e.currentTarget.style.boxShadow = '0 16px 42px rgba(31,71,51,0.3)';
                 e.currentTarget.style.background = 'linear-gradient(135deg, #26593f, #1a402d)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 12px 36px rgba(31,71,51,0.4)';
+                e.currentTarget.style.boxShadow = '0 12px 36px rgba(31,71,51,0.2)';
                 e.currentTarget.style.background = 'linear-gradient(135deg, #1f4733, #153324)';
               }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 4.009 2 6.585 2c2.35 0 4.13 1.344 5.415 3.559C13.285 3.344 15.065 2 17.415 2 19.991 2 23 3.518 23 7.191c0 4.105-5.371 8.863-11 14.402z"/></svg>
@@ -696,11 +707,11 @@ export default function SlowFrameHero() {
                 alignItems: 'center',
                 gap: '10px',
                 padding: '16px 38px',
-                background: 'rgba(255,255,255,0.08)',
+                background: 'rgba(26, 58, 42, 0.05)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
-                color: '#ffffff',
-                border: '1.5px solid rgba(255,255,255,0.2)',
+                color: 'var(--green-dark)',
+                border: '1.5px solid var(--green-dark)',
                 borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '0.94rem',
@@ -711,14 +722,14 @@ export default function SlowFrameHero() {
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.background = 'rgba(255,255,255,1)';
-                e.currentTarget.style.color = '#0c100e';
-                e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.2)';
+                e.currentTarget.style.background = 'var(--green-dark)';
+                e.currentTarget.style.color = '#ffffff';
+                e.currentTarget.style.boxShadow = '0 12px 30px rgba(26, 58, 42, 0.15)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-                e.currentTarget.style.color = '#ffffff';
+                e.currentTarget.style.background = 'rgba(26, 58, 42, 0.05)';
+                e.currentTarget.style.color = 'var(--green-dark)';
                 e.currentTarget.style.boxShadow = 'none';
               }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -730,23 +741,23 @@ export default function SlowFrameHero() {
             <div style={{
               display: 'flex',
               gap: '54px',
-              background: 'rgba(10,24,18,0.45)',
+              background: 'rgba(255, 255, 255, 0.82)',
               backdropFilter: 'blur(24px)',
               WebkitBackdropFilter: 'blur(24px)',
               borderRadius: '60px',
               padding: '22px 52px',
-              border: '1.5px solid rgba(255,255,255,0.12)',
+              border: '1.5px solid rgba(26, 58, 42, 0.12)',
               whiteSpace: 'nowrap',
-              boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
+              boxShadow: '0 25px 60px rgba(26, 58, 42, 0.05)',
             }}>
               {[
-                { num: '11,500+', label: 'Trees Planted' },
-                { num: '8+ Years', label: 'Active Service' },
-                { num: '100%', label: 'Transparency' },
+                { num: '—', label: 'Trees Planted' },
+                { num: '—', label: 'Active Service' },
+                { num: '—', label: 'Transparency' },
               ].map((s, i) => (
                 <div key={i} style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 600, color: '#fff', fontFamily: 'Inter, sans-serif' }}>{s.num}</div>
-                  <div style={{ fontSize: '0.66rem', color: '#a8d8b8', letterSpacing: '0.14em', textTransform: 'uppercase', fontFamily: 'Inter, sans-serif', marginTop: '4px', fontWeight: 600 }}>{s.label}</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--green-dark)', fontFamily: 'Inter, sans-serif' }}>{s.num}</div>
+                  <div style={{ fontSize: '0.66rem', color: 'var(--green-icon)', letterSpacing: '0.14em', textTransform: 'uppercase', fontFamily: 'Inter, sans-serif', marginTop: '4px', fontWeight: 600 }}>{s.label}</div>
                 </div>
               ))}
             </div>

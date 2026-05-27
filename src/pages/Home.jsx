@@ -10,6 +10,7 @@ import WhySupport from '../components/WhySupport';
 import GetInvolved from '../components/GetInvolved';
 import Donation from '../components/Donation';
 import Blog from '../components/Blog';
+import Interviews from '../components/Interviews';
 import Contact from '../components/Contact';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <CinematicStory />
       <FocusAreas />
       <Impact />
+      <Interviews />
       <Programmes />
       <Gallery />
       <WhySupport />

@@ -60,14 +60,14 @@ export default function CinematicStory() {
   });
 
   return (
-    <div ref={containerRef} style={{ height: '550vh', position: 'relative', background: '#0e1d15' }}>
+    <div ref={containerRef} style={{ height: '550vh', position: 'relative', background: 'var(--bg-section)' }}>
       <div style={{ position: 'sticky', top: 0, height: '100vh', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
         
         {/* Background Mesh Grid */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'radial-gradient(rgba(200, 168, 74, 0.06) 1.2px, transparent 1.2px)',
+          backgroundImage: 'radial-gradient(rgba(26, 58, 42, 0.07) 1.2px, transparent 1.2px)',
           backgroundSize: '32px 32px',
           opacity: 0.8,
           pointerEvents: 'none',
@@ -77,13 +77,13 @@ export default function CinematicStory() {
         {/* Ambient Glows */}
         <motion.div style={{
           position: 'absolute', top: '10%', left: '15%', width: '45vw', height: '45vw',
-          background: 'radial-gradient(circle, rgba(200,168,74,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(200,168,74,0.05) 0%, transparent 70%)',
           borderRadius: '50%', filter: 'blur(70px)', zIndex: 1,
           y: useTransform(smoothProgress, [0, 1], [-100, 300])
         }} />
         <motion.div style={{
           position: 'absolute', bottom: '10%', right: '10%', width: '40vw', height: '40vw',
-          background: 'radial-gradient(circle, rgba(45,114,84,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(45,114,84,0.06) 0%, transparent 70%)',
           borderRadius: '50%', filter: 'blur(90px)', zIndex: 1,
           y: useTransform(smoothProgress, [0, 1], [200, -200])
         }} />
@@ -99,12 +99,12 @@ export default function CinematicStory() {
           gap: '16px',
           fontFamily: "'Inter', sans-serif"
         }}>
-          <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#c8a84a', letterSpacing: '0.15em' }}>THE STORY PATH</div>
-          <div style={{ width: '100px', height: '1.5px', background: 'rgba(255,255,255,0.1)', position: 'relative' }}>
+          <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--green-icon)', letterSpacing: '0.15em' }}>THE STORY PATH</div>
+          <div style={{ width: '100px', height: '1.5px', background: 'rgba(26,58,42,0.12)', position: 'relative' }}>
             <motion.div style={{
               position: 'absolute', left: 0, top: 0, bottom: 0,
               width: useTransform(smoothProgress, [0, 1], ['0%', '100%']),
-              background: '#c8a84a'
+              background: 'var(--gold-accent)'
             }} />
           </div>
         </div>
@@ -163,16 +163,16 @@ export default function CinematicStory() {
                 <motion.div style={{ y: textY }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
                     <span style={{ 
-                      fontSize: '1.25rem', 
-                      fontFamily: "'Playfair Display', serif", 
-                      fontStyle: 'italic',
-                      fontWeight: 600,
-                      color: ch.accent 
+                       fontSize: '1.25rem', 
+                       fontFamily: "'Playfair Display', serif", 
+                       fontStyle: 'italic',
+                       fontWeight: 600,
+                       color: 'var(--green-icon)' 
                     }}>{ch.num}</span>
                     <span style={{ 
                       fontSize: '0.78rem', 
                       fontWeight: 600, 
-                      color: 'rgba(255,255,255,0.45)', 
+                      color: 'var(--text-muted)', 
                       letterSpacing: '0.2em',
                       fontFamily: "'Inter', sans-serif"
                     }}>{ch.eyebrow}</span>
@@ -182,7 +182,7 @@ export default function CinematicStory() {
                     fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', 
                     fontFamily: "'Playfair Display', Georgia, serif", 
                     fontWeight: 400, 
-                    color: '#ffffff', 
+                    color: 'var(--green-dark)', 
                     lineHeight: 1.12, 
                     letterSpacing: '-0.02em', 
                     marginBottom: '28px' 
@@ -192,15 +192,18 @@ export default function CinematicStory() {
 
                   {ch.isQuote ? (
                     <div style={{ 
-                      background: 'rgba(255, 255, 255, 0.03)', 
+                      background: 'rgba(255, 255, 255, 0.72)', 
                       borderLeft: `3px solid ${ch.accent}`, 
                       padding: '24px 30px', 
                       borderRadius: '0 16px 16px 0',
-                      marginBottom: '20px'
+                      marginBottom: '20px',
+                      boxShadow: '0 10px 30px rgba(26, 58, 42, 0.03)',
+                      border: '1px solid rgba(26,58,42,0.05)',
+                      borderLeftWidth: '3px'
                     }}>
                       <p style={{ 
                         fontSize: '1.1rem', 
-                        color: '#edeae3', 
+                        color: 'var(--green-dark)', 
                         lineHeight: 1.7, 
                         fontStyle: 'italic',
                         fontFamily: "'Playfair Display', Georgia, serif"
@@ -209,7 +212,7 @@ export default function CinematicStory() {
                       </p>
                       <div style={{ 
                         fontSize: '0.85rem', 
-                        color: 'rgba(255,255,255,0.5)', 
+                        color: 'var(--text-muted)', 
                         marginTop: '12px',
                         fontFamily: "'Inter', sans-serif",
                         fontWeight: 500
@@ -218,7 +221,7 @@ export default function CinematicStory() {
                   ) : (
                     <p style={{ 
                       fontSize: '1.05rem', 
-                      color: 'rgba(255, 255, 255, 0.72)', 
+                      color: 'var(--text-body)', 
                       lineHeight: 1.8, 
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 300,
@@ -237,8 +240,8 @@ export default function CinematicStory() {
                       borderRadius: '28px',
                       overflow: 'hidden',
                       aspectRatio: '4/3',
-                      boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
-                      border: '1.5px solid rgba(255,255,255,0.06)'
+                      boxShadow: '0 20px 50px rgba(26, 58, 42, 0.08)',
+                      border: '1.5px solid rgba(26,58,42,0.06)'
                     }}
                     whileHover={{ scale: 1.02, rotateY: -3 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -246,7 +249,7 @@ export default function CinematicStory() {
                     <div style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(to top, rgba(14,29,21,0.5), transparent 60%)',
+                      background: 'linear-gradient(to top, rgba(26,58,42,0.22), transparent 60%)',
                       zIndex: 2
                     }} />
                     <img 

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 export default function LeadershipPage() {
   const leaders = [
     {
-      name: "D.C. Arya",
-      role: "Founder & Chairperson",
-      bio: "A visionary community builder with over 25 years of field-level experience in social development, environmental forestry, and vocational skill deployment.",
+      name: "DC Arya",
+      role: "Founder Director",
+      bio: "CSR & Educational India Foundation is led by Founder Director DC Arya, whose vision is centered around environmental awareness, education, social responsibility, and cultural values. He strongly believes that society must address not only environmental pollution, but also the growing challenges related to moral and social imbalance. Through awareness initiatives, educational activities, and community engagement, his goal is to inspire individuals towards responsible living and collective progress. His leadership reflects a commitment to building a healthier, educated, and ethically strong society for future generations.",
       image: "/dc_arya_suit.jpg"
     },
     {

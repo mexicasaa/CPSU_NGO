@@ -25,11 +25,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <Link to="/" style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c8a84a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
-                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-                </svg>
+              <Link to="/" style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.3s ease', overflow: 'hidden' }}>
+                <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </Link>
               <div>
                 <div style={{ fontSize: '0.95rem', fontWeight: 500, color: '#fff', letterSpacing: '0.01em' }}>CSR & Educational</div>
@@ -127,6 +124,7 @@ export default function Footer() {
               { label: 'Donate', to: '/donate' },
               { label: 'Volunteer', to: '/volunteer' },
               { label: 'Partner & CSR', to: '/partners' },
+              { label: 'Careers', to: '/careers' },
               { label: 'Contact Us', to: '/contact' }
             ].map(l => (
               <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}
@@ -145,9 +143,9 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>REACH US</div>
             {[
-              'info@csreif.org',
-              '+91 98100 00000',
-              'Sector 14, Noida\nUttar Pradesh - 201301',
+              'aumdcarya@gmail.com',
+              '+91 98106 00994',
+              'B2A-102 Golflinks Residency\nSector 18 B, Dwarka-110078',
             ].map((l, i) => (
               <div key={i} style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', marginBottom: '14px', lineHeight: 1.5, whiteSpace: 'pre-line', fontFamily: "'Inter', sans-serif" }}>{l}</div>
             ))}

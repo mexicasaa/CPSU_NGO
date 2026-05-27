@@ -4,40 +4,40 @@ const FOCUS_AREAS = [
   {
     num: '01',
     tag: 'ENVIRONMENT',
-    title: 'Environment & Clean Living',
-    desc: 'Executing large-scale clean water installations, native tree plantation drives, and local air quality seminars to protect our soil and community health.',
+    title: 'Environment Protection',
+    desc: 'The foundation actively promotes awareness regarding pollution, environmental responsibility, clean air, water conservation, and sustainable living practices. We believe environmental protection is essential for the health and future of coming generations.',
     image: '/environment_cleanup.png',
     gridClass: 'card-env'
   },
   {
     num: '02',
     tag: 'EDUCATION',
-    title: 'Education & Employability',
-    desc: 'Free tuition circles, slum libraries, digital literacy classrooms, and academic bridging courses that turn local youth into capable scholars.',
+    title: 'Education & Awareness',
+    desc: 'We support educational initiatives that encourage knowledge, awareness, practical learning, and personal development. Our approach focuses on empowering individuals through education that builds both capability and character.',
     image: '/education_classroom.png',
     gridClass: 'card-edu'
   },
   {
     num: '03',
     tag: 'LIVELIHOOD',
-    title: 'Livelihood & Self-Reliance',
-    desc: 'Trade-based workshops providing sewing machines, electrical kits, and training in carpentry, repair, and crafts for direct local employment.',
+    title: 'Skill Development & Self-Reliance',
+    desc: 'The foundation encourages vocational and professional skill development programs that help individuals become self-dependent and career-ready.',
     image: '/skill_workshop.png',
     gridClass: 'card-live'
   },
   {
     num: '04',
-    tag: 'FAMILY VALUES',
-    title: 'Family & Cultural Preservation',
-    desc: 'Conducting intergenerational circles, respect forums, and cultural preservation dialogues to protect the values that unify homes.',
+    tag: 'SOCIAL REFORM',
+    title: 'Social Reform',
+    desc: 'We work towards creating a more responsible and value-driven society by promoting ethics, social harmony, respect for elders, and positive family values.',
     image: '/family_community.png',
     gridClass: 'card-fam'
   },
   {
     num: '05',
-    tag: 'SOCIAL COHESION',
-    title: 'Social Harmony & Service',
-    desc: 'Mobilizing citizen volunteers, local leaders, and community guides to execute selfless welfare projects and build cooperative local relations.',
+    tag: 'YOUTH EMPOWERMENT',
+    title: 'Youth Empowerment',
+    desc: 'We aim to inspire and guide young individuals towards leadership, responsibility, discipline, and meaningful contribution to society.',
     image: '/images/seminar.png',
     gridClass: 'card-harm'
   }

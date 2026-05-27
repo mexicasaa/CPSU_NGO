@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
   { label: 'About', href: '/about' },
@@ -14,6 +14,16 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  // Dynamic color configuration based on home page background (light vs dark)
+  const textColor = isHome ? 'var(--green-dark)' : '#ffffff';
+  const textMutedColor = isHome ? 'rgba(26, 58, 42, 0.75)' : 'rgba(255, 255, 255, 0.8)';
+  const subtextColor = isHome ? 'var(--gold-accent)' : '#888888';
+  const borderCTA = isHome ? '1px solid var(--green-dark)' : '1px solid rgba(255, 255, 255, 0.15)';
+  const backgroundCTA = isHome ? 'rgba(26, 58, 42, 0.05)' : 'rgba(255, 255, 255, 0.08)';
+  const hoverBackgroundCTA = isHome ? 'rgba(26, 58, 42, 0.1)' : 'rgba(255, 255, 255, 0.12)';
 
   return (
     <>
@@ -40,17 +50,16 @@ export default function Header() {
             <div style={{
               width: 48, height: 48, borderRadius: '50%',
               background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.15)',
+              border: isHome ? '1px solid rgba(26, 58, 42, 0.15)' : '1px solid rgba(255,255,255,0.15)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
+              overflow: 'hidden',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
             }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-              </svg>
+              <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#ffffff', lineHeight: 1.2 }}>CSR & Educational</div>
-              <div style={{ fontSize: '10px', fontWeight: 600, color: '#888888', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '2px' }}>INDIA FOUNDATION</div>
+              <div style={{ fontSize: '15px', fontWeight: 600, color: textColor, lineHeight: 1.2 }}>CSR & Educational</div>
+              <div style={{ fontSize: '10px', fontWeight: 600, color: subtextColor, letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '2px' }}>INDIA FOUNDATION</div>
             </div>
           </Link>
 
@@ -58,12 +67,12 @@ export default function Header() {
           <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="hdr-nav">
             {NAV_LINKS.map(link => (
               <Link key={link.label} to={link.href} style={{
-                fontSize: '14px', fontWeight: 400, color: 'rgba(255, 255, 255, 0.8)',
+                fontSize: '14px', fontWeight: 400, color: textMutedColor,
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
               }}
-                onMouseEnter={e => e.target.style.color = '#ffffff'}
-                onMouseLeave={e => e.target.style.color = 'rgba(255, 255, 255, 0.8)'}
+                onMouseEnter={e => e.target.style.color = textColor}
+                onMouseLeave={e => e.target.style.color = textMutedColor}
               >{link.label}</Link>
             ))}
           </nav>
@@ -76,18 +85,18 @@ export default function Header() {
               borderRadius: '999px',
               textDecoration: 'none',
               fontWeight: 500,
-              color: '#ffffff',
-              background: 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              color: textColor,
+              background: backgroundCTA,
+              border: borderCTA,
               transition: 'all 0.2s ease',
             }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.background = hoverBackgroundCTA;
+                e.currentTarget.style.borderColor = isHome ? 'var(--green-mid)' : 'rgba(255, 255, 255, 0.25)';
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.background = backgroundCTA;
+                e.currentTarget.style.borderColor = isHome ? 'var(--green-dark)' : 'rgba(255, 255, 255, 0.15)';
               }}
             >
               Donate
@@ -95,9 +104,9 @@ export default function Header() {
             
             <button onClick={() => setMenuOpen(!menuOpen)} className="hdr-hamburger" aria-label="Menu"
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'none', flexDirection: 'column', gap: 5 }}>
-              <span style={{ display: 'block', width: 22, height: 1.5, background: '#ffffff', transition: 'transform 0.3s', transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none' }} />
-              <span style={{ display: 'block', width: 22, height: 1.5, background: '#ffffff', opacity: menuOpen ? 0 : 1, transition: 'opacity 0.3s' }} />
-              <span style={{ display: 'block', width: 22, height: 1.5, background: '#ffffff', transition: 'transform 0.3s', transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none' }} />
+              <span style={{ display: 'block', width: 22, height: 1.5, background: textColor, transition: 'transform 0.3s', transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none' }} />
+              <span style={{ display: 'block', width: 22, height: 1.5, background: textColor, opacity: menuOpen ? 0 : 1, transition: 'opacity 0.3s' }} />
+              <span style={{ display: 'block', width: 22, height: 1.5, background: textColor, transition: 'transform 0.3s', transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none' }} />
             </button>
           </div>
         </div>

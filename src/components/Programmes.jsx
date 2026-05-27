@@ -1,12 +1,10 @@
 import React from 'react';
 
 const PROGRAMMES = [
-  { tag: 'ENVIRONMENT', status: 'ONGOING', title: 'Clean Water & Pollution Drives', desc: 'Community water awareness, river cleanups, and air-quality seminars across NCR.' },
-  { tag: 'EDUCATION', status: 'ONGOING', title: 'Sankalp Education Initiative', desc: 'Free tuition, libraries, and digital literacy for rural and slum children.' },
-  { tag: 'SKILLS & LIVELIHOOD', status: 'RECRUITING', title: 'Hunar Skill Workshops', desc: 'Trade-based skill training - tailoring, electrical, mobile repair, beauty & wellness.' },
-  { tag: 'FAMILY & SOCIETY', status: 'UPCOMING', title: 'Parivar Samvad - Family Values', desc: 'Community circles on cultural harmony, respect, and intergenerational dialogue.' },
-  { tag: 'ENVIRONMENT', status: 'ONGOING', title: 'Green Schools Programme', desc: 'Plantation drives, eco-clubs and waste segregation in 40+ schools.' },
-  { tag: 'SKILLS & LIVELIHOOD', status: 'ONGOING', title: 'Youth Livelihood Bridge', desc: 'Placement support and entrepreneurship mentoring for first-generation earners.' },
+  { tag: 'ENVIRONMENT', status: 'ONGOING', title: 'Environmental Awareness Seminars', desc: 'The foundation organizes seminars and awareness campaigns focused on pollution control, environmental responsibility, public health, and sustainable living.' },
+  { tag: 'EDUCATION', status: 'ONGOING', title: 'Educational Initiatives', desc: 'We support programs that encourage learning, awareness, practical education, and knowledge sharing for individuals and communities.' },
+  { tag: 'SKILLS & LIVELIHOOD', status: 'ONGOING', title: 'Skill Development Programs', desc: 'The foundation promotes vocational and professional training initiatives aimed at improving employability and self-reliance.' },
+  { tag: 'COMMUNITY OUTREACH', status: 'ONGOING', title: 'Community Outreach Activities', desc: 'We engage with communities through awareness drives, social initiatives, discussions, and collaborative programs that encourage positive social impact.' },
 ];
 
 const STATUS_STYLE = {
@@ -40,7 +38,7 @@ export default function Programmes() {
                 display: 'flex', 
                 flexDirection: 'column', 
                 justifyContent: 'space-between', 
-                minHeight: '250px',
+                minHeight: '230px',
                 background: '#ffffff',
                 border: '1px solid rgba(26, 58, 42, 0.06)',
                 borderRadius: '24px',
@@ -132,23 +130,17 @@ export default function Programmes() {
       <style dangerouslySetInnerHTML={{ __html: `
         .programmes-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
           .programmes-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
           }
           #programs > div > div:first-of-type {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
-          }
-        }
-
-        @media (max-width: 650px) {
-          .programmes-grid {
-            grid-template-columns: 1fr;
           }
         }
       `}} />

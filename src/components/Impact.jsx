@@ -1,12 +1,12 @@
 import React from 'react';
 
 const STATS = [
-  { num: '24,800+', label: 'People reached across programs' },
-  { num: '3,120', label: 'Students supported in learning' },
-  { num: '186', label: 'Awareness sessions conducted' },
-  { num: '67', label: 'Communities engaged' },
-  { num: '11.5k', label: 'Trees planted' },
-  { num: '₹0', label: 'Overhead on field donations' },
+  { num: '—', label: 'People reached across programs' },
+  { num: '—', label: 'Students supported in learning' },
+  { num: '—', label: 'Awareness sessions conducted' },
+  { num: '—', label: 'Communities engaged' },
+  { num: '—', label: 'Trees planted' },
+  { num: '—', label: 'Overhead on field donations' },
 ];
 
 export default function Impact() {
@@ -57,10 +57,10 @@ export default function Impact() {
                 marginBottom: '64px'
               }}>
                 <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.8rem)', fontWeight: 400, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.025em', maxWidth: '750px', margin: 0 }}>
-                  Numbers we are proud of - and a few we are still working on.
+                  Impact Updates
                 </h2>
-                <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, maxWidth: '480px', margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
-                  Every metric here represents a real person, a real classroom, or a real community. We publish updated impact reports each quarter.
+                <p style={{ fontSize: '1.02rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, maxWidth: '520px', margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+                  The foundation’s measurable impact data will be updated as programs and initiatives continue to expand. This section will showcase the outcomes, reach, and community impact created through our environmental, educational, and social initiatives.
                 </p>
               </div>
 

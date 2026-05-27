@@ -45,6 +45,22 @@ export default function AboutPage() {
         </div>
       </section>
       
+      {/* About Us Editorial Section */}
+      <section style={{ padding: '80px 0 20px', background: 'var(--bg-main)' }}>
+        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', marginBottom: '24px' }}>OUR FOUNDING VALUES</span>
+          <p style={{ fontSize: '1.25rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '24px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500 }}>
+            CSR & Educational India Foundation was established in 2025 with a vision to create positive social transformation through awareness, education, and responsible action. The foundation works in the areas of environmental awareness, youth empowerment, social reform, and value-based development.
+          </p>
+          <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.8, marginBottom: '24px', fontWeight: 300 }}>
+            We believe that the future of society depends not only on economic growth, but also on clean surroundings, ethical thinking, quality education, and strong family and cultural values.
+          </p>
+          <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
+            The foundation is committed to building awareness among individuals and communities so they can contribute towards a healthier, more responsible, and progressive nation.
+          </p>
+        </div>
+      </section>
+      
       {/* Who We Are Component */}
       <WhoWeAre />
       
@@ -68,9 +84,12 @@ export default function AboutPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-icon)" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
                 <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.4rem', fontWeight: 400, color: 'var(--green-dark)' }}>Our Mission</h3>
               </div>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7 }}>
-                To empower underserved rural and semi-urban communities through sustainable green livelihoods, high-impact education, skill training, and preservation of strong family units.
-              </p>
+              <ul style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7, paddingLeft: '20px', margin: 0 }}>
+                <li style={{ marginBottom: '8px' }}>To spread awareness about environmental protection and pollution control.</li>
+                <li style={{ marginBottom: '8px' }}>To promote education, skill development, and self-reliance.</li>
+                <li style={{ marginBottom: '8px' }}>To encourage ethical values, family harmony, and social responsibility.</li>
+                <li>To support initiatives that contribute towards public welfare and community development.</li>
+              </ul>
             </div>
 
             {/* Vision */}
@@ -88,8 +107,8 @@ export default function AboutPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.4rem', fontWeight: 400, color: 'var(--green-dark)' }}>Our Vision</h3>
               </div>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7 }}>
-                A socially harmonious and self-reliant India where every household has a dignified livelihood, is empowered through skills, and lives in deep balance with environmental ecosystems.
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7, margin: 0 }}>
+                To build a healthy, educated, environmentally conscious, and socially responsible society rooted in strong human values and collective progress.
               </p>
             </div>
 

@@ -4,131 +4,63 @@ import { motion, AnimatePresence } from 'framer-motion';
 const PROGRAMS_DATA = [
   {
     id: 'environmental-awareness',
-    title: 'Environmental Awareness & Advocacy',
+    title: 'Environmental Awareness Seminars',
     category: 'Environment',
     image: '/environment_cleanup.png',
-    shortDesc: 'Combatting air pollution in Delhi-NCR and mobilizing citizen networks for sustainable urban living.',
-    longDesc: 'Our environmental advocacy focus addresses critical threats to public health in Delhi-NCR. We believe pollution is not just a policy issue, but a civic and moral responsibility. Through active workshops, air-quality monitoring campaigns in schools, and localized green action plans, we empower citizens to lead cleaner, healthier lives.',
-    focus: 'Delhi Air Pollution, Water Conservation, Climate Responsibility, Civic Action.',
+    shortDesc: 'The foundation organizes seminars and awareness campaigns focused on pollution control, environmental responsibility, public health, and sustainable living.',
+    longDesc: 'Our Environmental Awareness Seminars are designed to address critical issues of air and water pollution, conservation, and health. We actively conduct awareness sessions, community discussions, and distribute practical guides to promote green living and sustainable habits across schools, resident associations, and public spaces.',
+    focus: 'Pollution Control, Environmental Responsibility, Public Health, Sustainable Living.',
     metrics: [
-      { label: 'Air Monitors Installed', value: '45+ Sites' },
-      { label: 'Seminars Conducted', value: '120+' },
-      { label: 'Citizen Mobilized', value: '15,000+' }
+      { label: 'Seminars Conducted', value: '—' },
+      { label: 'Participants Reached', value: '—' }
     ],
-    volunteerRoles: ['Campaign Coordinator', 'School Outreach Lead', 'Technical Air Monitor Specialist'],
-    fundingNeed: 'Funds support public-school workshops, low-cost outdoor air sensor distribution, and clean-air curriculum printouts.'
+    volunteerRoles: ['Seminar Coordinator', 'Community Outreach Lead', 'Environmental Educator'],
+    fundingNeed: 'Funds support educational materials, seminar venue organization, and awareness brochures.'
   },
   {
-    id: 'tree-plantation',
-    title: 'Tree Plantation & Clean Living',
-    category: 'Environment & Climate',
-    image: '/images/environment.png',
-    shortDesc: 'Urban forestry, green belt restoration, and community-driven waste management systems.',
-    longDesc: 'We restore Delhi\'s denuded green cover and manage community waste cycles through micro-forestry initiatives. Our programs plant native, hardy species that thrive in urban conditions, creating micro-oases of oxygen in congested areas. Alongside planting, we conduct intensive cleaning drives to eliminate plastic waste from public parks.',
-    focus: 'Native Sapling Planting, Trash Cleanup Drives, Urban Forestry, Soil Nourishment.',
-    metrics: [
-      { label: 'Saplings Planted', value: '18,500+' },
-      { label: 'Survival Rate', value: '88%' },
-      { label: 'Trash Removed', value: '42 Tons' }
-    ],
-    volunteerRoles: ['Planting Volunteer', 'Cleanup Captain', 'Arborist Assistant'],
-    fundingNeed: 'Covers the cost of high-quality organic soil, mature native saplings, and protective tree guards.'
-  },
-  {
-    id: 'water-purity',
-    title: 'Water Purity & Sanitation',
-    category: 'Health & Hygiene',
-    image: '/images/hero_globe.png',
-    shortDesc: 'Installing water filtration systems and ensuring dignified sanitation for low-income settlements.',
-    longDesc: 'Clean drinking water is a fundamental human right. The foundation partners with local communities to install community water filtration units and distribute bio-sand filters. We pair water infrastructure with sanitation training, ensuring long-term maintenance and reducing waterborne diseases among children.',
-    focus: 'Drinking Water Quality, Safe Filtration Systems, Hygiene Education, WASH Audits.',
-    metrics: [
-      { label: 'Filter Units Installed', value: '72 Sites' },
-      { label: 'Daily Water Output', value: '15,000L+' },
-      { label: 'Diseases Reduced', value: '64%' }
-    ],
-    volunteerRoles: ['Sanitation Trainer', 'Filter Installation Tech', 'Water Quality Inspector'],
-    fundingNeed: 'Directly funds water purification components, bio-sand filter supplies, and community wash facilities.'
-  },
-  {
-    id: 'skill-training',
-    title: 'Skill Training & Livelihood Support',
-    category: 'Economic Empowerment',
-    image: '/skill_workshop.png',
-    shortDesc: 'Vocational training and digital literacy workshops that help youth and women become self-reliant.',
-    longDesc: 'Poverty eradication is achieved through self-reliance, not charity. Our Hunar Skill Workshops deliver practical, high-demand technical training in fields like tailoring, basic electronics repair, digital bookkeeping, and coding basics. Upon graduation, trainees are connected to local employers or provided micro-grants to start small businesses.',
-    focus: 'Vocational Skills, Women Empowerment, Digital Inclusion, Employment Pipelines.',
-    metrics: [
-      { label: 'Workshops Conducted', value: '28 Cohorts' },
-      { label: 'Employment Rate', value: '76%' },
-      { label: 'Average Wage Increase', value: '140%' }
-    ],
-    volunteerRoles: ['Skills Mentor', 'Guest Lecturer', 'Resume & Career Coach'],
-    fundingNeed: 'Funds training equipment (sewing machines, basic computers), training stipends, and certificate courses.'
-  },
-  {
-    id: 'youth-development',
-    title: 'Youth & Leadership Development',
-    category: 'Education & Youth',
-    image: '/blog_skills.png',
-    shortDesc: 'Channelling youthful energy into constructive community service and professional preparedness.',
-    longDesc: 'Our youth development programs foster leadership, critical thinking, and civic engagement. We believe India\'s youth are the standard-bearers of social change. We organize volunteer clubs, public-speaking circles, and micro-grant challenges where young students can propose and execute local community-betterment projects.',
-    focus: 'Civic Responsibility, Public Speaking, Leadership Bootcamps, Service Learning.',
-    metrics: [
-      { label: 'Youth Leaders Trained', value: '850+' },
-      { label: 'Local Projects Funded', value: '34 Projects' },
-      { label: 'Mentorship Hours', value: '4,800+' }
-    ],
-    volunteerRoles: ['Youth Mentor', 'Public Speaking Coach', 'Bootcamp Facilitator'],
-    fundingNeed: 'Supports leadership camp facilities, training curriculum development, and youth micro-grants.'
-  },
-  {
-    id: 'family-cultural',
-    title: 'Family & Cultural Preservation',
-    category: 'Values & Cohesion',
-    image: '/family_community.png',
-    shortDesc: 'Strengthening family structures, honoring elderly wisdom, and fostering intergenerational harmony.',
-    longDesc: 'In a rapidly materializing world, joint family values and elderly wisdom offer essential grounding. The foundation facilitates intergenerational dialogue circles, heritage workshops, and community eldercare support groups. We believe respecting elder guidance and cultivating strong family units builds deep societal stability.',
-    focus: 'Eldercare Support, Intergenerational Dialogues, Moral Cohesion, Heritage Preservation.',
-    metrics: [
-      { label: 'Family Seminars Held', value: '56 Sessions' },
-      { label: 'Elders Enrolled', value: '320+' },
-      { label: 'Youth Volunteers', value: '450+' }
-    ],
-    volunteerRoles: ['Eldercare Companion', 'Seminar Facilitator', 'Cultural Storyteller'],
-    fundingNeed: 'Underwrites the costs of community assembly spaces, family counseling circles, and heritage storybooks.'
-  },
-  {
-    id: 'community-education',
-    title: 'Community Education & Literacy',
+    id: 'educational-initiatives',
+    title: 'Educational Initiatives',
     category: 'Education',
     image: '/education_classroom.png',
-    shortDesc: 'After-school tutoring, basic literacy initiatives, and moral science classes for children.',
-    longDesc: 'Education is the gateway to opportunity. We run Sankalp After-School centers in marginalized neighborhoods to supplement formal schooling. We focus on reading mastery, mathematical fundamentals, and critical reasoning, while instilling timeless values of service, hard work, and mutual respect.',
-    focus: 'Literacy and Numeracy, After-School Tutoring, Value Education, Creative Expression.',
+    shortDesc: 'We support programs that encourage learning, awareness, practical education, and knowledge sharing for individuals and communities.',
+    longDesc: 'Education is the cornerstone of societal development. We partner with local institutions to run supplementary educational support sessions, distribute books and study aids, and emphasize value-driven learning that empowers both the mind and the character of students.',
+    focus: 'Practical Learning, Character Building, Student Empowerment, Knowledge Sharing.',
     metrics: [
-      { label: 'Students Enrolled', value: '1,200+' },
-      { label: 'Sankalp Centers', value: '12 Locations' },
-      { label: 'Grade Improvements', value: '82%' }
+      { label: 'Students Enrolled', value: '—' },
+      { label: 'Support Centers', value: '—' }
     ],
-    volunteerRoles: ['After-School Teacher', 'Math Tutor', 'Reading Buddy'],
-    fundingNeed: 'Buys school backpacks, textbooks, whiteboards, classroom supplies, and local teacher salaries.'
+    volunteerRoles: ['After-School Educator', 'Reading Mentor', 'Curriculum Assistant'],
+    fundingNeed: 'Covers costs of school supplies, books, learning aids, and classroom organization.'
   },
   {
-    id: 'social-harmony',
-    title: 'Social Harmony & Selfless Service',
-    category: 'Social Unity',
-    image: '/images/community.png',
-    shortDesc: 'Eradicating greed and materialism through communal service, collective dining, and dialogue.',
-    longDesc: 'Materialism, greed, and ego fragment societies. The foundation conducts intensive social cohesion seminars and community service festivals where individuals from all walks of life work side-by-side. By sharing meals, cleaning neighborhoods together, and participating in selfless service (Seva), we bridge social divisions.',
-    focus: 'Selfless Service (Seva), Communal Harmony, anti-materialism dialogue, Unified Action.',
+    id: 'skill-development',
+    title: 'Skill Development Programs',
+    category: 'Skills & Livelihood',
+    image: '/skill_workshop.png',
+    shortDesc: 'The foundation promotes vocational and professional training initiatives aimed at improving employability and self-reliance.',
+    longDesc: 'We believe true empowerment is built upon self-reliance. Our vocational training focus is dedicated to delivering professional and technical skills—ranging from digital literacy to vocational crafts—which help youth and women secure local employment or launch self-sustained initiatives.',
+    focus: 'Vocational Training, Digital Literacy, Professional Readiness, Economic Self-Reliance.',
     metrics: [
-      { label: 'Harmony Festivals', value: '24 Events' },
-      { label: 'Meals Shared Collectively', value: '30,000+' },
-      { label: 'Community Dialogues', value: '80+' }
+      { label: 'Vocational Cohorts', value: '—' },
+      { label: 'Self-Reliant Graduates', value: '—' }
     ],
-    volunteerRoles: ['Service Coordinator', 'Communal Dining Volunteer', 'Dialogue Facilitator'],
-    fundingNeed: 'Funds neighborhood service materials, collective kitchen ingredients, and harmony campaign materials.'
+    volunteerRoles: ['Vocational Trainer', 'Resume Coach', 'Tech Skills Instructor'],
+    fundingNeed: 'Covers training equipment, digital tools, certifications, and career counseling sessions.'
+  },
+  {
+    id: 'community-outreach',
+    title: 'Community Outreach Activities',
+    category: 'Community Outreach',
+    image: '/family_community.png',
+    shortDesc: 'We engage with communities through awareness drives, social initiatives, discussions, and collaborative programs that encourage positive social impact.',
+    longDesc: 'Our community outreach programs bring together individuals, resident welfare groups, and local leaders to collaborate on community-led challenges. From health and hygiene drives to eldercare assistance, we foster family harmony, ethical values, and mutual support across all neighborhoods.',
+    focus: 'Social Harmony, Family Values, Eldercare Assistance, Collaborative Action.',
+    metrics: [
+      { label: 'Outreach Drives', value: '—' },
+      { label: 'Communities Served', value: '—' }
+    ],
+    volunteerRoles: ['Community Coordinator', 'Eldercare Assistant', 'Event Organizer'],
+    fundingNeed: 'Underwrites costs of local gatherings, outreach materials, health resources, and neighborhood campaign tools.'
   }
 ];
 

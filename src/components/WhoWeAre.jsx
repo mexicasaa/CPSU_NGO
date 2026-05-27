@@ -51,8 +51,11 @@ export default function WhoWeAre() {
 
           {/* RIGHT */}
           <div>
-            <p style={{ fontSize: '1rem', color: '#4a5568', lineHeight: 1.8, marginBottom: '40px', fontFamily: "'Inter', sans-serif" }}>
-              CSR & Educational India Foundation is a citizen-led non-profit working across four interconnected areas - environmental responsibility, education and employability, skill-based livelihood, and social cohesion. Our work is rooted in field practice, not abstractions: we partner directly with schools, panchayats, women's collectives and local industries.
+            <p style={{ fontSize: '1.05rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '28px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500 }}>
+              Founded in 2025, CSR & Educational India Foundation works towards addressing critical social and environmental challenges through awareness, education, and community engagement.
+            </p>
+            <p style={{ fontSize: '0.95rem', color: '#4a5568', lineHeight: 1.8, marginBottom: '40px', fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+              The foundation believes that true progress is achieved when society grows not only economically, but also morally, educationally, and environmentally. Through seminars, educational initiatives, social outreach programs, and collaborative efforts, the foundation aims to create meaningful and long-term impact for individuals, families, and future generations.
             </p>
 
             {/* Timeline */}
@@ -71,10 +74,9 @@ export default function WhoWeAre() {
                 }} />
 
                 {[
-                  { year: '2018', title: 'Foundation established', desc: 'Registered non-profit, first pilot in NCR slum schools.' },
-                  { year: '2020', title: 'Sankalp Education launched', desc: 'Free tuition, libraries and digital literacy programmes scaled.' },
-                  { year: '2022', title: 'Hunar Skill Workshops', desc: 'Trade-based livelihood training begins across 12 communities.' },
-                  { year: '2024', title: 'Green Schools & Parivar Samvad', desc: 'Environment-in-schools and family value circles roll out.' },
+                  { year: '2025', title: 'Foundation Established', desc: 'Registered as a Section 8 non-profit with core ecological, educational, and livelihood focus areas aligned.' },
+                  { year: '2025', title: 'Sankalp & Hunar Pilot Initiatives', desc: 'Launched first grassroots student coaching centers and vocational livelihood modules.' },
+                  { year: '2026', title: 'Operations Scale-up', desc: 'Expansion of digital literacy libraries, local trade workshops, and Parivar Samvad dialogue circles.' },
                 ].map((item, i) => (
                   <div key={i} style={{ position: 'relative', marginBottom: '28px' }}>
                     {/* Glowing Node */}

@@ -13,6 +13,7 @@ import DonationPage from './pages/DonationPage';
 import PartnersPage from './pages/PartnersPage';
 import MediaPage from './pages/MediaPage';
 import VolunteerPage from './pages/VolunteerPage';
+import CareersPage from './pages/CareersPage';
 import './App.css';
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/partners" element={<PartnersPage />} />
             <Route path="/media" element={<MediaPage />} />
             <Route path="/volunteer" element={<VolunteerPage />} />
+            <Route path="/careers" element={<CareersPage />} />
           </Routes>
         </main>
         <Footer />

@@ -21,7 +21,7 @@ export default function MotionScrollingHero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9ba8a1', display: 'block', marginBottom: '28px' }}>
-            INDIA · SINCE 2018 · A NON-PROFIT FOUNDATION
+            INDIA · REGISTERED IN 2025 · A NON-PROFIT FOUNDATION
           </span>
 
           <h1 style={{ fontSize: 'clamp(3rem, 5vw, 5.2rem)', fontWeight: 400, color: '#1a1a1a', lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: '28px' }}>

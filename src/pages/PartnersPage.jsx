@@ -121,8 +121,8 @@ export default function PartnersPage() {
           >
             Strategic partnerships for <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>multi-generational</span> impact.
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
-            Align corporate resources with audited grassroots results. CSR & Educational India Foundation provides legal, transparent, and high-impact partnership channels for forward-thinking organizations.
+          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+            CSR & Educational India Foundation welcomes collaboration with organizations, institutions, businesses, and socially responsible partners who share our vision for public welfare and community development. Through CSR partnerships and collaborative initiatives, we aim to support impactful programs in environmental awareness, education, youth empowerment, and social responsibility. We believe collective efforts and responsible partnerships are essential for creating sustainable social impact.
           </p>
         </div>
       </section>

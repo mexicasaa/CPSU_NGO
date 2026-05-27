@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Can I donate from outside of India?',
-    a: 'Currently, our online portal handles INR domestic cards, netbanking, and UPI. For foreign contributions (FCRA clearance), please contact us directly at partner@csreif.org to execute bank transfers.'
+    a: 'Currently, our online portal handles INR domestic cards, netbanking, and UPI. For foreign contributions (FCRA clearance), please contact us directly at aumdcarya@gmail.com to execute bank transfers.'
   }
 ];
 

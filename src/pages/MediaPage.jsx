@@ -54,7 +54,6 @@ const MEDIA_ITEMS = [
 
 export default function MediaPage() {
   const [filter, setFilter] = useState('all');
-  const [activeVideo, setActiveVideo] = useState(false);
 
   const filteredItems = filter === 'all' 
     ? MEDIA_ITEMS 
@@ -96,10 +95,10 @@ export default function MediaPage() {
               maxWidth: '900px'
             }}
           >
-            Stories of change, <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>audited</span> field reports & campaigns.
+            Media & Public <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Awareness</span>
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
-            Explore our continuous media updates, ground-level photograph diaries, and documented events that capture socio-ecological advancement in action.
+          <p style={{ fontSize: '1.15rem', maxWidth: '800px', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+            Our media section highlights interviews, seminars, awareness campaigns, public discussions, and foundation activities related to environment, education, and social reform. This platform serves as a space to share ideas, inspire awareness, and encourage meaningful conversations for the betterment of society.
           </p>
         </div>
       </section>
@@ -108,86 +107,81 @@ export default function MediaPage() {
       <section style={{ padding: '100px 0 120px', background: 'var(--bg-main)' }}>
         <div className="container">
 
-        {/* Featured Video Story Banner */}
-        <div style={{ 
-          background: 'var(--bg-card)',
-          borderRadius: '28px',
-          border: '1px solid rgba(26,58,42,0.06)',
-          overflow: 'hidden',
-          boxShadow: 'var(--shadow-premium)',
-          display: 'grid',
-          gridTemplateColumns: '1.1fr 1fr',
-          marginBottom: '80px',
-          alignItems: 'center'
-        }} className="cinematic-reveal">
-          {/* Image & Video Trigger Column */}
-          <div style={{ position: 'relative', height: '400px', overflow: 'hidden' }}>
-            <img 
-              src="/dc_arya_suit.jpg" 
-              alt="Chairperson D.C. Arya Video Story" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-            />
-            {/* Play Button Overlay */}
-            <button
-              onClick={() => setActiveVideo(true)}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                background: 'rgba(245, 243, 238, 0.95)',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 10px 30px rgba(26,58,42,0.15)',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.08)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'; }}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--green-dark)" stroke="var(--green-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
-            </button>
+        {/* Chairperson's YouTube Interviews Grid */}
+        <div style={{ marginBottom: '80px' }} className="cinematic-reveal">
+          <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>CHAIRPERSON’S INTERVIEWS & BROADCASTS</span>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '40px',
+          }} id="youtube-interviews-grid">
+            
+            {/* Interview 1 */}
             <div style={{
-              position: 'absolute',
-              bottom: '20px',
-              left: '20px',
-              background: 'rgba(26, 58, 42, 0.76)',
-              padding: '6px 14px',
-              borderRadius: '999px',
-              fontSize: '0.7rem',
-              fontWeight: 600,
-              color: '#fff',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              backdropFilter: 'blur(4px)'
-            }}>
-              Featured Video
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/5Eqo64tQ5B4"
+                  title="Chairperson D.C. Arya Interview: Air Purity & Civic Action"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>MEDIA INTERVIEW</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Environmental Awareness Discussion
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Founder Director DC Arya shares his views on increasing pollution levels, environmental responsibility, public health concerns, and the importance of awareness for protecting future generations.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Content Column */}
-          <div style={{ padding: '48px' }}>
-            <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>FOUNDER’S BROADCAST</span>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.25, marginBottom: '20px' }}>
-              Why Air Purity and Value Cohesion are Crucial for India
-            </h2>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '28px' }}>
-              "Delhi's air quality and modern materialism create division and physical illness. True prosperity lies in clean air, self-reliance, moral family values, and selfless service." // Chairperson D.C. Arya
-            </p>
-            <button 
-              onClick={() => setActiveVideo(true)}
-              className="btn-green"
-              style={{ padding: '12px 28px', fontSize: '0.9rem' }}
-            >
-              Watch Founder Story
-            </button>
+            {/* Interview 2 */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/tE2IGhGd52c"
+                  title="Chairperson D.C. Arya Interview: Grassroots Communities"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>FIELD DIALOGUE</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Social & Educational Awareness
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Discussions focused on education, social values, youth development, self-reliance, and the importance of building a responsible and value-driven society.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -367,140 +361,15 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Simulated Media Player Modal */}
-      <AnimatePresence>
-        {activeVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 3000,
-              background: 'rgba(26, 58, 42, 0.72)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '24px'
-            }}
-            onClick={() => setActiveVideo(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.92, y: 15 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.92, y: 15 }}
-              transition={{ type: 'spring', damping: 25 }}
-              style={{
-                width: '100%',
-                maxWidth: '820px',
-                background: '#1a1a1a',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 30px 90px rgba(0,0,0,0.6)',
-                position: 'relative'
-              }}
-              onClick={e => e.stopPropagation()}
-            >
-              {/* Close button */}
-              <button
-                onClick={() => setActiveVideo(false)}
-                style={{
-                  position: 'absolute',
-                  top: '16px',
-                  right: '16px',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.15)',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 10,
-                  transition: 'background 0.3s'
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.25)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.15)'}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-
-              {/* Video Simulated Window */}
-              <div style={{ width: '100%', height: '420px', background: '#000', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img 
-                  src="/dc_arya_suit.jpg" 
-                  alt="Video playing" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4 }} 
-                />
-                
-                {/* Audio Waves graphic overlay */}
-                <div style={{ position: 'absolute', display: 'flex', gap: '6px', alignItems: 'center' }}>
-                  {[1, 2, 3, 4, 5, 4, 3, 2, 1].map((h, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{ height: [12 * h, 36 * h, 12 * h] }}
-                      transition={{ repeat: Infinity, duration: 1.2 + i * 0.1, ease: 'easeInOut' }}
-                      style={{ width: '4px', background: 'var(--gold-accent)', borderRadius: '2px' }}
-                    />
-                  ))}
-                </div>
-
-                <div style={{
-                  position: 'absolute',
-                  top: '24px',
-                  left: '24px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: 'rgba(0,0,0,0.4)',
-                  padding: '6px 12px',
-                  borderRadius: '999px'
-                }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'red', animation: 'pulse 1.5s infinite' }}></div>
-                  <span style={{ fontSize: '0.68rem', fontWeight: 600, color: '#fff', letterSpacing: '0.05em' }}>LIVE BROADCAST</span>
-                </div>
-              </div>
-
-              {/* Video Simulated Control Panels */}
-              <div style={{ padding: '24px 32px', background: '#1c1c1c' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyBetween: 'space-between', gap: '20px', marginBottom: '12px' }}>
-                  {/* Play icon */}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2.5">
-                    <rect x="6" y="4" width="4" height="16"></rect>
-                    <rect x="14" y="4" width="4" height="16"></rect>
-                  </svg>
-                  
-                  {/* Scrub progress bar */}
-                  <div style={{ flex: 1, height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', position: 'relative' }}>
-                    <div style={{ width: '52%', height: '100%', background: 'var(--gold-accent)', borderRadius: '2px' }}></div>
-                  </div>
-
-                  <span style={{ fontSize: '0.78rem', color: '#888', fontFamily: "'Inter', sans-serif" }}>01:45 / 03:20</span>
-                </div>
-                <div style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
-                  Broadcasting D.C. Arya's Keynote Message on Delhi Air & Civic Responsibility
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <style>{`
-        @keyframes pulse {
-          0% { opacity: 0.3; }
-          50% { opacity: 1; }
-          100% { opacity: 0.3; }
+        #youtube-interviews-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 900px) {
+          #youtube-interviews-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
         }
       `}</style>
     </div>
