@@ -3,53 +3,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const MEDIA_ITEMS = [
   {
-    id: 1,
-    title: 'Delhi-NCR Clean Air Summit',
+    id: 0,
+    title: 'Pollution Control Measures in Delhi State',
     category: 'seminar',
-    date: 'October 2025',
-    image: '/images/seminar.png',
-    desc: 'Brought together civic leaders, educators, and environmental researchers to draft actionable air-quality models for local schools.'
-  },
-  {
-    id: 2,
-    title: 'Bio-Sand Water Filter Distribution',
-    category: 'field-work',
-    date: 'December 2025',
-    image: '/images/hero_globe.png',
-    desc: 'Installed and handed over 50 community-scale water filtration systems in low-income settlements in Delhi-NCR.'
-  },
-  {
-    id: 3,
-    title: 'Vocational Livelihood Graduation',
-    category: 'field-work',
-    date: 'January 2026',
-    image: '/education_classroom.png',
-    desc: 'Sankalp Vocational Cohort-4 celebrated graduation. 76% of candidates stepped immediately into manufacturing and trade apprenticeships.'
-  },
-  {
-    id: 4,
-    title: 'NCR Urban Micro-Forestry Drive',
-    category: 'field-work',
-    date: 'April 2026',
-    image: '/environment_cleanup.png',
-    desc: 'Planted 500+ mature native saplings and initiated a plastic cleanup sweep across denuded community parks.'
-  },
-  {
-    id: 5,
-    title: 'Intergenerational Wisdom Circles',
-    category: 'seminar',
-    date: 'March 2026',
-    image: '/family_community.png',
-    desc: 'Biannual Parivar Samvad dialogue circles honoring joint family structures, moral cohesion, and elderly guidance.'
-  },
-  {
-    id: 6,
-    title: 'Annual Social Impact Audits',
-    category: 'press',
     date: 'May 2026',
-    image: '/images/community.png',
-    desc: 'Released our audited financial sheets and ground-impact statistics, detailing radical transparent fund executions.'
-  }
+    image: '/images/ngo_policy_meeting.jpg',
+    desc: 'Meeting with Sh. Ashok Goel MLA, Model Town, regarding advancing Pollution Control Measures in Delhi.'
+  },
+  {
+    id: 7,
+    title: 'Clean Solar Light Distribution Drive',
+    category: 'field-work',
+    date: 'February 2026',
+    image: '/images/solar_light.png',
+    desc: 'Distributed over 150 solar-powered home lighting kits in off-grid urban settlements to enhance safety and educational facilities.'
+  },
+  {
+    id: 8,
+    title: 'Delhi Youth Environmental Policy Forum',
+    category: 'press',
+    date: 'April 2026',
+    image: '/images/youth_forum.png',
+    desc: 'Organized an environmental policy roundtable with 200+ students from Delhi schools, presenting climate action models to municipal leaders.'
+  },
 ];
 
 export default function MediaPage() {
@@ -185,108 +161,182 @@ export default function MediaPage() {
           </div>
         </div>
 
-        {/* Gallery Filtering Controls */}
-        <div style={{ 
-          display: 'flex', 
-          gap: '12px', 
-          marginBottom: '40px',
-          flexWrap: 'wrap',
-          borderBottom: '1px solid rgba(26,58,42,0.06)',
-          paddingBottom: '20px'
-        }} className="cinematic-reveal">
-          {[
-            { id: 'all', label: 'All Chronicles' },
-            { id: 'field-work', label: 'Ground Operations' },
-            { id: 'seminar', label: 'Summit Meetings' },
-            { id: 'press', label: 'Audits & Press' }
-          ].map(btn => (
-            <button
-              key={btn.id}
-              onClick={() => setFilter(btn.id)}
-              style={{
-                background: filter === btn.id ? 'var(--green-dark)' : 'transparent',
-                color: filter === btn.id ? '#fff' : 'var(--text-body)',
-                border: filter === btn.id ? '1px solid var(--green-dark)' : '1px solid rgba(26,58,42,0.12)',
-                borderRadius: '999px',
-                padding: '10px 22px',
-                fontSize: '0.88rem',
-                fontWeight: 500,
-                cursor: 'pointer',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                fontFamily: "'Inter', sans-serif"
-              }}
-            >
-              {btn.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Filtered Masonry Media Grid */}
-        <motion.div 
-          layout
-          style={{
+        {/* Leadership & Policy Initiatives Section */}
+        <div style={{ marginTop: '100px' }} className="cinematic-reveal">
+          <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
+            LEADERSHIP & POLICY ALIGNMENT
+          </span>
+          
+          <div style={{
+            background: 'linear-gradient(145deg, #11251b 0%, #1a3a2a 100%)',
+            borderRadius: '36px',
+            border: '1px solid rgba(200, 168, 74, 0.2)',
+            boxShadow: 'var(--shadow-premium)',
+            overflow: 'hidden',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '32px'
-          }} 
-          className="cinematic-reveal"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map(item => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="card hover-lift"
+            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+            gap: '56px',
+            padding: '56px',
+            alignItems: 'center',
+            position: 'relative'
+          }} className="hover-lift">
+            
+            {/* Atmospheric Background Ambient Glows */}
+            <div style={{
+              position: 'absolute',
+              top: '-20%',
+              left: '-20%',
+              width: '60%',
+              height: '60%',
+              background: 'radial-gradient(circle, rgba(200, 168, 74, 0.05) 0%, transparent 70%)',
+              pointerEvents: 'none',
+              filter: 'blur(50px)'
+            }} />
+            
+            {/* Left Column: Clearly Visible Image with executive crop that hides casual dining items at the bottom */}
+            <div style={{
+              width: '100%',
+              height: '560px',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+              border: '1px solid rgba(200, 168, 74, 0.25)',
+              backgroundColor: '#11251b',
+              position: 'relative'
+            }}>
+              <img 
+                src="/images/ashok_goel_meeting.jpg" 
+                alt="Meeting with Sh Ashok Goel MLA" 
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  padding: 0,
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  background: 'var(--bg-card)',
-                  border: '1px solid rgba(26,58,42,0.06)',
-                  boxShadow: 'var(--shadow-premium)'
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 8%', // Crops out the casual dining table at the bottom and focuses on the faces and the paper!
+                  display: 'block',
+                  transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
-              >
-                {/* Media Image */}
-                <div style={{ width: '100%', height: '220px', overflow: 'hidden', position: 'relative' }}>
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                  />
-                  <div style={{
-                    position: 'absolute',
-                    top: '16px',
-                    left: '16px',
-                    background: 'rgba(245, 243, 238, 0.95)',
-                    padding: '5px 12px',
-                    borderRadius: '999px',
-                    fontSize: '0.7rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    color: 'var(--green-dark)',
-                    boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
-                  }}>
-                    {item.category === 'field-work' ? 'Ground Ops' : item.category === 'seminar' ? 'Summit' : 'Audit'}
-                  </div>
-                </div>
+                className="executive-photo"
+              />
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'linear-gradient(to bottom, transparent 70%, rgba(17,37,27,0.4) 100%)',
+                pointerEvents: 'none'
+              }} />
+            </div>
+            
+            {/* Right Column: Premium Text Info */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', position: 'relative', zIndex: 2 }}>
+              <div>
+                <span style={{ 
+                  fontSize: '0.8rem', 
+                  color: 'var(--gold-accent)', 
+                  fontWeight: 600, 
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '12px'
+                }}>
+                  Official Policy Convening • Delhi State
+                </span>
+                <h2 style={{ 
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: 'clamp(2rem, 3vw, 2.6rem)',
+                  fontWeight: 400, 
+                  color: '#F5F3EE', 
+                  lineHeight: 1.2,
+                  margin: 0,
+                  letterSpacing: '-0.01em'
+                }}>
+                  Pollution Control <br />
+                  <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Measures</span> in Delhi State
+                </h2>
+              </div>
+              
+              <div style={{ 
+                height: '1px', 
+                width: '80px', 
+                background: 'var(--gold-accent)',
+                opacity: 0.8 
+              }} />
+              
+              <p style={{ 
+                fontSize: '1.08rem', 
+                color: 'rgba(245, 243, 238, 0.9)', 
+                lineHeight: 1.75,
+                fontWeight: 300,
+                margin: 0
+              }}>
+                A high-level consultative meeting was held with <strong>Sh. Ashok Goel, Honorable MLA from Model Town, New Delhi</strong>, to address and advance key environmental policy frameworks and active pollution control measures across Delhi State.
+              </p>
 
-                {/* Media Body */}
-                <div style={{ padding: '24px 28px 28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--gold-accent)', fontWeight: 600, marginBottom: '8px', display: 'block' }}>{item.date}</span>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>{item.title}</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, flexGrow: 1 }}>{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              <p style={{ 
+                fontSize: '0.94rem', 
+                color: 'rgba(245, 243, 238, 0.72)', 
+                lineHeight: 1.7,
+                fontWeight: 300,
+                margin: 0
+              }}>
+                The discussion focused on regional grassroots mobilization, implementation of modern filtration mechanisms, and fostering public-private-civic synergies to combat environmental degradation in high-risk zones. The alignment ensures a consolidated front for policy implementation, civic engagement, and actionable reforms.
+              </p>
+              
+              {/* Highlight Points */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '16px',
+                marginTop: '8px'
+              }}>
+                {[
+                  'Civic-State Coordination',
+                  'Targeted Local Actions',
+                  'Policy Recommendations',
+                  'Citizen-Led Air Audits'
+                ].map((point, index) => (
+                  <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <div style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: 'var(--gold-accent)'
+                    }} />
+                    <span style={{ fontSize: '0.88rem', color: '#F5F3EE', fontWeight: 500 }}>
+                      {point}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Quote from Meeting */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.04)',
+                borderLeft: '4px solid var(--gold-accent)',
+                padding: '20px 24px',
+                borderRadius: '0 20px 24px 0',
+                marginTop: '8px',
+                border: '1px solid rgba(255,255,255,0.02)',
+                borderLeftWidth: '4px'
+              }}>
+                <p style={{ 
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontStyle: 'italic', 
+                  fontSize: '1rem', 
+                  color: 'var(--gold-accent)', 
+                  margin: 0,
+                  lineHeight: 1.55,
+                  fontWeight: 300
+                }}>
+                  "Collaborative action between state representatives and community leadership is the cornerstone of sustainable environmental restoration."
+                </p>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
 
         </div>
       </section>
