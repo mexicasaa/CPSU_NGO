@@ -587,7 +587,7 @@ export default function CinematicScroller() {
         .cream-transition-overlay {
           position: absolute;
           inset: 0;
-          background: #F5F3EE; /* F5F3EE is the project's --bg-main ivorish cream */
+          background: #f5f3ee; /* Pristine Ivory Cream */
           opacity: var(--cream-overlay-opacity);
           pointer-events: none;
           z-index: 19;

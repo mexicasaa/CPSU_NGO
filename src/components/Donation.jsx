@@ -124,7 +124,7 @@ export default function Donation() {
   };
 
   return (
-    <section id="donate" style={{ background: '#f5f3ee', padding: '140px 0', borderTop: '1px solid rgba(26,58,42,0.05)', position: 'relative', overflow: 'hidden' }}>
+    <section id="donate" style={{ background: 'var(--bg-main)', padding: '140px 0', borderTop: '1px solid rgba(26,58,42,0.05)', position: 'relative', overflow: 'hidden' }}>
       
       {/* Decorative ambient glowing backdrops for organic depth */}
       <div className="ambient-glow-green" style={{ position: 'absolute', top: '10%', left: '-10%', width: '400px', height: '400px', pointerEvents: 'none', opacity: 0.6 }} />

@@ -24,11 +24,14 @@
   --gold-hover: #d4b85c;
   --blue-accent: #102a43;
 
-  /* Backgrounds */
-  --bg-main: #F5F3EE; /* Pristine Ivory Cream */
-  --bg-section: #EDEAE3; /* Warm Beige */
+  /* Backgrounds (Global Ivory Cream Overhaul) */
+  --bg-main: #f5f3ee; /* Pristine Ivory Cream */
+  --bg-section: #edeae3; /* Warm Beige */
   --bg-card: #FFFFFF;
   --bg-footer: #1a3a2a;
+  --bg-cream: #f5f3ee;
+  --bg-ivory: #f5f3ee;
+  --bg-warm: #edeae3;
 
   /* Text */
   --text-heading: #1a1a1a;

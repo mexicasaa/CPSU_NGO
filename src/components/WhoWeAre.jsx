@@ -88,7 +88,7 @@ export default function WhoWeAre() {
                       height: '10px', 
                       borderRadius: '50%', 
                       background: '#c8a84a', 
-                      border: '2px solid #F5F3EE',
+                      border: '2px solid var(--bg-main)',
                       boxShadow: '0 0 0 2px #1a3a2a',
                       zIndex: 2 
                     }} />
@@ -107,7 +107,7 @@ export default function WhoWeAre() {
 
             {/* Quote block */}
             <div style={{
-              background: '#eae7df', 
+              background: 'var(--bg-section)', 
               borderRadius: '24px',
               padding: '40px', 
               position: 'relative',
