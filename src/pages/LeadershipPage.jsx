@@ -39,19 +39,19 @@ export default function LeadershipPage() {
   const advisors = [
     {
       name: "Mr. Neeraj Kumar Pandey",
-      role: "Advisory Board Member",
+      role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Neeraj+Kumar+Pandey&background=1a3a2a&color=fff&size=256"
     },
     {
       name: "Mr. Cheatan Sharama",
-      role: "Advisory Board Member",
+      role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Cheatan+Sharama&background=1a3a2a&color=fff&size=256"
     },
     {
       name: "Mrs. Parveen Sethi",
-      role: "Advisory Board Member",
+      role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Parveen+Sethi&background=1a3a2a&color=fff&size=256"
     }
@@ -112,7 +112,7 @@ export default function LeadershipPage() {
               lineHeight: 1.2,
               margin: 0
             }}>
-              Board of Directors
+              Core Team
             </h2>
             <div style={{ width: '60px', height: '3px', background: 'var(--gold-accent)', margin: '24px auto 0' }} />
           </div>
