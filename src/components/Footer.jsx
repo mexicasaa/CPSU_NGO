@@ -178,9 +178,17 @@ export default function Footer() {
           <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', fontFamily: "'Inter', sans-serif" }}>
             © 2026 CSR & Educational India Foundation. All rights reserved.
           </span>
-          <Link to="/privacy" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
-            onMouseEnter={e => e.target.style.color = '#c8a84a'}
-            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Privacy</Link>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <Link to="/privacy-policy" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseEnter={e => e.target.style.color = '#c8a84a'}
+              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Privacy Policy</Link>
+            <Link to="/terms-conditions" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseEnter={e => e.target.style.color = '#c8a84a'}
+              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Terms & Conditions</Link>
+            <Link to="/disclaimer" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseEnter={e => e.target.style.color = '#c8a84a'}
+              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Disclaimer</Link>
+          </div>
         </div>
       </div>
 

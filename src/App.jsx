@@ -18,6 +18,9 @@ import PartnersPage from './pages/PartnersPage';
 import MediaPage from './pages/MediaPage';
 import VolunteerPage from './pages/VolunteerPage';
 import CareersPage from './pages/CareersPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
+import DisclaimerPage from './pages/DisclaimerPage';
 import './App.css';
 
 export default function App() {
@@ -42,6 +45,9 @@ export default function App() {
             <Route path="/media" element={<MediaPage />} />
             <Route path="/volunteer" element={<VolunteerPage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-conditions" element={<TermsPage />} />
+            <Route path="/disclaimer" element={<DisclaimerPage />} />
           </Routes>
         </main>
         <Footer />
