@@ -5,6 +5,10 @@ import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
+import MissionPage from './pages/MissionPage';
+import VisionPage from './pages/VisionPage';
+import StatementsPage from './pages/StatementsPage';
+import MantraPage from './pages/MantraPage';
 import FocusAreasPage from './pages/FocusAreasPage';
 import ContactPage from './pages/ContactPage';
 import LeadershipPage from './pages/LeadershipPage';
@@ -25,6 +29,10 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/mission" element={<MissionPage />} />
+            <Route path="/vision" element={<VisionPage />} />
+            <Route path="/statements" element={<StatementsPage />} />
+            <Route path="/mantra" element={<MantraPage />} />
             <Route path="/focus-areas" element={<FocusAreasPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/leadership" element={<LeadershipPage />} />

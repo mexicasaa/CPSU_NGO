@@ -2,13 +2,23 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { label: 'About', href: '/about' },
-  { label: 'Focus Areas', href: '/focus-areas' },
-  { label: 'Leadership', href: '/leadership' },
   { label: 'Programs', href: '/programs' },
-  { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Focus Areas', href: '/focus-areas' },
   { label: 'Partners & CSR', href: '/partners' },
+  { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Leadership', href: '/leadership' },
   { label: 'Media', href: '/media' },
+  { 
+    label: 'About', 
+    href: '/about',
+    submenu: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Our Mission', href: '/mission' },
+      { label: 'Our Vision', href: '/vision' },
+      { label: 'Core Statements', href: '/statements' },
+      { label: 'Our Mantra', href: '/mantra' },
+    ]
+  },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -17,13 +27,13 @@ export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  // Dynamic color configuration based on home page background (light vs dark)
-  const textColor = isHome ? 'var(--green-dark)' : '#ffffff';
-  const textMutedColor = isHome ? 'rgba(26, 58, 42, 0.75)' : 'rgba(255, 255, 255, 0.8)';
-  const subtextColor = isHome ? 'var(--gold-accent)' : '#888888';
-  const borderCTA = isHome ? '1px solid var(--green-dark)' : '1px solid rgba(255, 255, 255, 0.15)';
-  const backgroundCTA = isHome ? 'rgba(26, 58, 42, 0.05)' : 'rgba(255, 255, 255, 0.08)';
-  const hoverBackgroundCTA = isHome ? 'rgba(26, 58, 42, 0.1)' : 'rgba(255, 255, 255, 0.12)';
+  // Premium transparent theme with high-legibility white/gold text over video and dark green backgrounds
+  const textColor = '#ffffff';
+  const textMutedColor = 'rgba(255, 255, 255, 0.8)';
+  const subtextColor = 'var(--gold-accent)';
+  const borderCTA = '1px solid rgba(255, 255, 255, 0.25)';
+  const backgroundCTA = 'rgba(255, 255, 255, 0.08)';
+  const hoverBackgroundCTA = 'rgba(255, 255, 255, 0.15)';
 
   return (
     <>
@@ -50,7 +60,7 @@ export default function Header() {
             <div style={{
               width: 48, height: 48, borderRadius: '50%',
               background: 'rgba(255,255,255,0.03)',
-              border: isHome ? '1px solid rgba(26, 58, 42, 0.15)' : '1px solid rgba(255,255,255,0.15)',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               overflow: 'hidden',
               boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
@@ -59,22 +69,90 @@ export default function Header() {
             </div>
             <div>
               <div style={{ fontSize: '15px', fontWeight: 600, color: textColor, lineHeight: 1.2 }}>CSR & Educational</div>
-              <div style={{ fontSize: '10px', fontWeight: 600, color: subtextColor, letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '2px' }}>INDIA FOUNDATION</div>
+              <div style={{ fontSize: '10px', fontWeight: 700, color: subtextColor, letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '2px', textShadow: '0 1px 2px rgba(0,0,0,0.15)' }}>INDIA FOUNDATION</div>
             </div>
           </Link>
 
           {/* Desktop Nav */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="hdr-nav">
-            {NAV_LINKS.map(link => (
-              <Link key={link.label} to={link.href} style={{
-                fontSize: '14px', fontWeight: 400, color: textMutedColor,
-                textDecoration: 'none',
-                transition: 'color 0.2s ease',
-              }}
-                onMouseEnter={e => e.target.style.color = textColor}
-                onMouseLeave={e => e.target.style.color = textMutedColor}
-              >{link.label}</Link>
-            ))}
+            {NAV_LINKS.map(link => {
+              if (link.submenu) {
+                return (
+                  <div key={link.label} className="nav-item-dropdown" style={{ position: 'relative' }}>
+                    <Link to={link.href} style={{
+                      fontSize: '14px', fontWeight: 400, color: textMutedColor,
+                      textDecoration: 'none',
+                      transition: 'color 0.2s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '8px 0',
+                    }}
+                      onMouseEnter={e => e.currentTarget.style.color = textColor}
+                      onMouseLeave={e => e.currentTarget.style.color = textMutedColor}
+                    >
+                      {link.label}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ transition: 'transform 0.2s' }} className="dropdown-arrow-svg">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </Link>
+                    <div className="submenu-dropdown" style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '50%',
+                      transform: 'translateX(-50%) translateY(10px)',
+                      background: 'var(--green-dark)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      borderRadius: '16px',
+                      padding: '12px 0',
+                      minWidth: '185px',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                      zIndex: 100,
+                      opacity: 0,
+                      pointerEvents: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                    }}>
+                      {link.submenu.map(sub => (
+                        <Link key={sub.label} to={sub.href} style={{
+                          display: 'block',
+                          padding: '10px 24px',
+                          fontSize: '13px',
+                          color: 'rgba(255, 255, 255, 0.75)',
+                          textDecoration: 'none',
+                          transition: 'all 0.2s',
+                          whiteSpace: 'nowrap',
+                          textAlign: 'left'
+                        }}
+                          onMouseEnter={e => {
+                            e.target.style.color = '#ffffff';
+                            e.target.style.background = 'rgba(255, 255, 255, 0.05)';
+                            e.target.style.paddingLeft = '28px';
+                          }}
+                          onMouseLeave={e => {
+                            e.target.style.color = 'rgba(255, 255, 255, 0.75)';
+                            e.target.style.background = 'transparent';
+                            e.target.style.paddingLeft = '24px';
+                          }}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link key={link.label} to={link.href} style={{
+                  fontSize: '14px', fontWeight: 400, color: textMutedColor,
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                  padding: '8px 0',
+                }}
+                  onMouseEnter={e => e.target.style.color = textColor}
+                  onMouseLeave={e => e.target.style.color = textMutedColor}
+                >{link.label}</Link>
+              );
+            })}
           </nav>
 
           {/* CTA */}
@@ -92,11 +170,11 @@ export default function Header() {
             }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = hoverBackgroundCTA;
-                e.currentTarget.style.borderColor = isHome ? 'var(--green-mid)' : 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = backgroundCTA;
-                e.currentTarget.style.borderColor = isHome ? 'var(--green-dark)' : 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
               }}
             >
               Donate
@@ -123,16 +201,46 @@ export default function Header() {
           zIndex: 999,
           background: '#0c100e',
           padding: '24px',
+          overflowY: 'auto',
         }}>
-          {NAV_LINKS.map(link => (
-            <Link key={link.label} to={link.href} onClick={() => setMenuOpen(false)} style={{
-              display: 'block', padding: '16px 0',
-              borderBottom: '1px solid rgba(255,255,255,0.05)',
-              color: '#ffffff',
-              textDecoration: 'none',
-              fontSize: '18px',
-            }}>{link.label}</Link>
-          ))}
+          {NAV_LINKS.map(link => {
+            if (link.submenu) {
+              return (
+                <div key={link.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '12px 0' }}>
+                  <span style={{
+                    display: 'block',
+                    padding: '8px 0',
+                    color: 'var(--gold-accent)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em'
+                  }}>{link.label}</span>
+                  <div style={{ paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    {link.submenu.map(sub => (
+                      <Link key={sub.label} to={sub.href} onClick={() => setMenuOpen(false)} style={{
+                        display: 'block',
+                        padding: '10px 0',
+                        color: '#ffffff',
+                        textDecoration: 'none',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                      }}>{sub.label}</Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link key={link.label} to={link.href} onClick={() => setMenuOpen(false)} style={{
+                display: 'block', padding: '16px 0',
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+                color: '#ffffff',
+                textDecoration: 'none',
+                fontSize: '18px',
+              }}>{link.label}</Link>
+            );
+          })}
           <Link to="/donate" onClick={() => setMenuOpen(false)} style={{
             marginTop: 32,
             display: 'flex',
@@ -151,6 +259,14 @@ export default function Header() {
       <style>{`
         .transparent-navbar {
           background-color: transparent !important;
+        }
+        .nav-item-dropdown:hover .submenu-dropdown {
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          transform: translateX(-50%) translateY(0) !important;
+        }
+        .nav-item-dropdown:hover .dropdown-arrow-svg {
+          transform: rotate(180deg) !important;
         }
         @media (max-width: 1024px) {
           .hdr-nav { display: none !important; }

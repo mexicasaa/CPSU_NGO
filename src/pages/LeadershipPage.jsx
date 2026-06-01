@@ -5,34 +5,90 @@ export default function LeadershipPage() {
     {
       name: "DC Arya",
       role: "Founder Director",
-      bio: "CSR & Educational India Foundation is led by Founder Director DC Arya, whose vision is centered around environmental awareness, education, social responsibility, and cultural values. He strongly believes that society must address not only environmental pollution, but also the growing challenges related to moral and social imbalance. Through awareness initiatives, educational activities, and community engagement, his goal is to inspire individuals towards responsible living and collective progress. His leadership reflects a commitment to building a healthier, educated, and ethically strong society for future generations.",
+      bio: "A visionary leader dedicated to environmental awareness, education, and social responsibility. He has actively served as an elected Council Member and Former Chairman of the NIRC of the Institute of Cost Accountants of India (ICMAI).",
       image: "/dc_arya_suit.jpg",
       linkedin: "https://linkedin.com",
       email: "dcarya@csreduindia.org"
     },
     {
+      name: "Bajrang Lal Bagra",
+      role: "Director",
+      bio: "He served as the former Chairman and Managing Director (CMD) of the public sector undertaking, National Aluminium Company Limited (NALCO), and is the General Secretary (Mahamantri) of the Vishva Hindu Parishad (VHP).",
+      image: "/images/Bajrang Lal Bagra.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
       name: "HN Sharma",
-      role: "Social Welfare & Grassroots Strategist",
-      bio: "A veteran social administrator specializing in rural development initiatives, community empowerment, and mobilizing grassroots volunteer networks.",
+      role: "Director",
+      bio: "He served as the trusted political secretary and advisor to the former Prime Minister of India, Chandra Shekhar, bringing decades of high-level social, political, and administrative expertise to the foundation.",
       image: "/images/HN Sharma.png",
       linkedin: "https://linkedin.com",
       email: "hnsharma@csreduindia.org"
     },
     {
+      name: "CS Nanda",
+      role: "Director",
+      bio: "He serves as the 73rd President of the Institute of Chartered Accountants of India (ICAI) for the 2025–26 term. He actively supports Indian regulatory bodies, serving as a Board Member of IRDAI and a member of SEBI's Primary Market Advisory Committee.",
+      image: "/images/CS Nanda.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
+      name: "Atul Gupta",
+      role: "Director",
+      bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
+      image: "/images/Atul Gupta.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
+      name: "Dr. Bawindar Singh",
+      role: "Director",
+      bio: "He served as the President of the Institute of Cost Accountants of India (ICMAI). He regularly interfaces with senior union ministries and regulatory bodies in India to advocate for Cost Accountants in national audits and CSR spending social audits.",
+      image: "/images/Dr. Bawindar Singh.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
       name: "Subhash C Agrawal",
-      role: "RTI, Transparency & Public Grievances Lead",
-      bio: "A renowned RTI activist ensuring the highest standards of organizational transparency, public accountability, and ethical governance.",
+      role: "Director",
+      bio: "A renowned RTI activist who previously served as a Director of Finance for the Cement Corporation of India, combining corporate financial governance with strong advocacy for organizational transparency and accountability.",
       image: "/images/Subhash C Agrawal.jpg",
       linkedin: "https://linkedin.com",
       email: "subhashagrawal@csreduindia.org"
     },
     {
+      name: "Raj Chawla",
+      role: "Director",
+      bio: "He has served as a Central Council Member of the Institute of Chartered Accountants of India (ICAI) for the 2022–2025 term, and previously served as the Chairman of the Northern India Regional Council (NIRC) of ICAI.",
+      image: "/images/Raj Chawla.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
       name: "Y P Bhola",
-      role: "Taxation & Financial Planning Expert",
-      bio: "A veteran financial consultant managing the foundation's tax compliance, treasury planning, and efficient resource allocation.",
+      role: "Director",
+      bio: "A distinguished corporate leader who served as the Director of Finance at National Fertilizers Limited (NFL), a prominent Navratna CPSE under the Government of India, culminating a distinguished corporate career spanning nearly four decades.",
       image: "/images/Y P Bhola.jpg",
       linkedin: "https://linkedin.com",
       email: "ypbhola@csreduindia.org"
+    },
+    {
+      name: "Sunil Singh",
+      role: "Director",
+      bio: "He has held major leadership positions within the Northern India Regional Council of the Institute of Cost Accountants of India (ICMAI), notably serving consecutive terms as the Chairman of NIRC-ICMAI (2017–18 and 2018–19).",
+      image: "/images/Sunil Singh.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
+      name: "Vinod Chittora",
+      role: "Director",
+      bio: "A prominent member of the Institute of Cost Accountants of India (ICMAI) who has actively served the profession as the Past Chairman of the Jaipur Chapter of ICMAI.",
+      image: "/images/Vinod Chittora.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
     }
   ];
 
@@ -173,98 +229,7 @@ export default function LeadershipPage() {
                       {leader.bio}
                     </p>
                   </div>
-                  
-                  {/* Social Buttons */}
-                  <div style={{ display: 'flex', gap: '14px', alignItems: 'center', marginTop: 'auto' }}>
-                    {leader.linkedin && (
-                      <a 
-                        href={leader.linkedin} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        style={{ 
-                          color: 'var(--green-icon)', 
-                          opacity: 0.5,
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          display: 'inline-flex',
-                          alignItems: 'center'
-                        }}
-                        className="social-icon-btn"
-                        title={`${leader.name}'s LinkedIn Profile`}
-                      >
-                        <svg 
-                          width="17" 
-                          height="17" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="1.8" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round"
-                        >
-                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                          <rect x="2" y="9" width="4" height="12" />
-                          <circle cx="4" cy="4" r="2" />
-                        </svg>
-                      </a>
-                    )}
-                    {leader.email && (
-                      <a 
-                        href={`mailto:${leader.email}`} 
-                        style={{ 
-                          color: 'var(--green-icon)', 
-                          opacity: 0.5,
-                          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                          display: 'inline-flex',
-                          alignItems: 'center'
-                        }}
-                        className="social-icon-btn"
-                        title={`Email ${leader.name}`}
-                      >
-                        <svg 
-                          width="17" 
-                          height="17" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="1.8" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round"
-                        >
-                          <rect x="2" y="4" width="20" height="16" rx="2" />
-                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                        </svg>
-                      </a>
-                    )}
-                    <a 
-                      href="https://csreduindia.org" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      style={{ 
-                        color: 'var(--green-icon)', 
-                        opacity: 0.5,
-                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                        display: 'inline-flex',
-                        alignItems: 'center'
-                      }}
-                      className="social-icon-btn"
-                      title="CSR & Educational India Foundation Website"
-                    >
-                      <svg 
-                        width="17" 
-                        height="17" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="1.8" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                      </svg>
-                    </a>
-                  </div>
+
                 </div>
               </motion.div>
             ))}

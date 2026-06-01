@@ -4,143 +4,345 @@ import { motion } from 'framer-motion';
 
 export default function AboutPage() {
   return (
-    <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
-      {/* Premium Hero Header */}
+    <div style={{ background: 'var(--bg-main)', minHeight: '100vh', overflow: 'hidden' }}>
+      
+      {/* Immersive Editorial Hero */}
       <section style={{ 
         background: 'var(--green-dark)', 
-        padding: '160px 0 100px', 
+        padding: '180px 0 120px', 
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
       }}>
+        {/* Procedural Dotted Background Grid */}
         <div style={{ 
           position: 'absolute', 
-          top: 0, 
-          left: 0, 
-          width: '100%', 
-          height: '100%', 
-          background: 'radial-gradient(circle at 80% 20%, rgba(200, 168, 74, 0.15) 0%, transparent 60%)', 
+          inset: 0,
+          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          opacity: 0.45,
           pointerEvents: 'none' 
         }} />
+        
+        {/* Soft Organic Atmospheric Glows */}
+        <div style={{ 
+          position: 'absolute', 
+          top: '-10%', 
+          right: '10%', 
+          width: '500px', 
+          height: '500px', 
+          background: 'radial-gradient(circle, rgba(245, 196, 67, 0.12) 0%, transparent 70%)', 
+          filter: 'blur(60px)',
+          pointerEvents: 'none' 
+        }} />
+        <div style={{ 
+          position: 'absolute', 
+          bottom: '-20%', 
+          left: '10%', 
+          width: '400px', 
+          height: '400px', 
+          background: 'radial-gradient(circle, rgba(42, 92, 63, 0.35) 0%, transparent 70%)', 
+          filter: 'blur(50px)',
+          pointerEvents: 'none' 
+        }} />
+
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
+          <motion.span 
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6 }}
+            className="eyebrow" 
             style={{ 
-              fontFamily: "'Playfair Display', Georgia, serif", 
-              fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
-              fontWeight: 400, 
-              color: 'var(--bg-main)', 
-              lineHeight: 1.15, 
-              letterSpacing: '-0.02em', 
-              marginBottom: '24px' 
+              color: 'var(--gold-accent)', 
+              margin: 0, 
+              display: 'inline-block', 
+              marginBottom: '20px',
+              letterSpacing: '0.2em',
+              fontWeight: 600
             }}
           >
-            About Our Foundation
+            CSR & EDUCATIONAL INDIA FOUNDATION
+          </motion.span>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            style={{ 
+              fontFamily: "'Playfair Display', Georgia, serif", 
+              fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
+              fontWeight: 400, 
+              color: '#ffffff', 
+              lineHeight: 1.1, 
+              letterSpacing: '-0.02em', 
+              marginBottom: '28px' 
+            }}
+          >
+            About Our <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Foundation</span>
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
-            Learn more about our mission, our grounding community heritage, and the systematic, sustainable change we are creating across India.
-          </p>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            style={{ 
+              fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
+              maxWidth: '700px', 
+              color: 'rgba(255, 255, 255, 0.78)', 
+              lineHeight: 1.8, 
+              fontWeight: 300, 
+              margin: 0 
+            }}
+          >
+            We are structuring direct community-focused empowerment across India through rigorous environmental protection, modern digital learning, and ethical character building.
+          </motion.p>
         </div>
       </section>
       
-      {/* About Us Editorial Section */}
-      <section style={{ padding: '80px 0 20px', background: 'var(--bg-main)' }}>
-        <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', marginBottom: '24px' }}>OUR FOUNDING VALUES</span>
-          <p style={{ fontSize: '1.25rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '24px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500 }}>
-            CSR & Educational India Foundation was established in 2025 with a vision to create positive social transformation through awareness, education, and responsible action. The foundation works in the areas of environmental awareness, youth empowerment, social reform, and value-based development.
-          </p>
-          <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.8, marginBottom: '24px', fontWeight: 300 }}>
-            We believe that the future of society depends not only on economic growth, but also on clean surroundings, ethical thinking, quality education, and strong family and cultural values.
-          </p>
-          <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
-            The foundation is committed to building awareness among individuals and communities so they can contribute towards a healthier, more responsible, and progressive nation.
-          </p>
+      {/* Asymmetric Founding Values (Editorial Layout) */}
+      <section style={{ padding: '120px 0 80px', background: 'var(--bg-main)', position: 'relative' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '80px', alignItems: 'start' }} className="editorial-split">
+            
+            {/* Left side: Premium typography block */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              style={{ borderLeft: '3px solid var(--gold-accent)', paddingLeft: '40px' }}
+            >
+              <span className="eyebrow" style={{ color: 'var(--green-icon)', marginBottom: '16px' }}>OUR GENERAL PURPOSE</span>
+              <p style={{ 
+                fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', 
+                color: 'var(--green-dark)', 
+                lineHeight: 1.6, 
+                fontFamily: "'Playfair Display', Georgia, serif", 
+                fontWeight: 400,
+                marginBottom: '36px'
+              }}>
+                Established in 2025, our core mandate is to trigger value-based community development, restoring ethical living, family integration, and ecological duty.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <span style={{ fontSize: '3.5rem', fontFamily: "'Playfair Display', serif", color: 'var(--gold-accent)', fontWeight: 600, lineHeight: 1 }}>2025</span>
+                <div style={{ width: '40px', height: '1px', background: 'rgba(26,58,42,0.15)' }} />
+                <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.12em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>REGISTRATION YEAR</span>
+              </div>
+            </motion.div>
+
+            {/* Right side: Detailed narrative */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}
+            >
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300 }}>
+                We believe that the future of Indian society depends not only on pure industrialization, but also on clean surroundings, ethical thinking, quality skills, and strong family and cultural values.
+              </p>
+              <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
+                Through seminars, educational initiatives, social outreach, and collaborative partnerships, the foundation works in the areas of environmental protection, youth empowerment, civic duty education, and community development.
+              </p>
+            </motion.div>
+
+          </div>
         </div>
       </section>
       
       {/* Who We Are Component */}
       <WhoWeAre />
       
-      {/* Mission, Vision, Values Bento Grid */}
-      <section style={{ padding: '100px 0 120px', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
+      {/* Redesigned Bento Grid Section (Glassmorphism & Staggered Cards) */}
+      <section style={{ 
+        padding: '120px 0', 
+        background: 'var(--bg-section)', 
+        borderTop: '1px solid rgba(26,58,42,0.06)',
+        position: 'relative'
+      }}>
+        {/* Soft Gold Background Glow */}
+        <div style={{ 
+          position: 'absolute', 
+          top: '30%', 
+          left: '50%', 
+          transform: 'translate(-50%, -50%)',
+          width: '600px', 
+          height: '600px', 
+          background: 'radial-gradient(circle, rgba(245, 196, 67, 0.05) 0%, transparent 70%)', 
+          filter: 'blur(50px)',
+          pointerEvents: 'none' 
+        }} />
+
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }} className="mvv-grid">
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>THE CORE COMPASS</span>
+            <h2 style={{ 
+              fontFamily: "'Playfair Display', Georgia, serif", 
+              fontSize: 'clamp(2rem, 4vw, 3.2rem)', 
+              color: 'var(--green-dark)', 
+              fontWeight: 400,
+              marginTop: '8px' 
+            }}>
+              Operational Foundations
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }} className="mvv-grid">
             
-            {/* Mission */}
-            <div className="card hover-lift" style={{ 
-              padding: '40px', 
-              background: '#ffffff', 
-              borderRadius: '24px', 
-              border: '1px solid rgba(26, 58, 42, 0.06)',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(26,58,42,0.01)'
-            }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--green-dark)' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-icon)" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.4rem', fontWeight: 400, color: 'var(--green-dark)' }}>Our Mission</h3>
+            {/* Mission Card (Forest Green Accent) */}
+            <motion.div 
+              className="card hover-lift"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              style={{ 
+                padding: '48px 40px', 
+                background: '#ffffff', 
+                borderRadius: '28px', 
+                border: '1px solid rgba(26, 58, 42, 0.05)',
+                position: 'relative',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-premium)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px'
+              }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: 'var(--green-dark)' }} />
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <div style={{ 
+                  width: '44px', 
+                  height: '44px', 
+                  borderRadius: '12px', 
+                  background: 'rgba(26, 58, 42, 0.04)', 
+                  color: 'var(--green-dark)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.6rem', fontWeight: 500, color: 'var(--green-dark)' }}>Our Mission</h3>
               </div>
-              <ul style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7, paddingLeft: '20px', margin: 0 }}>
-                <li style={{ marginBottom: '8px' }}>To spread awareness about environmental protection and pollution control.</li>
-                <li style={{ marginBottom: '8px' }}>To promote education, skill development, and self-reliance.</li>
-                <li style={{ marginBottom: '8px' }}>To encourage ethical values, family harmony, and social responsibility.</li>
-                <li>To support initiatives that contribute towards public welfare and community development.</li>
+              
+              <ul style={{ 
+                fontSize: '0.96rem', 
+                color: 'var(--text-body)', 
+                lineHeight: 1.8, 
+                paddingLeft: '20px', 
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+                fontWeight: 300
+              }}>
+                <li>To spread rigorous awareness about environmental preservation and waste management.</li>
+                <li>To promote value-based education and direct technical skill development.</li>
+                <li>To strengthen ethical character building, social duty, and family integration.</li>
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Vision */}
-            <div className="card hover-lift" style={{ 
-              padding: '40px', 
-              background: '#ffffff', 
-              borderRadius: '24px', 
-              border: '1px solid rgba(26, 58, 42, 0.06)',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(26,58,42,0.01)'
-            }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--gold-accent)' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.4rem', fontWeight: 400, color: 'var(--green-dark)' }}>Our Vision</h3>
+            {/* Vision Card (Sunlit Gold Accent) */}
+            <motion.div 
+              className="card hover-lift"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              style={{ 
+                padding: '48px 40px', 
+                background: '#ffffff', 
+                borderRadius: '28px', 
+                border: '1px solid rgba(26, 58, 42, 0.05)',
+                position: 'relative',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-premium)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px'
+              }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: 'var(--gold-accent)' }} />
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <div style={{ 
+                  width: '44px', 
+                  height: '44px', 
+                  borderRadius: '12px', 
+                  background: 'rgba(245, 196, 67, 0.06)', 
+                  color: 'var(--gold-accent)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.6rem', fontWeight: 500, color: 'var(--green-dark)' }}>Our Vision</h3>
               </div>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7, margin: 0 }}>
-                To build a healthy, educated, environmentally conscious, and socially responsible society rooted in strong human values and collective progress.
+              
+              <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
+                To build an environmentally resilient, educated, and value-driven society where absolute integrity, dignity, and collective capability empower every citizen.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Values */}
-            <div className="card hover-lift" style={{ 
-              padding: '40px', 
-              background: '#ffffff', 
-              borderRadius: '24px', 
-              border: '1px solid rgba(26, 58, 42, 0.06)',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(26,58,42,0.01)'
-            }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--green-icon)' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-icon)" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.4rem', fontWeight: 400, color: 'var(--green-dark)' }}>Our Values</h3>
+            {/* Values Card (Forest Green Light Accent) */}
+            <motion.div 
+              className="card hover-lift"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              style={{ 
+                padding: '48px 40px', 
+                background: '#ffffff', 
+                borderRadius: '28px', 
+                border: '1px solid rgba(26, 58, 42, 0.05)',
+                position: 'relative',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-premium)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px'
+              }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: 'var(--green-icon)' }} />
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <div style={{ 
+                  width: '44px', 
+                  height: '44px', 
+                  borderRadius: '12px', 
+                  background: 'rgba(42, 92, 63, 0.04)', 
+                  color: 'var(--green-icon)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.6rem', fontWeight: 500, color: 'var(--green-dark)' }}>Our Values</h3>
               </div>
-              <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.7 }}>
+              
+              <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
                 Absolute financial transparency, absolute community-centered service, zero artificial dependencies, and an unwavering commitment to trust, mutual dignity, and social harmony.
               </p>
-            </div>
+            </motion.div>
 
           </div>
         </div>
       </section>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 900px) {
+        @media (max-width: 990px) {
+          .editorial-split {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
           .mvv-grid {
             grid-template-columns: 1fr !important;
-            gap: 24px !important;
+            gap: 32px !important;
           }
         }
       `}} />
