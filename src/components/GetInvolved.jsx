@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const WAYS = [
   {
@@ -6,7 +7,7 @@ const WAYS = [
     title: 'Donate',
     desc: "Fund a child's education, a skill workshop or a plantation drive. Every amount matters.",
     cta: 'Donate Now',
-    link: '#donate',
+    link: '/donate',
     svg: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
@@ -143,47 +144,67 @@ export default function GetInvolved() {
         </div>
 
         <div className="involvement-grid">
-          {WAYS.map((w, i) => (
-            <a 
-              key={i} 
-              href={w.link} 
-              className="involvement-card"
-              onClick={(e) => {
-                if (w.link.startsWith('#')) {
-                  e.preventDefault();
-                  const target = document.querySelector(w.link);
-                  if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+          {WAYS.map((w, i) => {
+            const isExternalOrHash = w.link.startsWith('#') || w.link.startsWith('http');
+            return isExternalOrHash ? (
+              <a 
+                key={i} 
+                href={w.link} 
+                className="involvement-card"
+                onClick={(e) => {
+                  if (w.link.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(w.link);
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }
-                }
-              }}
-            >
-              {/* Card Number Watermark */}
-              <div className="involvement-card__num">{w.num}</div>
-
-              {/* Card Top Row */}
-              <div className="involvement-card__top">
-                <div className="involvement-card__icon-box">
-                  {w.svg}
+                }}
+              >
+                <div className="involvement-card__num">{w.num}</div>
+                <div className="involvement-card__top">
+                  <div className="involvement-card__icon-box">
+                    {w.svg}
+                  </div>
                 </div>
-              </div>
-
-              {/* Card Content */}
-              <div className="involvement-card__meta">
-                <h3 className="involvement-card__title">{w.title}</h3>
-                <p className="involvement-card__desc">{w.desc}</p>
-              </div>
-
-              {/* Action Call to Action */}
-              <div className="involvement-card__cta">
-                <span>{w.cta}</span>
-                <svg className="involvement-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </div>
-            </a>
-          ))}
+                <div className="involvement-card__meta">
+                  <h3 className="involvement-card__title">{w.title}</h3>
+                  <p className="involvement-card__desc">{w.desc}</p>
+                </div>
+                <div className="involvement-card__cta">
+                  <span>{w.cta}</span>
+                  <svg className="involvement-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </a>
+            ) : (
+              <Link 
+                key={i} 
+                to={w.link} 
+                className="involvement-card"
+              >
+                <div className="involvement-card__num">{w.num}</div>
+                <div className="involvement-card__top">
+                  <div className="involvement-card__icon-box">
+                    {w.svg}
+                  </div>
+                </div>
+                <div className="involvement-card__meta">
+                  <h3 className="involvement-card__title">{w.title}</h3>
+                  <p className="involvement-card__desc">{w.desc}</p>
+                </div>
+                <div className="involvement-card__cta">
+                  <span>{w.cta}</span>
+                  <svg className="involvement-card__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
 

@@ -94,19 +94,19 @@ export default function LeadershipPage() {
 
   const advisors = [
     {
-      name: "Mr. Neeraj Kumar Pandey",
+      name: "Neeraj Kumar Pandey",
       role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Neeraj+Kumar+Pandey&background=1a3a2a&color=fff&size=256"
     },
     {
-      name: "Mr. Cheatan Sharama",
+      name: "Cheatan Sharama",
       role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Cheatan+Sharama&background=1a3a2a&color=fff&size=256"
     },
     {
-      name: "Mrs. Parveen Sethi",
+      name: "Parveen Sethi",
       role: "Member",
       bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
       image: "https://ui-avatars.com/api/?name=Parveen+Sethi&background=1a3a2a&color=fff&size=256"

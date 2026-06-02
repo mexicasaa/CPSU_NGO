@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function MotionScrollingHero() {
   return (
@@ -33,14 +34,14 @@ export default function MotionScrollingHero() {
           </p>
 
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '72px' }}>
-            <a href="#donate" className="btn-green" style={{ fontSize: '0.92rem' }}>
+            <Link to="/donate" className="btn-green" style={{ fontSize: '0.92rem' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 4.009 2 6.585 2c2.35 0 4.13 1.344 5.415 3.559C13.285 3.344 15.065 2 17.415 2 19.991 2 23 3.518 23 7.191c0 4.105-5.371 8.863-11 14.402z"/></svg>
               Donate Now
-            </a>
-            <a href="#volunteer" className="btn-outline-dark" style={{ fontSize: '0.92rem' }}>
+            </Link>
+            <Link to="/volunteer" className="btn-outline-dark" style={{ fontSize: '0.92rem' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               Join as Volunteer
-            </a>
+            </Link>
             <a href="#work" className="btn-text-arrow" style={{ fontSize: '0.92rem', marginLeft: '8px' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
               Explore Our Work ↗
