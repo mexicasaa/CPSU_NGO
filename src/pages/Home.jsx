@@ -11,8 +11,6 @@ import GetInvolved from '../components/GetInvolved';
 import Donation from '../components/Donation';
 import Blog from '../components/Blog';
 import Interviews from '../components/Interviews';
-import Contact from '../components/Contact';
-
 export default function Home() {
   return (
     <>
@@ -28,7 +26,6 @@ export default function Home() {
       <GetInvolved />
       <Donation />
       <Blog />
-      <Contact />
     </>
   );
 }

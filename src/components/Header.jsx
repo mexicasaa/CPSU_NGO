@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
@@ -24,46 +24,62 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Premium transparent theme with high-legibility white/gold text over video and dark green backgrounds
-  const textColor = '#ffffff';
-  const textMutedColor = 'rgba(255, 255, 255, 0.8)';
-  const subtextColor = 'var(--gold-accent)';
-  const borderCTA = '1px solid rgba(255, 255, 255, 0.25)';
-  const backgroundCTA = 'rgba(255, 255, 255, 0.08)';
-  const hoverBackgroundCTA = 'rgba(255, 255, 255, 0.15)';
+  const textColor = scrolled ? '#1a3a2a' : '#ffffff';
+  const textMutedColor = scrolled ? 'rgba(26, 58, 42, 0.7)' : 'rgba(255, 255, 255, 0.8)';
+  const subtextColor = scrolled ? '#1a3a2a' : 'var(--gold-accent)';
+  const borderCTA = scrolled ? '1px solid rgba(26, 58, 42, 0.25)' : '1px solid rgba(255, 255, 255, 0.25)';
+  const backgroundCTA = scrolled ? 'rgba(26, 58, 42, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+  const hoverBackgroundCTA = scrolled ? 'rgba(26, 58, 42, 0.15)' : 'rgba(255, 255, 255, 0.15)';
 
   return (
     <>
-      <header className="transparent-navbar" style={{
-        position: 'absolute',
+      <header className={scrolled ? "scrolled-navbar" : "transparent-navbar"} style={{
+        position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
-        zIndex: 50,
+        zIndex: 1000,
         borderBottom: 'none',
+        transition: 'all 0.3s ease-in-out',
       }}>
         <div style={{
           maxWidth: '1440px',
           margin: '0 auto',
           padding: '0 40px',
-          height: '80px',
+          height: scrolled ? '70px' : '80px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          transition: 'height 0.3s ease-in-out',
         }}>
 
           {/* Logo */}
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none', flexShrink: 0 }}>
             <div style={{
               width: 48, height: 48, borderRadius: '50%',
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
+              background: scrolled ? 'rgba(26, 58, 42, 0.05)' : 'rgba(255,255,255,0.03)',
+              border: scrolled ? '1px solid rgba(26, 58, 42, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               overflow: 'hidden',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
+              boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
+              transition: 'all 0.3s ease'
             }}>
               <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
@@ -170,11 +186,11 @@ export default function Header() {
             }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = hoverBackgroundCTA;
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                e.currentTarget.style.borderColor = scrolled ? 'rgba(26, 58, 42, 0.5)' : 'rgba(255, 255, 255, 0.5)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = backgroundCTA;
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.borderColor = scrolled ? 'rgba(26, 58, 42, 0.25)' : 'rgba(255, 255, 255, 0.25)';
               }}
             >
               Donate
@@ -194,7 +210,7 @@ export default function Header() {
       {menuOpen && (
         <div style={{
           position: 'fixed',
-          top: '80px',
+          top: scrolled ? '70px' : '80px',
           left: 0,
           right: 0,
           bottom: 0,
@@ -202,6 +218,7 @@ export default function Header() {
           background: '#0c100e',
           padding: '24px',
           overflowY: 'auto',
+          transition: 'top 0.3s ease-in-out',
         }}>
           {NAV_LINKS.map(link => {
             if (link.submenu) {
@@ -259,6 +276,13 @@ export default function Header() {
       <style>{`
         .transparent-navbar {
           background-color: transparent !important;
+        }
+        .scrolled-navbar {
+          background-color: rgba(255, 255, 255, 0.95) !important;
+          backdrop-filter: blur(12px) !important;
+          -webkit-backdrop-filter: blur(12px) !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         .nav-item-dropdown:hover .submenu-dropdown {
           opacity: 1 !important;

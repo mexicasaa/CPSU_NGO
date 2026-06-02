@@ -24,14 +24,14 @@
   --gold-hover: #fcd764;
   --blue-accent: #102a43;
 
-  /* Backgrounds (Global Ivory Cream Overhaul) */
-  --bg-main: #f5f3ee; /* Pristine Ivory Cream */
-  --bg-section: #edeae3; /* Warm Beige */
+  /* Backgrounds (Global Mint Swatch Overhaul) */
+  --bg-main: #e6f1e2; /* Mint Green Swatch */
+  --bg-section: #ffffff; /* White Color */
   --bg-card: #FFFFFF;
   --bg-footer: #1a3a2a;
-  --bg-cream: #f5f3ee;
-  --bg-ivory: #f5f3ee;
-  --bg-warm: #edeae3;
+  --bg-cream: #e6f1e2;
+  --bg-ivory: #e6f1e2;
+  --bg-warm: #ffffff;
 
   /* Text */
   --text-heading: #1a1a1a;
@@ -287,12 +287,12 @@ textarea::placeholder {
 
 /* Soft atmospheric glowing backgrounds */
 .ambient-glow-green {
-  background: radial-gradient(circle, rgba(42, 92, 63, 0.1) 0%, rgba(245, 243, 238, 0) 70%);
+  background: radial-gradient(circle, rgba(42, 92, 63, 0.1) 0%, rgba(230, 241, 226, 0) 70%);
   filter: blur(40px);
 }
 
 .ambient-glow-gold {
-  background: radial-gradient(circle, rgba(200, 168, 74, 0.08) 0%, rgba(245, 243, 238, 0) 70%);
+  background: radial-gradient(circle, rgba(200, 168, 74, 0.08) 0%, rgba(230, 241, 226, 0) 70%);
   filter: blur(40px);
 }
 

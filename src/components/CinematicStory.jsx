@@ -39,7 +39,7 @@ const CHAPTERS = [
     eyebrow: 'CHAIRPERSON\'S PROMISE',
     title: 'A Vision Grounded in Direct Field Action',
     desc: "\"We are not interested in empty numbers. We are building a model of sustainable civic change where communities are partners, not spectators. Together, we can construct an India that is clean, wise, and united.\"",
-    img: "/dc_arya_suit.jpg",
+    img: "/dc_arya_suit_v3.jpg",
     accent: "#c8a84a",
     isQuote: true,
     author: "D.C. Arya, Founder"
@@ -259,6 +259,7 @@ export default function CinematicStory() {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
+                        objectPosition: ch.img.includes('dc_arya') ? 'top' : 'center',
                         display: 'block'
                       }}
                     />

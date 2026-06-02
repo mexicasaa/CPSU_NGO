@@ -24,13 +24,14 @@ export default function WhoWeAre() {
             }}>
               <div style={{ width: '100%', overflow: 'hidden' }}>
                 <img 
-                  src="/dc_arya_suit.jpg" 
+                  src="/dc_arya_suit_v3.jpg" 
                   alt="D.C. Arya"
                   style={{
                     width: '100%',
                     height: 'auto',
                     aspectRatio: '1/1',
                     objectFit: 'cover',
+                    objectPosition: 'top',
                     display: 'block',
                     transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}

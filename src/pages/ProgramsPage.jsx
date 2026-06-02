@@ -152,7 +152,7 @@ export default function ProgramsPage() {
                   position: 'absolute',
                   top: '16px',
                   left: '16px',
-                  background: 'rgba(245, 243, 238, 0.95)',
+                  background: 'rgba(230, 241, 226, 0.95)',
                   padding: '6px 14px',
                   borderRadius: '999px',
                   fontSize: '0.72rem',
@@ -364,7 +364,7 @@ export default function ProgramsPage() {
                   left: 0,
                   right: 0,
                   height: '140px',
-                  background: 'linear-gradient(to top, var(--bg-main) 15%, rgba(245,243,238,0) 100%)'
+                  background: 'linear-gradient(to top, var(--bg-main) 15%, rgba(230, 241, 226, 0) 100%)'
                 }}></div>
               </div>
 

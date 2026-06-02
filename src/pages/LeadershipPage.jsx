@@ -3,23 +3,23 @@ import { motion } from 'framer-motion';
 export default function LeadershipPage() {
   const leaders = [
     {
-      name: "DC Arya",
-      role: "Founder Director",
-      bio: "A visionary leader dedicated to environmental awareness, education, and social responsibility. He has actively served as an elected Council Member and Former Chairman of the NIRC of the Institute of Cost Accountants of India (ICMAI).",
-      image: "/dc_arya_suit.jpg",
-      linkedin: "https://linkedin.com",
-      email: "dcarya@csreduindia.org"
-    },
-    {
-      name: "Bajrang Lal Bagra",
-      role: "Director",
+      name: "Sh Bajrang Bagra",
+      role: "Chairman",
       bio: "He served as the former Chairman and Managing Director (CMD) of the public sector undertaking, National Aluminium Company Limited (NALCO), and is the General Secretary (Mahamantri) of the Vishva Hindu Parishad (VHP).",
       image: "/images/Bajrang Lal Bagra.jpg",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
     },
     {
-      name: "HN Sharma",
+      name: "Sh D C Arya",
+      role: "Founder & Secretary",
+      bio: "A visionary leader dedicated to environmental awareness, education, and social responsibility. He has actively served as an elected Council Member and Former Chairman of the NIRC of the Institute of Cost Accountants of India (ICMAI).",
+      image: "/dc_arya_suit_v3.jpg",
+      linkedin: "https://linkedin.com",
+      email: "dcarya@csreduindia.org"
+    },
+    {
+      name: "Sh H N Sharma",
       role: "Director",
       bio: "He served as the trusted political secretary and advisor to the former Prime Minister of India, Chandra Shekhar, bringing decades of high-level social, political, and administrative expertise to the foundation.",
       image: "/images/HN Sharma.png",
@@ -27,15 +27,7 @@ export default function LeadershipPage() {
       email: "hnsharma@csreduindia.org"
     },
     {
-      name: "CS Nanda",
-      role: "Director",
-      bio: "He serves as the 73rd President of the Institute of Chartered Accountants of India (ICAI) for the 2025–26 term. He actively supports Indian regulatory bodies, serving as a Board Member of IRDAI and a member of SEBI's Primary Market Advisory Committee.",
-      image: "/images/CS Nanda.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Atul Gupta",
+      name: "Sh Atul Gupta",
       role: "Director",
       bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
       image: "/images/Atul Gupta.jpg",
@@ -43,7 +35,7 @@ export default function LeadershipPage() {
       email: "contact@csreduindia.org"
     },
     {
-      name: "Dr. Bawindar Singh",
+      name: "Sh Balwinder Singh",
       role: "Director",
       bio: "He served as the President of the Institute of Cost Accountants of India (ICMAI). He regularly interfaces with senior union ministries and regulatory bodies in India to advocate for Cost Accountants in national audits and CSR spending social audits.",
       image: "/images/Dr. Bawindar Singh.jpg",
@@ -51,23 +43,23 @@ export default function LeadershipPage() {
       email: "contact@csreduindia.org"
     },
     {
-      name: "Subhash C Agrawal",
+      name: "Sh C S Nanda",
       role: "Director",
-      bio: "A renowned RTI activist who previously served as a Director of Finance for the Cement Corporation of India, combining corporate financial governance with strong advocacy for organizational transparency and accountability.",
-      image: "/images/Subhash C Agrawal.jpg",
-      linkedin: "https://linkedin.com",
-      email: "subhashagrawal@csreduindia.org"
-    },
-    {
-      name: "Raj Chawla",
-      role: "Director",
-      bio: "He has served as a Central Council Member of the Institute of Chartered Accountants of India (ICAI) for the 2022–2025 term, and previously served as the Chairman of the Northern India Regional Council (NIRC) of ICAI.",
-      image: "/images/Raj Chawla.jpg",
+      bio: "He serves as the 73rd President of the Institute of Chartered Accountants of India (ICAI) for the 2025–26 term. He actively supports Indian regulatory bodies, serving as a Board Member of IRDAI and a member of SEBI's Primary Market Advisory Committee.",
+      image: "/images/CS Nanda.jpg",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
     },
     {
-      name: "Y P Bhola",
+      name: "Sh A K Tiwari",
+      role: "Director",
+      bio: "He served as the former Director (Finance) & Chief Financial Officer (CFO). Appointed to this board-level position on December 1, 2018, he oversaw corporate financial strategy, investor relations, and overall fiscal management.",
+      image: "/images/A K Tiwari.png",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
+    },
+    {
+      name: "Sh Y P Bhola",
       role: "Director",
       bio: "A distinguished corporate leader who served as the Director of Finance at National Fertilizers Limited (NFL), a prominent Navratna CPSE under the Government of India, culminating a distinguished corporate career spanning nearly four decades.",
       image: "/images/Y P Bhola.jpg",
@@ -75,7 +67,15 @@ export default function LeadershipPage() {
       email: "ypbhola@csreduindia.org"
     },
     {
-      name: "Sunil Singh",
+      name: "Sh Subhash Agrawal",
+      role: "Director",
+      bio: "A renowned RTI activist who previously served as a Director of Finance for the Cement Corporation of India, combining corporate financial governance with strong advocacy for organizational transparency and accountability.",
+      image: "/images/Subhash C Agrawal.jpg",
+      linkedin: "https://linkedin.com",
+      email: "subhashagrawal@csreduindia.org"
+    },
+    {
+      name: "Sh Sunil Singh",
       role: "Director",
       bio: "He has held major leadership positions within the Northern India Regional Council of the Institute of Cost Accountants of India (ICMAI), notably serving consecutive terms as the Chairman of NIRC-ICMAI (2017–18 and 2018–19).",
       image: "/images/Sunil Singh.jpg",
@@ -209,6 +209,7 @@ export default function LeadershipPage() {
                       width: '100%', 
                       height: '100%', 
                       objectFit: 'cover', 
+                      objectPosition: leader.image.includes('dc_arya') ? 'top' : 'center',
                       filter: 'grayscale(100%)',
                       transition: 'filter 0.5s ease, transform 0.5s ease'
                     }} 

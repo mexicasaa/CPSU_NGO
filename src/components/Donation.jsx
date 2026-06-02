@@ -55,6 +55,8 @@ export default function Donation() {
   const [fund, setFund] = useState('General');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [panCard, setPanCard] = useState('');
+  const [address, setAddress] = useState('');
   const [note, setNote] = useState('');
   
   // Custom focus state tracking for input cards
@@ -94,6 +96,8 @@ export default function Donation() {
     // Reset form after successful contribution
     setName('');
     setEmail('');
+    setPanCard('');
+    setAddress('');
     setNote('');
     setCustom('');
     setSelected(1500);
@@ -482,7 +486,7 @@ export default function Donation() {
               </div>
 
               {/* Donor Contact Credentials - rounded boxes with focus glow rings */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                 <div style={getInputCardStyle('name')}>
                   <input 
                     required
@@ -513,6 +517,53 @@ export default function Donation() {
                     value={email} 
                     onChange={e => setEmail(e.target.value)} 
                     onFocus={() => setFocusedField('email')}
+                    onBlur={() => setFocusedField(null)}
+                    style={{ 
+                      padding: '12px 0', 
+                      background: 'transparent',
+                      border: 'none',
+                      outline: 'none',
+                      color: 'var(--green-dark)',
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '0.95rem',
+                      fontWeight: 500,
+                      width: '100%'
+                    }} 
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+                <div style={getInputCardStyle('panCard')}>
+                  <input 
+                    required
+                    placeholder="PAN Card (Mandatory for 80G)" 
+                    value={panCard} 
+                    onChange={e => setPanCard(e.target.value.toUpperCase())} 
+                    onFocus={() => setFocusedField('panCard')}
+                    onBlur={() => setFocusedField(null)}
+                    style={{ 
+                      padding: '12px 0', 
+                      background: 'transparent',
+                      border: 'none',
+                      outline: 'none',
+                      color: 'var(--green-dark)',
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '0.95rem',
+                      fontWeight: 500,
+                      width: '100%',
+                      textTransform: 'uppercase'
+                    }} 
+                  />
+                </div>
+                
+                <div style={getInputCardStyle('address')}>
+                  <input 
+                    required
+                    placeholder="Full Address (Mandatory)" 
+                    value={address} 
+                    onChange={e => setAddress(e.target.value)} 
+                    onFocus={() => setFocusedField('address')}
                     onBlur={() => setFocusedField(null)}
                     style={{ 
                       padding: '12px 0', 
