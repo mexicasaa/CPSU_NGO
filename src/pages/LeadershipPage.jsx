@@ -117,7 +117,7 @@ export default function LeadershipPage() {
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
       {/* Premium Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -132,7 +132,7 @@ export default function LeadershipPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export default function LeadershipPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px' 
@@ -149,7 +149,7 @@ export default function LeadershipPage() {
           >
             Our Leadership Team
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             Meet the systematic, passionate minds organizing our ground efforts to build long-term dignified self-reliance.
           </p>
         </div>
@@ -159,7 +159,7 @@ export default function LeadershipPage() {
       <section style={{ padding: '100px 0 120px', background: 'var(--bg-main)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', display: 'inline-block', marginBottom: '12px' }}>CORE LEADERSHIP</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', display: 'inline-block', marginBottom: '12px' }}>CORE LEADERSHIP</span>
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', 
@@ -223,7 +223,7 @@ export default function LeadershipPage() {
                         {leader.name}
                       </h3>
                     </div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--gold-accent)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '14px' }}>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--green-icon)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '14px' }}>
                       {leader.role}
                     </div>
                     <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, margin: '0 0 16px 0', fontWeight: 300 }}>
@@ -241,8 +241,8 @@ export default function LeadershipPage() {
       {/* Youth Icon Spotlight Section */}
       <section style={{ 
         padding: '120px 0', 
-        background: 'linear-gradient(135deg, #11251a 0%, #1a3a2a 100%)', 
-        color: '#ffffff',
+        background: 'linear-gradient(135deg, #e6f1e2 0%, #d8ebd4 100%)', 
+        color: '#11251a',
         position: 'relative',
         overflow: 'hidden',
         borderTop: '1px solid rgba(200, 168, 74, 0.2)',
@@ -270,12 +270,12 @@ export default function LeadershipPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', display: 'inline-block', marginBottom: '12px' }}>DISTINGUISHED RECOGNITION</span>
+            <span className="eyebrow" style={{ color: '#a57c1d', display: 'inline-block', marginBottom: '12px' }}>DISTINGUISHED RECOGNITION</span>
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.2,
               margin: 0
             }}>
@@ -349,7 +349,7 @@ export default function LeadershipPage() {
                 fontFamily: "'Playfair Display', Georgia, serif", 
                 fontSize: '2.5rem', 
                 fontWeight: 400, 
-                color: 'var(--bg-main)', 
+                color: '#11251a', 
                 margin: '0 0 8px 0',
                 lineHeight: 1.15
               }}>
@@ -357,7 +357,7 @@ export default function LeadershipPage() {
               </h3>
               
               <h4 style={{ 
-                color: 'var(--gold-accent)', 
+                color: '#a57c1d', 
                 fontSize: '1rem', 
                 fontWeight: 500, 
                 letterSpacing: '0.05em', 
@@ -372,23 +372,23 @@ export default function LeadershipPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: 'rgba(17, 37, 26, 0.05)',
+                border: '1px solid rgba(17, 37, 26, 0.1)',
                 padding: '8px 16px',
                 borderRadius: '12px',
                 fontSize: '0.82rem',
                 fontWeight: 600,
-                color: 'rgba(245, 243, 238, 0.9)',
+                color: 'rgba(17, 37, 26, 0.9)',
                 letterSpacing: '0.05em',
                 marginBottom: '32px'
               }}>
-                <span style={{ color: 'var(--gold-accent)' }}>Motto:</span>
+                <span style={{ color: '#a57c1d' }}>Motto:</span>
                 Nation First • Environment First • Future First 🇮🇳🌱
               </div>
 
 
               {/* Story Details */}
-              <div style={{ fontSize: '0.98rem', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300 }}>
+              <div style={{ fontSize: '0.98rem', color: 'rgba(17, 37, 26, 0.85)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300 }}>
                 <p style={{ margin: '0 0 20px 0' }}>
                   <strong>Tarun</strong> is a highly distinguished finance and governance professional, holding prestigious dual qualifications as a Chartered Accountant and a Cost & Management Accountant <strong>(CMA-AIR 44)</strong>. His notable professional career includes key experience as a consultant for the <strong>Ministry of Corporate Affairs (MCA)</strong> and the <strong>Serious Fraud Investigation Office (SFIO)</strong>, where he actively contributed to corporate governance, compliance management, and complex regulatory affairs.
                 </p>
@@ -420,7 +420,7 @@ export default function LeadershipPage() {
                   fontSize: '1.25rem', 
                   lineHeight: 1.7, 
                   fontStyle: 'italic', 
-                  color: 'var(--bg-main)',
+                  color: '#11251a',
                   position: 'relative',
                   zIndex: 1,
                   fontWeight: 300,
@@ -430,7 +430,7 @@ export default function LeadershipPage() {
                 }}>
                   "To empower the youth to lead with integrity, serve society with purpose, and contribute towards a greener, stronger, and more prosperous India."
                 </p>
-                <div style={{ textAlign: 'right', marginTop: '12px', fontSize: '0.85rem', color: 'var(--gold-accent)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                <div style={{ textAlign: 'right', marginTop: '12px', fontSize: '0.85rem', color: 'var(--green-icon)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                   — CORE VISION
                 </div>
               </div>
@@ -445,7 +445,7 @@ export default function LeadershipPage() {
       <section style={{ padding: '120px 0', background: 'var(--bg-main)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', display: 'inline-block', marginBottom: '12px' }}>GUIDING OUR PATH</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', display: 'inline-block', marginBottom: '12px' }}>GUIDING OUR PATH</span>
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', 
@@ -507,7 +507,7 @@ export default function LeadershipPage() {
                 <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.35rem', fontWeight: 600, color: 'var(--green-dark)', margin: '0 0 4px 0' }}>
                   {advisor.name}
                 </h3>
-                <div style={{ fontSize: '0.75rem', color: 'var(--gold-accent)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '16px' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--green-icon)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '16px' }}>
                   {advisor.role}
                 </div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, margin: '0 0 24px 0', fontWeight: 300, flexGrow: 1 }}>
@@ -554,30 +554,30 @@ export default function LeadershipPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: 'var(--green-dark)', 
+            background: '#e6f1e2', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',
             width: '100%',
             textAlign: 'center',
-            boxShadow: '0 20px 50px rgba(17,37,26,0.1)',
+            boxShadow: '0 20px 50px rgba(17,37,26,0.05)',
             position: 'relative',
             overflow: 'hidden'
           }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(200,168,74,0.08) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>JOIN OUR MISSION</span>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
+            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>JOIN OUR MISSION</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
               Want to lead change with us?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(245,243,238,0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               We are constantly seeking dedicated individuals, field managers, ecology experts, and corporate CSR sponsors to expand our grassroots impact across India.
             </p>
             <button 

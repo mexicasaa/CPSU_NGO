@@ -40,7 +40,7 @@ export default function MediaPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -55,7 +55,7 @@ export default function MediaPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>DOCUMENTARY JOURNALS</span>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>DOCUMENTARY JOURNALS</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,16 +64,16 @@ export default function MediaPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px',
               maxWidth: '900px'
             }}
           >
-            Media & Public <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Awareness</span>
+            Media & Public <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Awareness</span>
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '800px', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '800px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
             Our media section highlights interviews, seminars, awareness campaigns, public discussions, and foundation activities related to environment, education, and social reform. This platform serves as a space to share ideas, inspire awareness, and encourage meaningful conversations for the betterment of society.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function MediaPage() {
                 ></iframe>
               </div>
               <div style={{ padding: '32px' }}>
-                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>MEDIA INTERVIEW</span>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>MEDIA INTERVIEW</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
                   Environmental Awareness Discussion
                 </h3>
@@ -148,7 +148,7 @@ export default function MediaPage() {
                 ></iframe>
               </div>
               <div style={{ padding: '32px' }}>
-                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>FIELD DIALOGUE</span>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>FIELD DIALOGUE</span>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
                   Social & Educational Awareness
                 </h3>
@@ -168,7 +168,7 @@ export default function MediaPage() {
           </span>
           
           <div style={{
-            background: 'linear-gradient(145deg, #11251b 0%, #1a3a2a 100%)',
+            background: 'linear-gradient(145deg, #e6f1e2 0%, #d8ebd4 100%)',
             borderRadius: '36px',
             border: '1px solid rgba(200, 168, 74, 0.2)',
             boxShadow: 'var(--shadow-premium)',
@@ -199,9 +199,9 @@ export default function MediaPage() {
               height: '560px',
               borderRadius: '24px',
               overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
               border: '1px solid rgba(200, 168, 74, 0.25)',
-              backgroundColor: '#11251b',
+              backgroundColor: '#e6f1e2',
               position: 'relative'
             }}>
               <img 
@@ -223,7 +223,7 @@ export default function MediaPage() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'linear-gradient(to bottom, transparent 70%, rgba(17,37,27,0.4) 100%)',
+                background: 'linear-gradient(to bottom, transparent 70%, rgba(17,37,27,0.15) 100%)',
                 pointerEvents: 'none'
               }} />
             </div>
@@ -233,7 +233,7 @@ export default function MediaPage() {
               <div>
                 <span style={{ 
                   fontSize: '0.8rem', 
-                  color: 'var(--gold-accent)', 
+                  color: 'var(--green-icon)', 
                   fontWeight: 600, 
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
@@ -246,26 +246,26 @@ export default function MediaPage() {
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(2rem, 3vw, 2.6rem)',
                   fontWeight: 400, 
-                  color: '#F5F3EE', 
+                  color: '#11251a', 
                   lineHeight: 1.2,
                   margin: 0,
                   letterSpacing: '-0.01em'
                 }}>
                   Pollution Control <br />
-                  <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Measures</span> in Delhi State
+                  <span className="serif-italic" style={{ color: '#a57c1d' }}>Measures</span> in Delhi State
                 </h2>
               </div>
               
               <div style={{ 
                 height: '1px', 
                 width: '80px', 
-                background: 'var(--gold-accent)',
+                background: 'var(--green-icon)',
                 opacity: 0.8 
               }} />
               
               <p style={{ 
                 fontSize: '1.08rem', 
-                color: 'rgba(245, 243, 238, 0.9)', 
+                color: 'rgba(17, 37, 26, 0.85)', 
                 lineHeight: 1.75,
                 fontWeight: 300,
                 margin: 0
@@ -275,7 +275,7 @@ export default function MediaPage() {
 
               <p style={{ 
                 fontSize: '0.94rem', 
-                color: 'rgba(245, 243, 238, 0.72)', 
+                color: 'rgba(17, 37, 26, 0.72)', 
                 lineHeight: 1.7,
                 fontWeight: 300,
                 margin: 0
@@ -301,9 +301,9 @@ export default function MediaPage() {
                       width: '6px',
                       height: '6px',
                       borderRadius: '50%',
-                      background: 'var(--gold-accent)'
+                      background: 'var(--green-icon)'
                     }} />
-                    <span style={{ fontSize: '0.88rem', color: '#F5F3EE', fontWeight: 500 }}>
+                    <span style={{ fontSize: '0.88rem', color: '#11251a', fontWeight: 500 }}>
                       {point}
                     </span>
                   </div>
@@ -312,19 +312,19 @@ export default function MediaPage() {
 
               {/* Quote from Meeting */}
               <div style={{
-                background: 'rgba(255, 255, 255, 0.04)',
-                borderLeft: '4px solid var(--gold-accent)',
+                background: 'rgba(17, 37, 26, 0.04)',
+                borderLeft: '4px solid var(--green-icon)',
                 padding: '20px 24px',
                 borderRadius: '0 20px 24px 0',
                 marginTop: '8px',
-                border: '1px solid rgba(255,255,255,0.02)',
+                border: '1px solid rgba(17,37,26,0.02)',
                 borderLeftWidth: '4px'
               }}>
                 <p style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontStyle: 'italic', 
                   fontSize: '1rem', 
-                  color: 'var(--gold-accent)', 
+                  color: '#a57c1d', 
                   margin: 0,
                   lineHeight: 1.55,
                   fontWeight: 300
@@ -345,30 +345,30 @@ export default function MediaPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: 'var(--green-dark)', 
+            background: '#e6f1e2', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',
             width: '100%',
             textAlign: 'center',
-            boxShadow: '0 20px 50px rgba(17,37,26,0.1)',
+            boxShadow: '0 20px 50px rgba(17,37,26,0.05)',
             position: 'relative',
             overflow: 'hidden'
           }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(200,168,74,0.08) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>STAY INFORMED</span>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
+            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>STAY INFORMED</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
               Want to follow our journey?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(245,243,238,0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Subscribe to our monthly journal to receive field-reports, transparency audits, and inspiring stories directly from the communities we serve.
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '480px', margin: '0 auto' }}>
@@ -377,9 +377,9 @@ export default function MediaPage() {
                 placeholder="Enter your email address" 
                 style={{ 
                   flexGrow: 1, 
-                  background: 'rgba(255,255,255,0.1)', 
-                  border: '1px solid rgba(255,255,255,0.2)', 
-                  color: '#fff', 
+                  background: '#ffffff', 
+                  border: '1px solid rgba(17, 37, 26, 0.15)', 
+                  color: '#11251a', 
                   borderRadius: '999px',
                   padding: '16px 24px'
                 }} 

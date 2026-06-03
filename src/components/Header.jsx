@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
+  { label: 'Our Mission', href: '/mission' },
+  { label: 'Our Vision', href: '/vision' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Leadership', href: '/leadership' },
   { label: 'Programs', href: '/programs' },
   { label: 'Focus Areas', href: '/focus-areas' },
   { label: 'Partners & CSR', href: '/partners' },
   { label: 'Volunteer', href: '/volunteer' },
-  { label: 'Leadership', href: '/leadership' },
   { label: 'Media', href: '/media' },
   { 
     label: 'About', 
     href: '/about',
     submenu: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Our Mission', href: '/mission' },
-      { label: 'Our Vision', href: '/vision' },
       { label: 'Core Statements', href: '/statements' },
       { label: 'Our Mantra', href: '/mantra' },
     ]
@@ -41,16 +41,17 @@ export default function Header() {
   }, []);
 
   // Premium transparent theme with high-legibility white/gold text over video and dark green backgrounds
-  const textColor = scrolled ? '#1a3a2a' : '#ffffff';
-  const textMutedColor = scrolled ? 'rgba(26, 58, 42, 0.7)' : 'rgba(255, 255, 255, 0.8)';
-  const subtextColor = scrolled ? '#1a3a2a' : 'var(--gold-accent)';
-  const borderCTA = scrolled ? '1px solid rgba(26, 58, 42, 0.25)' : '1px solid rgba(255, 255, 255, 0.25)';
-  const backgroundCTA = scrolled ? 'rgba(26, 58, 42, 0.08)' : 'rgba(255, 255, 255, 0.08)';
-  const hoverBackgroundCTA = scrolled ? 'rgba(26, 58, 42, 0.15)' : 'rgba(255, 255, 255, 0.15)';
+  const showDarkNav = scrolled || !isHome;
+  const textColor = showDarkNav ? '#1a3a2a' : '#ffffff';
+  const textMutedColor = showDarkNav ? 'rgba(26, 58, 42, 0.7)' : 'rgba(255, 255, 255, 0.8)';
+  const subtextColor = showDarkNav ? '#1a3a2a' : 'var(--gold-accent)';
+  const borderCTA = showDarkNav ? '1px solid rgba(26, 58, 42, 0.25)' : '1px solid rgba(255, 255, 255, 0.25)';
+  const backgroundCTA = showDarkNav ? 'rgba(26, 58, 42, 0.08)' : 'rgba(255, 255, 255, 0.08)';
+  const hoverBackgroundCTA = showDarkNav ? 'rgba(26, 58, 42, 0.15)' : 'rgba(255, 255, 255, 0.15)';
 
   return (
     <>
-      <header className={scrolled ? "scrolled-navbar" : "transparent-navbar"} style={{
+      <header className={showDarkNav ? "scrolled-navbar" : "transparent-navbar"} style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -74,8 +75,8 @@ export default function Header() {
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none', flexShrink: 0 }}>
             <div style={{
               width: 48, height: 48, borderRadius: '50%',
-              background: scrolled ? 'rgba(26, 58, 42, 0.05)' : 'rgba(255,255,255,0.03)',
-              border: scrolled ? '1px solid rgba(26, 58, 42, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
+              background: showDarkNav ? 'rgba(26, 58, 42, 0.05)' : 'rgba(255,255,255,0.03)',
+              border: showDarkNav ? '1px solid rgba(26, 58, 42, 0.15)' : '1px solid rgba(255, 255, 255, 0.25)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               overflow: 'hidden',
               boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
@@ -90,7 +91,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="hdr-nav">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '20px' }} className="hdr-nav">
             {NAV_LINKS.map(link => {
               if (link.submenu) {
                 return (
@@ -117,12 +118,12 @@ export default function Header() {
                       top: '100%',
                       left: '50%',
                       transform: 'translateX(-50%) translateY(10px)',
-                      background: 'var(--green-dark)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      background: '#e6f1e2',
+                      border: '1px solid rgba(17, 37, 26, 0.12)',
                       borderRadius: '16px',
                       padding: '12px 0',
                       minWidth: '185px',
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
                       zIndex: 100,
                       opacity: 0,
                       pointerEvents: 'none',
@@ -133,19 +134,19 @@ export default function Header() {
                           display: 'block',
                           padding: '10px 24px',
                           fontSize: '13px',
-                          color: 'rgba(255, 255, 255, 0.75)',
+                          color: 'rgba(17, 37, 26, 0.8)',
                           textDecoration: 'none',
                           transition: 'all 0.2s',
                           whiteSpace: 'nowrap',
                           textAlign: 'left'
                         }}
                           onMouseEnter={e => {
-                            e.target.style.color = '#ffffff';
-                            e.target.style.background = 'rgba(255, 255, 255, 0.05)';
+                            e.target.style.color = '#11251a';
+                            e.target.style.background = 'rgba(17, 37, 26, 0.06)';
                             e.target.style.paddingLeft = '28px';
                           }}
                           onMouseLeave={e => {
-                            e.target.style.color = 'rgba(255, 255, 255, 0.75)';
+                            e.target.style.color = 'rgba(17, 37, 26, 0.8)';
                             e.target.style.background = 'transparent';
                             e.target.style.paddingLeft = '24px';
                           }}
@@ -186,11 +187,11 @@ export default function Header() {
             }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = hoverBackgroundCTA;
-                e.currentTarget.style.borderColor = scrolled ? 'rgba(26, 58, 42, 0.5)' : 'rgba(255, 255, 255, 0.5)';
+                e.currentTarget.style.borderColor = showDarkNav ? 'rgba(26, 58, 42, 0.5)' : 'rgba(255, 255, 255, 0.5)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = backgroundCTA;
-                e.currentTarget.style.borderColor = scrolled ? 'rgba(26, 58, 42, 0.25)' : 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.borderColor = showDarkNav ? 'rgba(26, 58, 42, 0.25)' : 'rgba(255, 255, 255, 0.25)';
               }}
             >
               Donate
@@ -215,7 +216,7 @@ export default function Header() {
           right: 0,
           bottom: 0,
           zIndex: 999,
-          background: '#0c100e',
+          background: '#e6f1e2',
           padding: '24px',
           overflowY: 'auto',
           transition: 'top 0.3s ease-in-out',
@@ -223,13 +224,13 @@ export default function Header() {
           {NAV_LINKS.map(link => {
             if (link.submenu) {
               return (
-                <div key={link.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', padding: '12px 0' }}>
+                <div key={link.label} style={{ borderBottom: '1px solid rgba(17,37,26,0.08)', padding: '12px 0' }}>
                   <span style={{
                     display: 'block',
                     padding: '8px 0',
-                    color: 'var(--gold-accent)',
+                    color: '#c8a84a',
                     fontSize: '13px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em'
                   }}>{link.label}</span>
@@ -238,10 +239,10 @@ export default function Header() {
                       <Link key={sub.label} to={sub.href} onClick={() => setMenuOpen(false)} style={{
                         display: 'block',
                         padding: '10px 0',
-                        color: '#ffffff',
+                        color: '#11251a',
                         textDecoration: 'none',
                         fontSize: '16px',
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}>{sub.label}</Link>
                     ))}
                   </div>
@@ -251,8 +252,8 @@ export default function Header() {
             return (
               <Link key={link.label} to={link.href} onClick={() => setMenuOpen(false)} style={{
                 display: 'block', padding: '16px 0',
-                borderBottom: '1px solid rgba(255,255,255,0.05)',
-                color: '#ffffff',
+                borderBottom: '1px solid rgba(17,37,26,0.08)',
+                color: '#11251a',
                 textDecoration: 'none',
                 fontSize: '18px',
               }}>{link.label}</Link>
@@ -266,9 +267,10 @@ export default function Header() {
             borderRadius: '999px',
             textDecoration: 'none',
             fontSize: '16px',
-            fontWeight: 500,
+            fontWeight: 600,
             background: '#ffffff',
-            color: '#0c100e',
+            color: '#11251a',
+            border: '1px solid rgba(17,37,26,0.1)'
           }}>Donate</Link>
         </div>
       )}

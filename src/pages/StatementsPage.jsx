@@ -54,17 +54,17 @@ export default function StatementsPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderBottom: '1px solid rgba(17, 37, 26, 0.08)'
       }}>
         {/* Procedural Grid */}
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(17, 37, 26, 0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           opacity: 0.45,
           pointerEvents: 'none' 
@@ -83,7 +83,7 @@ export default function StatementsPage() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
             TRUST, COMPLIANCE & GOVERNANCE
           </span>
           
@@ -95,13 +95,13 @@ export default function StatementsPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
               fontWeight: 400, 
-              color: '#ffffff', 
+              color: '#11251a', 
               lineHeight: 1.1, 
               letterSpacing: '-0.02em', 
               marginBottom: '28px' 
             }}
           >
-            Core Statements <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Of Integrity</span>
+            Core Statements <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Of Integrity</span>
           </motion.h1>
           
           <motion.p 
@@ -111,7 +111,7 @@ export default function StatementsPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(255, 255, 255, 0.78)', 
+              color: 'rgba(17, 37, 26, 0.8)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 
@@ -174,7 +174,7 @@ export default function StatementsPage() {
                       <span style={{ 
                         fontSize: '0.72rem', 
                         fontWeight: 700, 
-                        color: 'var(--gold-accent)', 
+                        color: 'var(--green-icon)', 
                         letterSpacing: '0.12em',
                         fontFamily: "'Inter', sans-serif" 
                       }}>
@@ -361,7 +361,7 @@ export default function StatementsPage() {
                   <span style={{ fontSize: '0.55rem', fontWeight: 700, color: 'var(--green-dark)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                     APPROVED
                   </span>
-                  <span style={{ fontSize: '0.72rem', fontFamily: "'Playfair Display', serif", fontWeight: 600, color: 'var(--gold-accent)', margin: '2px 0' }}>
+                  <span style={{ fontSize: '0.72rem', fontFamily: "'Playfair Display', serif", fontWeight: 600, color: 'var(--green-icon)', margin: '2px 0' }}>
                     100% DIRECT
                   </span>
                   <span style={{ fontSize: '0.5rem', fontWeight: 500, color: 'var(--green-icon)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>

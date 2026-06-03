@@ -17,20 +17,20 @@
   /* Brand Colors */
   --green-dark: #1a3a2a;
   --green-mid: #26523c;
-  --green-btn: #1f4733;
-  --green-hover: #2d6047;
+  --green-btn: #e6f1e2;
+  --green-hover: #d2ebd0;
   --green-icon: #2a5c3f;
   --gold-accent: #f5c443;
   --gold-hover: #fcd764;
   --blue-accent: #102a43;
 
   /* Backgrounds (Global Mint Swatch Overhaul) */
-  --bg-main: #e6f1e2; /* Mint Green Swatch */
+  --bg-main: #ffffff; /* Swapped to White */
   --bg-section: #ffffff; /* White Color */
   --bg-card: #FFFFFF;
-  --bg-footer: #1a3a2a;
-  --bg-cream: #e6f1e2;
-  --bg-ivory: #e6f1e2;
+  --bg-footer: #e6f1e2; /* Swapped to Mint */
+  --bg-cream: #ffffff; /* Swapped to White */
+  --bg-ivory: #ffffff; /* Swapped to White */
   --bg-warm: #ffffff;
 
   /* Text */
@@ -111,10 +111,10 @@ section {
   align-items: center;
   gap: 10px;
   background: var(--green-btn);
-  color: #fff;
+  color: var(--green-dark);
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 600;
   padding: 14px 28px;
   border-radius: 999px;
   border: none;

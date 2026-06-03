@@ -5,15 +5,16 @@ export default function WhoWeAre() {
   return (
     <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0' }}>
       <div className="container">
+        <div style={{ marginBottom: '60px', maxWidth: '800px' }}>
+          <span className="eyebrow">WHO WE ARE</span>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, color: '#11251a', lineHeight: 1.1, letterSpacing: '-0.025em', margin: 0 }}>
+            A serious, human-centred foundation - not a slogan.
+          </h2>
+        </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start' }}>
 
           {/* LEFT */}
           <div style={{ position: 'sticky', top: '140px' }}>
-            <span className="eyebrow">WHO WE ARE</span>
-            <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, color: '#11251a', lineHeight: 1.1, letterSpacing: '-0.025em', marginBottom: '48px' }}>
-              A serious, human-centred foundation - not a slogan.
-            </h2>
-
             {/* Founder photo with label */}
             <div className="hover-lift" style={{ 
               position: 'relative', 
@@ -106,26 +107,7 @@ export default function WhoWeAre() {
               </div>
             </div>
 
-            {/* Quote block */}
-            <div style={{
-              background: 'var(--bg-section)', 
-              borderRadius: '24px',
-              padding: '40px', 
-              position: 'relative',
-              borderLeft: '4px solid #c8a84a',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.01)'
-            }}>
-              <div style={{ position: 'absolute', top: '24px', right: '28px', fontSize: '3rem', color: '#c8b8a2', lineHeight: 1, fontFamily: 'Georgia, serif' }}>"</div>
-              <p style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontStyle: 'italic', fontWeight: 400,
-                fontSize: '1.18rem', lineHeight: 1.7,
-                color: '#1a3a2a', marginBottom: '20px',
-              }}>
-                "We believe a country becomes truly self-reliant when its environment is cared for, its children are taught, its workers are skilled, and its families stand together. That is the work we have chosen."
-              </p>
-              <div style={{ fontSize: '0.88rem', color: '#4a5568', fontWeight: 600 }}>- D.C. Arya, Founder</div>
-            </div>
+
           </div>
         </div>
       </div>

@@ -47,17 +47,17 @@ export default function VisionPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderBottom: '1px solid rgba(17, 37, 26, 0.08)'
       }}>
         {/* Procedural Grid */}
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(17, 37, 26, 0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           opacity: 0.45,
           pointerEvents: 'none' 
@@ -76,7 +76,7 @@ export default function VisionPage() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
             OUR SUSTAINABLE FUTURE
           </span>
           
@@ -88,13 +88,13 @@ export default function VisionPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
               fontWeight: 400, 
-              color: '#ffffff', 
+              color: '#11251a', 
               lineHeight: 1.1, 
               letterSpacing: '-0.02em', 
               marginBottom: '28px' 
             }}
           >
-            Our Long-Term <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Vision</span>
+            Our Long-Term <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Vision</span>
           </motion.h1>
           
           <motion.p 
@@ -104,7 +104,7 @@ export default function VisionPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(255, 255, 255, 0.78)', 
+              color: 'rgba(17, 37, 26, 0.8)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 
@@ -186,7 +186,7 @@ export default function VisionPage() {
                   <span style={{ 
                     fontSize: '0.72rem', 
                     fontWeight: 600, 
-                    color: 'var(--gold-accent)', 
+                    color: 'var(--green-icon)', 
                     textTransform: 'uppercase', 
                     letterSpacing: '0.12em',
                     background: 'rgba(245, 196, 67, 0.08)',
@@ -224,7 +224,7 @@ export default function VisionPage() {
       {/* Cinematic Frame Quote Section */}
       <section style={{ 
         padding: '140px 0', 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         position: 'relative', 
         overflow: 'hidden',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)'
@@ -233,7 +233,7 @@ export default function VisionPage() {
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(17, 37, 26, 0.08) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
           opacity: 0.5,
           pointerEvents: 'none' 
@@ -250,10 +250,10 @@ export default function VisionPage() {
           
           {/* Framed Quote container */}
           <div style={{
-            border: '1px solid rgba(255, 255, 255, 0.08)',
+            border: '1px solid rgba(17, 37, 26, 0.12)',
             padding: '80px 60px',
             borderRadius: '32px',
-            background: 'rgba(255, 255, 255, 0.01)',
+            background: 'rgba(17, 37, 26, 0.02)',
             backdropFilter: 'blur(10px)',
             position: 'relative',
             textAlign: 'center'
@@ -264,14 +264,14 @@ export default function VisionPage() {
             <div style={{ position: 'absolute', bottom: '-1px', right: '40px', width: '20px', height: '3px', background: 'var(--gold-accent)' }} />
             <div style={{ position: 'absolute', bottom: '40px', right: '-1px', width: '3px', height: '20px', background: 'var(--gold-accent)' }} />
 
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', marginBottom: '28px' }}>THE INTEGRAL COMPASS</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', marginBottom: '28px' }}>THE INTEGRAL COMPASS</span>
             
             <p style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(1.5rem, 3vw, 2.3rem)', 
               fontStyle: 'italic', 
               lineHeight: 1.6, 
-              color: '#ffffff', 
+              color: '#11251a', 
               fontWeight: 400,
               marginBottom: '36px',
               textShadow: '0 2px 4px rgba(0,0,0,0.1)'
@@ -281,7 +281,7 @@ export default function VisionPage() {
             
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
               <div style={{ width: '30px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
-              <span style={{ color: 'var(--gold-accent)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              <span style={{ color: 'var(--green-icon)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
                 FOUNDATION CHARTER
               </span>
               <div style={{ width: '30px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />

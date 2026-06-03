@@ -82,7 +82,7 @@ export default function DonationPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -97,7 +97,7 @@ export default function DonationPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>
             TRANSPARENT DONATION PATHWAY
           </span>
           <motion.h1 
@@ -108,15 +108,15 @@ export default function DonationPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px' 
             }}
           >
-            Invest in <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>self-reliance</span> and environmental health.
+            Invest in <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>self-reliance</span> and environmental health.
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             Your support directly fuels clean air drives in Delhi, educational classrooms, and vocational toolkits. 100% of public funds reach our program execution.
           </p>
         </div>
@@ -240,7 +240,7 @@ export default function DonationPage() {
                   padding: '20px',
                   marginBottom: '32px'
                 }}>
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--gold-accent)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--green-icon)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
@@ -248,13 +248,13 @@ export default function DonationPage() {
                   </h4>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <li style={{ fontSize: '0.88rem', color: 'var(--text-body)', display: 'flex', alignItems: 'start', gap: '10px', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--gold-accent)', fontWeight: 800 }}>✓</span> Exclusive quarterly field reports and raw impact metrics.
+                      <span style={{ color: 'var(--green-icon)', fontWeight: 800 }}>✓</span> Exclusive quarterly field reports and raw impact metrics.
                     </li>
                     <li style={{ fontSize: '0.88rem', color: 'var(--text-body)', display: 'flex', alignItems: 'start', gap: '10px', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--gold-accent)', fontWeight: 800 }}>✓</span> Direct invitations to our local community town-halls.
+                      <span style={{ color: 'var(--green-icon)', fontWeight: 800 }}>✓</span> Direct invitations to our local community town-halls.
                     </li>
                     <li style={{ fontSize: '0.88rem', color: 'var(--text-body)', display: 'flex', alignItems: 'start', gap: '10px', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--gold-accent)', fontWeight: 800 }}>✓</span> Sustainable, long-term impact that helps us plan ambitious, multi-year projects.
+                      <span style={{ color: 'var(--green-icon)', fontWeight: 800 }}>✓</span> Sustainable, long-term impact that helps us plan ambitious, multi-year projects.
                     </li>
                   </ul>
                 </div>
@@ -410,7 +410,7 @@ export default function DonationPage() {
               <div>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--green-dark)', marginBottom: '8px' }}>Radical Transparency</h4>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.5 }}>
-                  <strong style={{ color: 'var(--green-dark)' }}>85%</strong> goes to field supplies, <strong style={{ color: 'var(--gold-accent)' }}>10%</strong> administrative, <strong style={{ color: '#102a43' }}>5%</strong> advocacy/marketing. Founders independently fund senior admin costs.
+                  <strong style={{ color: 'var(--green-dark)' }}>85%</strong> goes to field supplies, <strong style={{ color: 'var(--green-icon)' }}>10%</strong> administrative, <strong style={{ color: '#102a43' }}>5%</strong> advocacy/marketing. Founders independently fund senior admin costs.
                 </p>
               </div>
             </div>
@@ -594,7 +594,7 @@ export default function DonationPage() {
                   <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--green-dark)', textAlign: 'right', maxWidth: '200px' }}>{successReceipt.sponsorOption}</span>
                 </div>
                 <div style={{ borderTop: '1px dashed rgba(26,58,42,0.1)', marginTop: '16px', paddingTop: '16px', display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--gold-accent)', fontWeight: 600 }}>TAX STATUS:</span>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--green-icon)', fontWeight: 600 }}>TAX STATUS:</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--green-dark)', fontWeight: 600 }}>{successReceipt.taxBenefit}</span>
                 </div>
               </div>

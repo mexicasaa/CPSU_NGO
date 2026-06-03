@@ -88,7 +88,7 @@ export default function PartnersPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -103,7 +103,7 @@ export default function PartnersPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CORPORATE SOCIAL RESPONSIBILITY</span>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CORPORATE SOCIAL RESPONSIBILITY</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,16 +112,16 @@ export default function PartnersPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px',
               maxWidth: '900px'
             }}
           >
-            Strategic partnerships for <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>multi-generational</span> impact.
+            Strategic partnerships for <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>multi-generational</span> impact.
           </motion.h1>
-          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
             CSR & Educational India Foundation welcomes collaboration with organizations, institutions, businesses, and socially responsible partners who share our vision for public welfare and community development. Through CSR partnerships and collaborative initiatives, we aim to support impactful programs in environmental awareness, education, youth empowerment, and social responsibility. We believe collective efforts and responsible partnerships are essential for creating sustainable social impact.
           </p>
         </div>
@@ -163,22 +163,22 @@ export default function PartnersPage() {
         {/* Partnership Benefits Bento Grid */}
         <div style={{ marginBottom: '100px' }} className="cinematic-reveal">
           <div style={{ 
-            background: 'var(--green-dark)', 
+            background: '#e6f1e2', 
             borderRadius: '28px', 
             padding: '60px 48px',
-            color: '#fff',
+            color: '#11251a',
             boxShadow: 'var(--shadow-premium)'
           }}>
             <div style={{ maxWidth: '600px', marginBottom: '48px' }}>
-              <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>CREDIBILITY FIRST</span>
-              <h2 style={{ fontSize: '2.2rem', fontWeight: 400, color: '#fff', lineHeight: 1.2 }}>Why Corporate CSR Teams Trust Our Foundation</h2>
+              <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>CREDIBILITY FIRST</span>
+              <h2 style={{ fontSize: '2.2rem', fontWeight: 400, color: '#11251a', lineHeight: 1.2 }}>Why Corporate CSR Teams Trust Our Foundation</h2>
             </div>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px' }}>
               {BENEFIT_ITEMS.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-accent)', letterSpacing: '0.05em' }}>0{idx + 1} // BENEFITS</div>
-                  <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#fff' }}>{item.title}</h4>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--green-icon)', letterSpacing: '0.05em' }}>0{idx + 1} // BENEFITS</div>
+                  <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#11251a' }}>{item.title}</h4>
                   <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
               ))}
@@ -391,7 +391,7 @@ export default function PartnersPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: 'var(--green-dark)', 
+            background: '#e6f1e2', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',
@@ -401,20 +401,20 @@ export default function PartnersPage() {
             position: 'relative',
             overflow: 'hidden'
           }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(200,168,74,0.08) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>CORPORATE OUTREACH</span>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
+            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>CORPORATE OUTREACH</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
               Ready to deploy CSR capital?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(245,243,238,0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Speak directly with our Executive Director to structure a transparent, impactful, and ISO-compliant social program for your brand.
             </p>
             <button 

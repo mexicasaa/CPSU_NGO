@@ -174,7 +174,7 @@ export default function VolunteerPage() {
       
       {/* 1. Cinematic Hero Section with Impact Stats */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '180px 0 110px', 
         position: 'relative',
         overflow: 'hidden'
@@ -202,7 +202,7 @@ export default function VolunteerPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: '800px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '18px', fontWeight: 600 }}>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '18px', fontWeight: 600 }}>
               JOIN THE GROUND FORCE
             </span>
             <motion.h1 
@@ -213,19 +213,19 @@ export default function VolunteerPage() {
                 fontFamily: "'Playfair Display', Georgia, serif", 
                 fontSize: 'clamp(3rem, 6vw, 4.8rem)', 
                 fontWeight: 400, 
-                color: 'var(--bg-main)', 
+                color: '#11251a', 
                 lineHeight: 1.1, 
                 letterSpacing: '-0.02em', 
                 marginBottom: '28px' 
               }}
             >
-              Become a <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Volunteer.</span>
+              Become a <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Volunteer.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: '1.2rem', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.8, fontWeight: 300, marginBottom: '0' }}
+              style={{ fontSize: '1.2rem', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.8, fontWeight: 300, marginBottom: '0' }}
             >
               Join CSR & Educational India Foundation and contribute towards meaningful social and environmental change. Volunteers play an important role in supporting awareness campaigns, educational activities, seminars, social outreach programs, and community initiatives. Whether you are a student, working professional, educator, or social contributor, your participation can help create positive impact in society.
             </motion.p>
@@ -253,7 +253,7 @@ export default function VolunteerPage() {
               { val: '100%', lbl: 'Selfless Service Driven' }
             ].map((stat, idx) => (
               <div key={idx} style={{ display: 'flex', flexDirection: 'column' }}>
-                <span className="serif-italic" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--gold-accent)', fontWeight: 400, lineHeight: 1.1 }}>
+                <span className="serif-italic" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--green-icon)', fontWeight: 400, lineHeight: 1.1 }}>
                   {stat.val}
                 </span>
                 <span style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(245,243,238,0.65)', marginTop: '8px' }}>
@@ -271,7 +271,7 @@ export default function VolunteerPage() {
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <span className="eyebrow" style={{ color: 'var(--green-icon)', justifyContent: 'center' }}>CHANNELS OF SERVICE</span>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--green-dark)', fontWeight: 400, marginTop: '8px' }}>
-              Where can you <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>create impact?</span>
+              Where can you <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>create impact?</span>
             </h2>
             <p style={{ maxWidth: '600px', margin: '16px auto 0', color: 'var(--text-body)', fontSize: '1rem', lineHeight: 1.6 }}>
               Select a focus area below that resonates with you. Clicking "Apply for this Role" will prepopulate the registration form below.
@@ -357,7 +357,7 @@ export default function VolunteerPage() {
                   <span style={{ 
                     fontSize: '0.72rem', 
                     fontWeight: 600, 
-                    color: 'var(--gold-accent)', 
+                    color: 'var(--green-icon)', 
                     background: 'rgba(200,168,74,0.08)', 
                     padding: '6px 12px', 
                     borderRadius: '999px',
@@ -409,9 +409,9 @@ export default function VolunteerPage() {
       <section style={{ padding: '120px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', justifyContent: 'center' }}>YOUR PATH TO SERVICE</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', justifyContent: 'center' }}>YOUR PATH TO SERVICE</span>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--green-dark)', fontWeight: 400, marginTop: '8px' }}>
-              How onboarding <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>unfolds.</span>
+              How onboarding <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>unfolds.</span>
             </h2>
           </div>
 
@@ -442,7 +442,7 @@ export default function VolunteerPage() {
                   borderRadius: '50%', 
                   background: 'var(--bg-card)', 
                   border: '2px solid rgba(200, 168, 74, 0.3)',
-                  color: 'var(--gold-accent)',
+                  color: 'var(--green-icon)',
                   fontSize: '1.4rem',
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontWeight: 500,
@@ -467,7 +467,7 @@ export default function VolunteerPage() {
       </section>
 
       {/* 4. Cinematic Testimonial Spotlight Section */}
-      <section style={{ padding: '120px 0', background: 'var(--green-dark)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '120px 0', background: '#e6f1e2', position: 'relative', overflow: 'hidden' }}>
         {/* Abstract glowing elements */}
         <div style={{ 
           position: 'absolute', 
@@ -493,7 +493,7 @@ export default function VolunteerPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', justifyContent: 'center' }}>VOLUNTEER VOICES</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)', justifyContent: 'center' }}>VOLUNTEER VOICES</span>
             
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(200, 168, 74, 0.4)" strokeWidth="1.5" style={{ marginTop: '24px', marginBottom: '24px' }}>
               <path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h3c-.5 2.5-2 4.5-4 5.5v2.5zm11 0c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h3c-.5 2.5-2 4.5-4 5.5v2.5z"/>
@@ -503,7 +503,7 @@ export default function VolunteerPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(1.4rem, 3.5vw, 2.2rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.5, 
               fontStyle: 'italic',
               marginBottom: '36px' 
@@ -512,10 +512,10 @@ export default function VolunteerPage() {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--bg-main)', letterSpacing: '0.02em' }}>
+              <span style={{ fontSize: '1rem', fontWeight: 600, color: '#11251a', letterSpacing: '0.02em' }}>
                 Anjali Dev
               </span>
-              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gold-accent)', marginTop: '6px' }}>
+              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--green-icon)', marginTop: '6px' }}>
                 Sankalp Education Volunteer
               </span>
             </div>
@@ -532,7 +532,7 @@ export default function VolunteerPage() {
             <div style={{ paddingRight: '20px' }}>
               <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>THE CORE COHORT</span>
               <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', color: 'var(--green-dark)', fontWeight: 400, marginTop: '8px', marginBottom: '28px' }}>
-                Become an active pillar of <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>our grounding mission.</span>
+                Become an active pillar of <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>our grounding mission.</span>
               </h2>
               <p style={{ fontSize: '1rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '40px' }}>
                 We believe that systematic transformation is achieved through organic citizen involvement. We do not maintain heavy corporate administration; we trust our localized cohorts to lead change directly on the ground.
@@ -559,7 +559,7 @@ export default function VolunteerPage() {
                       height: '32px', 
                       borderRadius: '50%', 
                       background: 'rgba(200, 168, 74, 0.1)', 
-                      color: 'var(--gold-accent)', 
+                      color: 'var(--green-icon)', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center',
@@ -787,7 +787,7 @@ export default function VolunteerPage() {
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <span className="eyebrow" style={{ color: 'var(--green-icon)', justifyContent: 'center' }}>HAVE QUESTIONS?</span>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'var(--green-dark)', fontWeight: 400, marginTop: '8px' }}>
-              Frequently Asked <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Queries.</span>
+              Frequently Asked <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Queries.</span>
             </h2>
           </div>
 
@@ -836,7 +836,7 @@ export default function VolunteerPage() {
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      style={{ color: 'var(--gold-accent)', marginLeft: '20px' }}
+                      style={{ color: 'var(--green-icon)', marginLeft: '20px' }}
                     >
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="6 9 12 15 18 9" />

@@ -7,7 +7,7 @@ export default function FocusAreasPage() {
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
       {/* Premium Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -22,7 +22,7 @@ export default function FocusAreasPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function FocusAreasPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px' 
@@ -39,7 +39,7 @@ export default function FocusAreasPage() {
           >
             Our Core Focus Areas
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(245, 243, 238, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             We focus on systematic community development pillars to ensure practical, field-level and long-term self-reliance.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function FocusAreasPage() {
                   width: '48px', 
                   height: '48px', 
                   borderRadius: '50%', 
-                  background: 'var(--green-dark)', 
-                  color: 'var(--gold-accent)', 
+                  background: '#e6f1e2', 
+                  color: 'var(--green-icon)', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center', 

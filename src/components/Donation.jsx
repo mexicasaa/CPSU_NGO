@@ -166,11 +166,11 @@ export default function Donation() {
 
             {/* Premium Gold-Bordered Dark Trust Card */}
             <div className="hover-lift" style={{
-              background: 'var(--green-dark)', 
+              background: '#e6f1e2', 
               borderRadius: '28px', 
               padding: '44px',
               border: '1px solid rgba(200, 168, 74, 0.25)',
-              boxShadow: '0 25px 50px rgba(17,37,26,0.15)',
+              boxShadow: '0 25px 50px rgba(17,37,26,0.06)',
               position: 'relative',
               overflow: 'hidden'
             }}>
@@ -182,7 +182,7 @@ export default function Donation() {
               }} />
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '22px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   <path d="m9 12 2 2 4-4"/>
                 </svg>
@@ -190,7 +190,7 @@ export default function Donation() {
                   fontSize: '0.72rem', 
                   fontWeight: 700, 
                   letterSpacing: '0.14em', 
-                  color: 'var(--gold-accent)', 
+                  color: 'var(--green-dark)', 
                   textTransform: 'uppercase', 
                   fontFamily: "'Inter', sans-serif" 
                 }}>TRUSTED & TRANSPARENT FOUNDATION</span>
@@ -200,7 +200,7 @@ export default function Donation() {
                 fontFamily: "'Playfair Display', serif", 
                 fontStyle: 'italic', 
                 fontSize: '1.25rem', 
-                color: '#ffffff', 
+                color: 'var(--green-dark)', 
                 lineHeight: 1.7, 
                 marginBottom: '26px',
                 borderLeft: '2px solid var(--gold-accent)',
@@ -209,7 +209,7 @@ export default function Donation() {
                 "₹1,500 funds one child's monthly learning kit. ₹12,000 sponsors a full year."
               </blockquote>
               
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(17,37,26,0.7)', lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
                 Bank transfer, corporate rails and custom UPI gates are supported. Our dedicated support team will share detailed receipts and structural field reports on your email.
               </p>
             </div>
@@ -245,13 +245,13 @@ export default function Donation() {
                     padding: '13px 24px',
                     borderRadius: '999px',
                     border: 'none',
-                    background: frequency === 'one-time' ? 'var(--green-dark)' : 'transparent',
-                    color: frequency === 'one-time' ? '#ffffff' : 'var(--text-body)',
+                    background: frequency === 'one-time' ? 'var(--green-btn)' : 'transparent',
+                    color: frequency === 'one-time' ? 'var(--green-dark)' : 'var(--text-body)',
                     fontWeight: 600,
                     fontFamily: "'Inter', sans-serif",
                     fontSize: '0.88rem',
                     cursor: 'pointer',
-                    boxShadow: frequency === 'one-time' ? '0 4px 12px rgba(26,58,42,0.08)' : 'none',
+                    boxShadow: frequency === 'one-time' ? '0 4px 12px rgba(26,58,42,0.04)' : 'none',
                     transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                     zIndex: 2
                   }}
@@ -462,7 +462,7 @@ export default function Donation() {
                           fontSize: '0.85rem',
                           fontWeight: isActive ? 700 : 500,
                           background: isActive ? accentColor : '#faf9f5',
-                          color: isActive ? (frequency === 'monthly' ? '#11251a' : '#ffffff') : 'var(--text-body)',
+                          color: isActive ? (frequency === 'monthly' ? '#11251a' : 'var(--green-dark)') : 'var(--text-body)',
                           border: isActive ? `1.5px solid ${accentColor}` : '1.5px solid rgba(26,58,42,0.08)',
                           display: 'inline-flex',
                           alignItems: 'center',
@@ -616,7 +616,7 @@ export default function Donation() {
                     padding: '16px 36px', 
                     borderRadius: '999px',
                     background: accentColor,
-                    color: frequency === 'monthly' ? '#11251a' : '#ffffff',
+                    color: '#11251a',
                     border: 'none',
                     fontWeight: 700,
                     fontFamily: "'Inter', sans-serif",
@@ -625,7 +625,7 @@ export default function Donation() {
                     justifyContent: 'center',
                     gap: '10px',
                     cursor: 'pointer',
-                    boxShadow: frequency === 'monthly' ? '0 10px 25px rgba(200, 168, 74, 0.2)' : '0 10px 25px rgba(31, 71, 51, 0.15)',
+                    boxShadow: frequency === 'monthly' ? '0 10px 25px rgba(200, 168, 74, 0.2)' : '0 10px 25px rgba(230, 241, 226, 0.15)',
                     transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                     position: 'relative',
                     overflow: 'hidden'
@@ -633,12 +633,12 @@ export default function Donation() {
                   onMouseEnter={e => {
                     e.target.style.background = accentHover;
                     e.target.style.transform = 'translateY(-2px)';
-                    e.target.style.boxShadow = frequency === 'monthly' ? '0 15px 30px rgba(200, 168, 74, 0.3)' : '0 15px 30px rgba(31, 71, 51, 0.25)';
+                    e.target.style.boxShadow = frequency === 'monthly' ? '0 15px 30px rgba(200, 168, 74, 0.3)' : '0 15px 30px rgba(230, 241, 226, 0.25)';
                   }}
                   onMouseLeave={e => {
                     e.target.style.background = accentColor;
                     e.target.style.transform = 'none';
-                    e.target.style.boxShadow = frequency === 'monthly' ? '0 10px 25px rgba(200, 168, 74, 0.2)' : '0 10px 25px rgba(31, 71, 51, 0.15)';
+                    e.target.style.boxShadow = frequency === 'monthly' ? '0 10px 25px rgba(200, 168, 74, 0.2)' : '0 10px 25px rgba(230, 241, 226, 0.15)';
                   }}
                 >
                   <svg className="pulsing-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ transition: 'transform 0.2s' }}>

@@ -186,12 +186,13 @@ export default function SlowFrameHero() {
 
         .hero-btn-donate {
           background: var(--green-btn);
-          color: #ffffff;
+          color: #11251a;
+          font-weight: 600;
         }
 
         .hero-btn-donate:hover {
           transform: translateY(-2px);
-          box-shadow: 0 16px 36px rgba(31,71,51,0.3) !important;
+          box-shadow: 0 16px 36px rgba(230, 241, 226, 0.25) !important;
           background: var(--green-hover) !important;
         }
 

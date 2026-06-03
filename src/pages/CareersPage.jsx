@@ -100,7 +100,7 @@ export default function CareersPage() {
       
       {/* 1. Cinematic Hero Section */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -115,7 +115,7 @@ export default function CareersPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CAREERS & OPPORTUNITIES</span>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CAREERS & OPPORTUNITIES</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,16 +124,16 @@ export default function CareersPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', 
               fontWeight: 400, 
-              color: 'var(--bg-main)', 
+              color: '#11251a', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px',
               maxWidth: '900px'
             }}
           >
-            Join our mission to build a <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>healthier, value-driven</span> society.
+            Join our mission to build a <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>healthier, value-driven</span> society.
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '750px', color: 'rgba(245, 243, 238, 0.85)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '750px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
             CSR & Educational India Foundation welcomes passionate individuals who wish to contribute towards social impact and community development. We offer opportunities for individuals interested in volunteering, internships, awareness campaigns, event coordination, communication support, and educational initiatives.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function CareersPage() {
                 <div style={{
                   width: '48px', height: '48px', borderRadius: '12px',
                   background: 'rgba(200, 168, 74, 0.08)',
-                  color: 'var(--gold-accent)',
+                  color: 'var(--green-icon)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
                   {opp.icon}
@@ -192,7 +192,7 @@ export default function CareersPage() {
             <div>
               <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>JOIN OUR MISSION</span>
               <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: 'var(--green-dark)', fontWeight: 400, marginTop: '8px', marginBottom: '24px' }}>
-                Be part of our journey towards <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>positive social change.</span>
+                Be part of our journey towards <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>positive social change.</span>
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.75, marginBottom: '32px' }}>
                 If you are committed to creating positive social and environmental change, we welcome you to be part of our journey towards building a healthier, educated, and responsible society.
@@ -206,7 +206,7 @@ export default function CareersPage() {
                   <div key={idx} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                     <div style={{ 
                       width: '28px', height: '28px', borderRadius: '50%',
-                      background: 'rgba(200, 168, 74, 0.1)', color: 'var(--gold-accent)',
+                      background: 'rgba(200, 168, 74, 0.1)', color: 'var(--green-icon)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       flexShrink: 0, fontSize: '0.8rem', fontWeight: 600
                     }}>

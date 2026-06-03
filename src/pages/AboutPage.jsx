@@ -8,17 +8,17 @@ export default function AboutPage() {
       
       {/* Immersive Editorial Hero */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderBottom: '1px solid rgba(17, 37, 26, 0.08)'
       }}>
         {/* Procedural Dotted Background Grid */}
         <div style={{ 
           position: 'absolute', 
           inset: 0,
-          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(17, 37, 26, 0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           opacity: 0.45,
           pointerEvents: 'none' 
@@ -53,7 +53,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="eyebrow" 
             style={{ 
-              color: 'var(--gold-accent)', 
+              color: 'var(--green-icon)', 
               margin: 0, 
               display: 'inline-block', 
               marginBottom: '20px',
@@ -72,13 +72,13 @@ export default function AboutPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
               fontWeight: 400, 
-              color: '#ffffff', 
+              color: '#11251a', 
               lineHeight: 1.1, 
               letterSpacing: '-0.02em', 
               marginBottom: '28px' 
             }}
           >
-            About Our <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Foundation</span>
+            About Our <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Foundation</span>
           </motion.h1>
           
           <motion.p 
@@ -88,7 +88,7 @@ export default function AboutPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(255, 255, 255, 0.78)', 
+              color: 'rgba(17, 37, 26, 0.8)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 Established in 2025, our core mandate is to trigger value-based community development, restoring ethical living, family integration, and ecological duty.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <span style={{ fontSize: '3.5rem', fontFamily: "'Playfair Display', serif", color: 'var(--gold-accent)', fontWeight: 600, lineHeight: 1 }}>2025</span>
+                <span style={{ fontSize: '3.5rem', fontFamily: "'Playfair Display', serif", color: 'var(--green-icon)', fontWeight: 600, lineHeight: 1 }}>2025</span>
                 <div style={{ width: '40px', height: '1px', background: 'rgba(26,58,42,0.15)' }} />
                 <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.12em', color: 'var(--text-muted)', textTransform: 'uppercase' }}>REGISTRATION YEAR</span>
               </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 gap: '24px'
               }}
             >
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: 'var(--green-dark)' }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: '#e6f1e2' }} />
               
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                 <div style={{ 
@@ -272,7 +272,7 @@ export default function AboutPage() {
                   height: '44px', 
                   borderRadius: '12px', 
                   background: 'rgba(245, 196, 67, 0.06)', 
-                  color: 'var(--gold-accent)',
+                  color: 'var(--green-icon)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'

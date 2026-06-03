@@ -5,13 +5,13 @@ export default function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer style={{ background: '#11251a', color: '#fff', padding: '100px 0 0', borderTop: '1px solid rgba(200, 168, 74, 0.2)' }}>
+    <footer style={{ background: '#e6f1e2', color: '#11251a', padding: '100px 0 0', borderTop: '1px solid rgba(200, 168, 74, 0.2)' }}>
       <div className="container">
         {/* Big headline */}
         <h2 style={{ 
           fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
           fontWeight: 400, 
-          color: '#fff', 
+          color: '#11251a', 
           lineHeight: 1.05, 
           letterSpacing: '-0.03em', 
           marginBottom: '80px' 
@@ -21,23 +21,23 @@ export default function Footer() {
         </h2>
 
         {/* 4-column info grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '48px', paddingBottom: '64px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '48px', paddingBottom: '64px', borderBottom: '1px solid rgba(17,37,26,0.08)' }}>
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <Link to="/" style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.3s ease', overflow: 'hidden' }}>
+              <Link to="/" style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(17,37,26,0.06)', border: '1.5px solid rgba(17,37,26,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.3s ease', overflow: 'hidden' }}>
                 <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </Link>
               <div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 500, color: '#fff', letterSpacing: '0.01em' }}>CSR & Educational</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 500, color: '#11251a', letterSpacing: '0.01em' }}>CSR & Educational</div>
                 <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '0.12em', color: '#c8a84a', textTransform: 'uppercase' }}>INDIA FOUNDATION</div>
               </div>
             </div>
-            <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '28px', maxWidth: '320px', fontFamily: "'Inter', sans-serif" }}>
+            <p style={{ fontSize: '0.88rem', color: 'rgba(17,37,26,0.65)', lineHeight: 1.7, marginBottom: '28px', maxWidth: '320px', fontFamily: "'Inter', sans-serif" }}>
               A citizen-led non-profit working on environment, education, livelihood and social cohesion across communities in India.
             </p>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '10px' }}>QUARTERLY FIELD NOTES</div>
+              <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(17,37,26,0.5)', textTransform: 'uppercase', marginBottom: '10px' }}>QUARTERLY FIELD NOTES</div>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <div style={{ position: 'relative', flex: 1 }}>
                   <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }}>
@@ -48,9 +48,9 @@ export default function Footer() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     style={{ 
-                      background: 'rgba(255,255,255,0.05)', 
-                      border: '1px solid rgba(255,255,255,0.12)', 
-                      color: '#fff', 
+                      background: '#ffffff', 
+                      border: '1px solid rgba(17,37,26,0.15)', 
+                      color: '#11251a', 
                       borderRadius: '999px', 
                       padding: '11px 16px 11px 40px', 
                       fontSize: '0.85rem', 
@@ -61,11 +61,11 @@ export default function Footer() {
                     }}
                     onFocus={e => {
                       e.target.style.borderColor = '#c8a84a';
-                      e.target.style.background = 'rgba(255,255,255,0.08)';
+                      e.target.style.background = '#ffffff';
                     }}
                     onBlur={e => {
-                      e.target.style.borderColor = 'rgba(255,255,255,0.12)';
-                      e.target.style.background = 'rgba(255,255,255,0.05)';
+                      e.target.style.borderColor = 'rgba(17,37,26,0.15)';
+                      e.target.style.background = '#ffffff';
                     }}
                   />
                 </div>
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Explore */}
           <div>
-            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>EXPLORE</div>
+            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(17,37,26,0.5)', textTransform: 'uppercase', marginBottom: '20px' }}>EXPLORE</div>
             {[
               { label: 'About', to: '/about' },
               { label: 'Focus areas', to: '/focus-areas' },
@@ -105,13 +105,13 @@ export default function Footer() {
               { label: 'Programs', to: '/programs' },
               { label: 'Media & stories', to: '/media' }
             ].map(l => (
-              <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}
+              <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(17,37,26,0.75)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}
                 onMouseEnter={e => {
                   e.target.style.color = '#c8a84a';
                   e.target.style.transform = 'translateX(4px)';
                 }}
                 onMouseLeave={e => {
-                  e.target.style.color = 'rgba(255,255,255,0.7)';
+                  e.target.style.color = 'rgba(17,37,26,0.75)';
                   e.target.style.transform = 'none';
                 }}>{l.label}</Link>
             ))}
@@ -119,7 +119,7 @@ export default function Footer() {
 
           {/* Engage */}
           <div>
-            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>ENGAGE</div>
+            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(17,37,26,0.5)', textTransform: 'uppercase', marginBottom: '20px' }}>ENGAGE</div>
             {[
               { label: 'Donate', to: '/donate' },
               { label: 'Volunteer', to: '/volunteer' },
@@ -127,13 +127,13 @@ export default function Footer() {
               { label: 'Careers', to: '/careers' },
               { label: 'Contact Us', to: '/contact' }
             ].map(l => (
-              <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}
+              <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(17,37,26,0.75)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}
                 onMouseEnter={e => {
                   e.target.style.color = '#c8a84a';
                   e.target.style.transform = 'translateX(4px)';
                 }}
                 onMouseLeave={e => {
-                  e.target.style.color = 'rgba(255,255,255,0.7)';
+                  e.target.style.color = 'rgba(17,37,26,0.75)';
                   e.target.style.transform = 'none';
                 }}>{l.label}</Link>
             ))}
@@ -141,13 +141,13 @@ export default function Footer() {
 
           {/* Reach Us */}
           <div>
-            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '20px' }}>REACH US</div>
+            <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(17,37,26,0.5)', textTransform: 'uppercase', marginBottom: '20px' }}>REACH US</div>
             {[
               'aumdcarya@gmail.com',
               '+91 98106 00994',
               'B2A-102 Golflinks Residency\nSector 18 B, Dwarka-110078',
             ].map((l, i) => (
-              <div key={i} style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', marginBottom: '14px', lineHeight: 1.5, whiteSpace: 'pre-line', fontFamily: "'Inter', sans-serif" }}>{l}</div>
+              <div key={i} style={{ fontSize: '0.88rem', color: 'rgba(17,37,26,0.7)', marginBottom: '14px', lineHeight: 1.5, whiteSpace: 'pre-line', fontFamily: "'Inter', sans-serif" }}>{l}</div>
             ))}
             {/* Social icons */}
             <div style={{ display: 'flex', gap: '10px', marginTop: '24px' }}>
@@ -157,16 +157,16 @@ export default function Footer() {
                 <path key="li" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>,
                 <polygon key="yt" points="23 7 16 12 23 17 23 7"/>,
               ].map((icon, i) => (
-                <a key={i} href="#" style={{ width: 38, height: 38, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', border: '1px solid rgba(255,255,255,0.08)' }}
+                <a key={i} href="#" style={{ width: 38, height: 38, borderRadius: '50%', background: 'rgba(17,37,26,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', border: '1px solid rgba(17,37,26,0.08)' }}
                   onMouseEnter={e => {
                     e.currentTarget.style.background = 'rgba(200, 168, 74, 0.15)';
                     e.currentTarget.style.borderColor = '#c8a84a';
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                    e.currentTarget.style.background = 'rgba(17,37,26,0.06)';
+                    e.currentTarget.style.borderColor = 'rgba(17,37,26,0.08)';
                   }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icon}</svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(17,37,26,0.8)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icon}</svg>
                 </a>
               ))}
             </div>
@@ -175,19 +175,19 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 0', flexWrap: 'wrap', gap: '16px' }}>
-          <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', fontFamily: "'Inter', sans-serif" }}>
+          <span style={{ fontSize: '0.82rem', color: 'rgba(17,37,26,0.5)', fontFamily: "'Inter', sans-serif" }}>
             © 2026 CSR & Educational India Foundation. All rights reserved.
           </span>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <Link to="/privacy-policy" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+            <Link to="/privacy-policy" style={{ fontSize: '0.82rem', color: 'rgba(17,37,26,0.5)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
               onMouseEnter={e => e.target.style.color = '#c8a84a'}
-              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Privacy Policy</Link>
-            <Link to="/terms-conditions" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseLeave={e => e.target.style.color = 'rgba(17,37,26,0.5)'}>Privacy Policy</Link>
+            <Link to="/terms-conditions" style={{ fontSize: '0.82rem', color: 'rgba(17,37,26,0.5)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
               onMouseEnter={e => e.target.style.color = '#c8a84a'}
-              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Terms & Conditions</Link>
-            <Link to="/disclaimer" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseLeave={e => e.target.style.color = 'rgba(17,37,26,0.5)'}>Terms & Conditions</Link>
+            <Link to="/disclaimer" style={{ fontSize: '0.82rem', color: 'rgba(17,37,26,0.5)', textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
               onMouseEnter={e => e.target.style.color = '#c8a84a'}
-              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.35)'}>Disclaimer</Link>
+              onMouseLeave={e => e.target.style.color = 'rgba(17,37,26,0.5)'}>Disclaimer</Link>
           </div>
         </div>
       </div>

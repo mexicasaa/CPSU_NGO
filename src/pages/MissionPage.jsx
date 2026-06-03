@@ -74,17 +74,17 @@ export default function MissionPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: 'var(--green-dark)', 
+        background: '#e6f1e2', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+        borderBottom: '1px solid rgba(17, 37, 26, 0.08)'
       }}>
         {/* Procedural Dotted Grid */}
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(17, 37, 26, 0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           opacity: 0.45,
           pointerEvents: 'none' 
@@ -104,7 +104,7 @@ export default function MissionPage() {
         }} />
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
+          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
             CSR & EDUCATIONAL INDIA FOUNDATION
           </span>
           
@@ -116,13 +116,13 @@ export default function MissionPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
               fontWeight: 400, 
-              color: '#ffffff', 
+              color: '#11251a', 
               lineHeight: 1.1, 
               letterSpacing: '-0.02em', 
               marginBottom: '28px' 
             }}
           >
-            Our Mission <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>In Action</span>
+            Our Mission <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>In Action</span>
           </motion.h1>
           
           <motion.p 
@@ -132,7 +132,7 @@ export default function MissionPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(255, 255, 255, 0.78)', 
+              color: 'rgba(17, 37, 26, 0.8)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 
@@ -333,7 +333,7 @@ export default function MissionPage() {
 
         <div className="container" style={{ maxWidth: '960px' }}>
           <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>OUR ROADMAP</span>
+            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>OUR ROADMAP</span>
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 4vw, 3.2rem)', 
@@ -374,7 +374,7 @@ export default function MissionPage() {
                   boxShadow: '0 0 15px rgba(245, 196, 67, 0.3)',
                   zIndex: 2
                 }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--green-dark)' }} />
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#e6f1e2' }} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '40px', alignItems: 'start' }} className="timeline-grid">
@@ -382,7 +382,7 @@ export default function MissionPage() {
                     <span style={{ 
                       fontSize: '2.4rem', 
                       fontWeight: 700, 
-                      color: 'var(--gold-accent)', 
+                      color: 'var(--green-icon)', 
                       fontFamily: "'Inter', sans-serif",
                       lineHeight: 1 
                     }}>
