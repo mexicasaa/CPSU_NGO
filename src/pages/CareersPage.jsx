@@ -186,7 +186,7 @@ export default function CareersPage() {
       {/* 3. Join Our Mission & Apply Section */}
       <section style={{ padding: '100px 0 120px', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '80px', alignItems: 'start' }} className="form-split">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '80px', alignItems: 'start' }} className="form-split careers-form-split">
             
             {/* Left Info Column */}
             <div>
@@ -266,7 +266,7 @@ export default function CareersPage() {
                         />
                       </div>
 
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} className="careers-form-grid">
                         <input
                           required
                           type="email"
@@ -426,6 +426,20 @@ export default function CareersPage() {
         </div>
       </section>
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .careers-form-split {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .careers-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+        }
+      `}} />
     </div>
   );
 }

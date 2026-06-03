@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }) {
   const lenisRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -30,6 +32,16 @@ export default function SmoothScroll({ children }) {
       lenis.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) {
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [location.pathname, location.search]);
 
   return <>{children}</>;
 }

@@ -27,14 +27,6 @@ export default function LeadershipPage() {
       email: "hnsharma@csreduindia.org"
     },
     {
-      name: "Sh Atul Gupta",
-      role: "Director",
-      bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
-      image: "/images/Atul Gupta.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
       name: "Sh Balwinder Singh",
       role: "Director",
       bio: "He served as the President of the Institute of Cost Accountants of India (ICMAI). He regularly interfaces with senior union ministries and regulatory bodies in India to advocate for Cost Accountants in national audits and CSR spending social audits.",
@@ -53,7 +45,7 @@ export default function LeadershipPage() {
     {
       name: "Sh A K Tiwari",
       role: "Director",
-      bio: "He served as the former Director (Finance) & Chief Financial Officer (CFO). Appointed to this board-level position on December 1, 2018, he oversaw corporate financial strategy, investor relations, and overall fiscal management.",
+      bio: "Shri Anjani Kumar Tiwari, currently serving as Member of the Petroleum and Natural Gas Regulatory Board (PNGRB), previously held the board-level position of Director (Finance) at GAIL (India) Limited, where he oversaw corporate financial strategy, investor relations, and overall fiscal management",
       image: "/images/A K Tiwari.png",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
@@ -81,18 +73,25 @@ export default function LeadershipPage() {
       image: "/images/Sunil Singh.jpg",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
+    }
+  ];
+  const advisors = [
+    {
+      name: "Sh Atul Gupta",
+      role: "Advisory Board",
+      bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
+      image: "/images/Atul Gupta.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
     },
     {
       name: "Vinod Chittora",
-      role: "Director",
+      role: "Advisory Board",
       bio: "A prominent member of the Institute of Cost Accountants of India (ICMAI) who has actively served the profession as the Past Chairman of the Jaipur Chapter of ICMAI.",
       image: "/images/Vinod Chittora.jpg",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
-    }
-  ];
-
-  const advisors = [
+    },
     {
       name: "Neeraj Kumar Pandey",
       role: "Member",
@@ -242,7 +241,7 @@ export default function LeadershipPage() {
       <section style={{ 
         padding: '120px 0', 
         background: 'linear-gradient(135deg, #1a3a2a 0%, #26523c 100%)', 
-        color: '#11251a',
+        color: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
         borderTop: '1px solid rgba(200, 168, 74, 0.2)',
@@ -275,7 +274,7 @@ export default function LeadershipPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.2,
               margin: 0
             }}>
@@ -349,7 +348,7 @@ export default function LeadershipPage() {
                 fontFamily: "'Playfair Display', Georgia, serif", 
                 fontSize: '2.5rem', 
                 fontWeight: 400, 
-                color: '#11251a', 
+                color: '#ffffff', 
                 margin: '0 0 8px 0',
                 lineHeight: 1.15
               }}>
@@ -378,7 +377,7 @@ export default function LeadershipPage() {
                 borderRadius: '12px',
                 fontSize: '0.82rem',
                 fontWeight: 600,
-                color: 'rgba(17, 37, 26, 0.9)',
+                color: '#ffffff',
                 letterSpacing: '0.05em',
                 marginBottom: '32px'
               }}>
@@ -390,11 +389,13 @@ export default function LeadershipPage() {
               {/* Story Details */}
               <div style={{ fontSize: '0.98rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300 }}>
                 <p style={{ margin: '0 0 20px 0' }}>
-                  <strong>Tarun</strong> is a highly distinguished finance and governance professional, holding prestigious dual qualifications as a Chartered Accountant and a Cost & Management Accountant <strong>(CMA-AIR 44)</strong>. His notable professional career includes key experience as a consultant for the <strong>Ministry of Corporate Affairs (MCA)</strong> and the <strong>Serious Fraud Investigation Office (SFIO)</strong>, where he actively contributed to corporate governance, compliance management, and complex regulatory affairs.
+                  Tarun is a highly distinguished finance and governance professional, holding prestigious dual qualifications as CA and CMA. His notable professional career includes key experience as a consultant for the Ministry of Corporate Affairs and the Serious Fraud Investigation Office (SFIO), where he actively contributed to corporate governance, compliance management, and complex regulatory affairs. 
                 </p>
-                
+                <p style={{ margin: '0 0 20px 0' }}>
+                  Beyond his professional accomplishments, Tarun's love for nature began in childhood and continues to inspire his mission today. He actively promotes sustainable living, environmental conservation, and public awareness because he believes protecting our planet is an urgent responsibility. His vision is to empower India's youth to become environmental leaders by inspiring the next generation to take action against pollution, climate change, and global warming. He believes that young people are not just the future of the nation—they are the driving force behind positive change. For Tarun, protecting the environment is a duty we all share—a duty to our Earth, our communities, and future generations.
+                </p>
                 <p style={{ margin: 0 }}>
-                  Driven by an unwavering personal commitment to environmental protection since childhood, Tarun has consistently advocated for sustainable living, active ecological conservation, and public awareness. His primary vision is to rally the Indian youth toward environmental ownership — inspiring the next generation to lead initiatives that reduce the greenhouse effect, combat global warming, and eliminate environmental pollution. Tarun strongly believes that environmental responsibility is not merely a choice, but an urgent collective duty to preserve the Earth for future generations and secure a <strong>pollution-free India</strong>. Living by the philosophy of <strong>"Nation First"</strong>, Tarun is deeply dedicated to promoting ethical leadership, responsible citizenship, and robust youth participation in nation-building.
+                  Guided by the philosophy of "NATION FIRST," he is deeply committed to promoting ethical leadership, responsible citizenship, and meaningful youth participation in nation-building, while working towards a cleaner, greener, and more sustainable India.
                 </p>
               </div>
 
@@ -420,7 +421,7 @@ export default function LeadershipPage() {
                   fontSize: '1.25rem', 
                   lineHeight: 1.7, 
                   fontStyle: 'italic', 
-                  color: '#11251a',
+                  color: '#ffffff',
                   position: 'relative',
                   zIndex: 1,
                   fontWeight: 300,
@@ -514,36 +515,7 @@ export default function LeadershipPage() {
                   {advisor.bio}
                 </p>
                 
-                {/* Social Buttons */}
-                <div style={{ display: 'flex', gap: '14px', justifyContent: 'center' }}>
-                  {advisor.linkedin && (
-                    <a 
-                      href={advisor.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      style={{ color: 'var(--green-icon)', opacity: 0.5, transition: 'all 0.3s ease' }}
-                      className="social-icon-btn"
-                    >
-                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                        <rect x="2" y="9" width="4" height="12" />
-                        <circle cx="4" cy="4" r="2" />
-                      </svg>
-                    </a>
-                  )}
-                  {advisor.email && (
-                    <a 
-                      href={`mailto:${advisor.email}`} 
-                      style={{ color: 'var(--green-icon)', opacity: 0.5, transition: 'all 0.3s ease' }}
-                      className="social-icon-btn"
-                    >
-                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                    </a>
-                  )}
-                </div>
+
               </motion.div>
             ))}
           </div>
@@ -571,7 +543,7 @@ export default function LeadershipPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>

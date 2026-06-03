@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function WhoWeAre() {
   return (
-    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 0px' }}>
+    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 80px' }}>
       <div className="container">
         <div style={{ marginBottom: '40px', maxWidth: '800px' }}>
           <span className="eyebrow">WHO WE ARE</span>
@@ -17,7 +17,7 @@ export default function WhoWeAre() {
           {/* LEFT: Card 1 */}
           <div>
             {/* Leader 1: Sh Bajrang Bagra */}
-            <div className="hover-lift animate-reveal" style={{ 
+            <div className="hover-lift animate-reveal wewe-leader-card" style={{ 
               background: '#ffffff',
               borderRadius: '24px', 
               overflow: 'hidden',
@@ -66,7 +66,7 @@ export default function WhoWeAre() {
           {/* LEFT: Card 2 */}
           <div>
             {/* Leader 2: Sh D C Arya */}
-            <div className="hover-lift animate-reveal" style={{ 
+            <div className="hover-lift animate-reveal wewe-leader-card" style={{ 
               background: '#ffffff',
               borderRadius: '24px', 
               overflow: 'hidden',
@@ -88,11 +88,12 @@ export default function WhoWeAre() {
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexGrow: 1 }}>
                 <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>Sh D.C. Arya</div>
                 <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>Founder & Secretary</div>
+                <div style={{ fontSize: '0.95rem', color: 'var(--green-dark)', fontWeight: 600, marginBottom: '6px', fontStyle: 'italic', fontFamily: "'Playfair Display', serif" }}>Samaj ka Vikas - Hamara Pryas</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
                   "True progress is built on pure air, clean minds, and ethical values. We must address not only environmental pollution, but also moral and social challenges."
                 </p>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '8px', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
-                  Former Chairman, NIRC-ICMAI
+                  Former Chairman, NIRC-ICMAI • Former Director (Finance), IRFC
                 </div>
               </div>
             </div>
@@ -154,6 +155,20 @@ export default function WhoWeAre() {
       <style>{`
         @media (max-width: 900px) {
           .wewe-row { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+        @media (max-width: 640px) {
+          .wewe-leader-card {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .wewe-leader-card > div:first-child {
+            width: 100% !important;
+            max-width: 280px !important;
+            height: auto !important;
+            aspect-ratio: 4/5 !important;
+            flex-shrink: 0 !important;
+          }
         }
       `}</style>
     </section>

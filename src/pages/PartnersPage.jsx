@@ -187,7 +187,7 @@ export default function PartnersPage() {
         </div>
 
         {/* 2-Column Split: Intake Form & Simulated Partners */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '64px', alignItems: 'center' }} className="cinematic-reveal">
+        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '64px', alignItems: 'center' }} className="cinematic-reveal partners-form-split">
           
           {/* Professional Intake Form Card */}
           <div style={{ 
@@ -210,7 +210,7 @@ export default function PartnersPage() {
                   <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '32px' }}>Submit details regarding your organization’s social responsibility mandates, and our CSR director will respond within 24 hours.</p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} className="partners-form-grid">
                       <input
                         required
                         placeholder="Company / Institution Name"
@@ -408,7 +408,7 @@ export default function PartnersPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
@@ -446,6 +446,20 @@ export default function PartnersPage() {
           </div>
         </div>
       </section>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .partners-form-split {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .partners-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+        }
+      `}} />
     </div>
   );
 }

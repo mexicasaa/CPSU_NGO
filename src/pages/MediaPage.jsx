@@ -174,7 +174,7 @@ export default function MediaPage() {
             boxShadow: 'var(--shadow-premium)',
             overflow: 'hidden',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '56px',
             padding: '56px',
             alignItems: 'center',
@@ -233,7 +233,7 @@ export default function MediaPage() {
               <div>
                 <span style={{ 
                   fontSize: '0.8rem', 
-                  color: 'var(--green-icon)', 
+                  color: '#ffffff', 
                   fontWeight: 600, 
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
@@ -246,7 +246,7 @@ export default function MediaPage() {
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(2rem, 3vw, 2.6rem)',
                   fontWeight: 400, 
-                  color: '#11251a', 
+                  color: '#ffffff', 
                   lineHeight: 1.2,
                   margin: 0,
                   letterSpacing: '-0.01em'
@@ -259,13 +259,13 @@ export default function MediaPage() {
               <div style={{ 
                 height: '1px', 
                 width: '80px', 
-                background: 'var(--green-icon)',
+                background: '#ffffff',
                 opacity: 0.8 
               }} />
               
               <p style={{ 
                 fontSize: '1.08rem', 
-                color: 'rgba(17, 37, 26, 0.85)', 
+                color: 'rgba(255, 255, 255, 0.85)', 
                 lineHeight: 1.75,
                 fontWeight: 300,
                 margin: 0
@@ -275,7 +275,7 @@ export default function MediaPage() {
 
               <p style={{ 
                 fontSize: '0.94rem', 
-                color: 'rgba(17, 37, 26, 0.72)', 
+                color: 'rgba(255, 255, 255, 0.72)', 
                 lineHeight: 1.7,
                 fontWeight: 300,
                 margin: 0
@@ -303,7 +303,7 @@ export default function MediaPage() {
                       borderRadius: '50%',
                       background: 'var(--green-icon)'
                     }} />
-                    <span style={{ fontSize: '0.88rem', color: '#11251a', fontWeight: 500 }}>
+                    <span style={{ fontSize: '0.88rem', color: '#ffffff', fontWeight: 500 }}>
                       {point}
                     </span>
                   </div>
@@ -362,7 +362,7 @@ export default function MediaPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
@@ -371,7 +371,7 @@ export default function MediaPage() {
             <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Subscribe to our monthly journal to receive field-reports, transparency audits, and inspiring stories directly from the communities we serve.
             </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '480px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '480px', margin: '0 auto' }} className="journal-subscribe-row">
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
@@ -419,6 +419,15 @@ export default function MediaPage() {
           #youtube-interviews-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .journal-subscribe-row {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          .journal-subscribe-row input, .journal-subscribe-row button {
+            width: 100% !important;
           }
         }
       `}</style>

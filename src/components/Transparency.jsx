@@ -59,7 +59,7 @@ export default function Transparency() {
       <style>{`
         @media (max-width: 900px) {
            #transparency .section-container > div {
-               gridTemplateColumns: 1fr !important;
+               grid-template-columns: 1fr !important;
            }
         }
       `}</style>

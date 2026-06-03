@@ -200,9 +200,12 @@ export default function TermsPage() {
 const styleStyle = (
   <style dangerouslySetInnerHTML={{ __html: `
     @media (max-width: 900px) {
-      .terms-grid {
+      .terms-grid, .charter-inner {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
+      }
+      .charter-inner {
+        padding: 36px 20px !important;
       }
     }
   `}} />

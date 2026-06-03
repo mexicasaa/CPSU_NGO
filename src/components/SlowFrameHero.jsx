@@ -186,7 +186,7 @@ export default function SlowFrameHero() {
 
         .hero-btn-donate {
           background: var(--green-btn);
-          color: #11251a;
+          color: #ffffff;
           font-weight: 600;
         }
 

@@ -126,7 +126,7 @@ export default function DonationPage() {
         <div className="container">
           
           {/* 2-Column Core Layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '64px', alignItems: 'start' }} className="cinematic-reveal">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '64px', alignItems: 'start' }} className="cinematic-reveal donation-page-grid">
           
           {/* LEFT: Donation Panel Card */}
           <div style={{ 
@@ -187,7 +187,7 @@ export default function DonationPage() {
 
               {/* Tier Amount Grid */}
               <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '16px', letterSpacing: '0.01em' }}>SELECT AN AMOUNT (INR)</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }} className="donation-amounts-grid">
                 {[1000, 2500, 5000, 'custom'].map((amt) => (
                   <button
                     key={amt}
@@ -312,7 +312,7 @@ export default function DonationPage() {
 
               {/* Donor Credentials Form */}
               <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '16px', letterSpacing: '0.01em' }}>DONOR PARTICULARS (Tax Exemption Receipt)</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }} className="donation-particulars-grid">
                 <input
                   required
                   placeholder="Full Name"
@@ -416,7 +416,7 @@ export default function DonationPage() {
             </div>
 
             {/* Credential Indicators */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }} className="donation-badges-grid">
               {[
                 { title: '80G Registered', label: 'Eligible for Tax Cuts' },
                 { title: 'Verified Secure', label: 'SSL Crypt Encryption' },
@@ -613,6 +613,28 @@ export default function DonationPage() {
         )}
       </AnimatePresence>
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1024px) {
+          .donation-page-grid {
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .donation-amounts-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+          }
+          .donation-particulars-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .donation-badges-grid {
+            grid-template-columns: 1fr !important;
+            gap: 12px !important;
+          }
+        }
+      `}} />
     </div>
   );
 }

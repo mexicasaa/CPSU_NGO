@@ -268,7 +268,7 @@ export default function Header() {
             fontSize: '16px',
             fontWeight: 600,
             background: '#ffffff',
-            color: '#ffffff',
+            color: 'var(--green-dark)',
             border: '1px solid rgba(255,255,255,0.1)'
           }}>Donate</Link>
         </div>

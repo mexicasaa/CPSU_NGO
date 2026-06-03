@@ -17,7 +17,7 @@ export default function Gallery() {
         
         <span className="eyebrow">FIELD GALLERY</span>
         
-        <div style={{ marginBottom: '64px', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '80px', alignItems: 'end' }}>
+        <div className="gallery-header-row" style={{ marginBottom: '64px', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '80px', alignItems: 'end' }}>
           <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, color: '#11251a', lineHeight: 1.1, letterSpacing: '-0.025em', margin: 0 }}>
             Documentary moments - workshops, classrooms, communities.
           </h2>
@@ -161,6 +161,13 @@ export default function Gallery() {
             grid-column: auto !important;
             grid-row: auto !important;
             min-height: 220px !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .gallery-header-row {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
           }
         }
 

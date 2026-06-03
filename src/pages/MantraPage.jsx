@@ -31,7 +31,7 @@ export default function MantraPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#1a3a2a', 
+        background: '#F47C20', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
@@ -70,13 +70,13 @@ export default function MantraPage() {
           left: '10%', 
           width: '500px', 
           height: '500px', 
-          background: 'radial-gradient(circle, rgba(245, 196, 67, 0.1) 0%, transparent 70%)', 
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)', 
           filter: 'blur(60px)',
           pointerEvents: 'none' 
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
+          <span className="eyebrow" style={{ color: '#ffffff', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
             PHILOSOPHY & MOTTO
           </span>
           
@@ -94,7 +94,7 @@ export default function MantraPage() {
               marginBottom: '28px' 
             }}
           >
-            Our Guiding <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Mantras</span>
+            Our Guiding <span className="serif-italic" style={{ color: '#ffffff' }}>Mantras</span>
           </motion.h1>
           
           <motion.p 
@@ -104,7 +104,7 @@ export default function MantraPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(255, 255, 255, 0.9)', 
+              color: 'rgba(255, 255, 255, 0.95)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 
@@ -185,17 +185,17 @@ export default function MantraPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       padding: '36px 24px',
-                      background: 'rgba(245, 196, 67, 0.03)',
-                      border: '1px solid rgba(200, 168, 74, 0.25)',
+                      background: 'rgba(244, 124, 32, 0.03)',
+                      border: '1px solid rgba(244, 124, 32, 0.25)',
                       borderRadius: '24px',
                       textAlign: 'center',
                       position: 'relative'
                     }} className="mantra-sanskrit-plate">
                       {/* Traditional filigree corner dots */}
-                      <div style={{ position: 'absolute', top: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: 'var(--gold-accent)' }} />
-                      <div style={{ position: 'absolute', top: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: 'var(--gold-accent)' }} />
-                      <div style={{ position: 'absolute', bottom: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: 'var(--gold-accent)' }} />
-                      <div style={{ position: 'absolute', bottom: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: 'var(--gold-accent)' }} />
+                      <div style={{ position: 'absolute', top: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
+                      <div style={{ position: 'absolute', top: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
+                      <div style={{ position: 'absolute', bottom: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
+                      <div style={{ position: 'absolute', bottom: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
                       
                       <span style={{ 
                         fontFamily: "'Playfair Display', Georgia, serif", 
@@ -218,7 +218,7 @@ export default function MantraPage() {
                         <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--green-icon)', letterSpacing: '0.12em' }}>
                           MANTRA 0{idx + 1}
                         </span>
-                        <div style={{ width: '16px', height: '1.5px', background: 'rgba(200, 168, 74, 0.4)' }} />
+                        <div style={{ width: '16px', height: '1.5px', background: 'rgba(244, 124, 32, 0.4)' }} />
                         <span style={{ fontSize: '0.68rem', fontWeight: 600, color: 'var(--text-muted)', letterSpacing: '0.1em' }}>
                           {m.tag}
                         </span>
@@ -259,7 +259,7 @@ export default function MantraPage() {
       {/* Refined Philosophy Footnote banner */}
       <section style={{ 
         padding: '100px 0', 
-        background: '#1a3a2a', 
+        background: '#F47C20', 
         position: 'relative', 
         overflow: 'hidden',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)'
@@ -277,24 +277,24 @@ export default function MantraPage() {
         <div style={{ 
           position: 'absolute', 
           inset: 0, 
-          background: 'radial-gradient(circle at 50% 50%, rgba(245, 196, 67, 0.06) 0%, transparent 60%)', 
+          background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%)', 
           pointerEvents: 'none' 
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
           
           <div style={{
-            border: '1px solid rgba(17, 37, 26, 0.12)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
             padding: '60px 40px',
             borderRadius: '28px',
-            background: 'rgba(17, 37, 26, 0.02)',
+            background: 'rgba(255, 255, 255, 0.05)',
             backdropFilter: 'blur(10px)',
             textAlign: 'center'
           }}>
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', 
-              color: '#11251a', 
+              color: '#ffffff', 
               marginBottom: '20px',
               fontWeight: 400
             }}>

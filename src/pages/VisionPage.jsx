@@ -271,7 +271,7 @@ export default function VisionPage() {
               fontSize: 'clamp(1.5rem, 3vw, 2.3rem)', 
               fontStyle: 'italic', 
               lineHeight: 1.6, 
-              color: '#11251a', 
+              color: '#ffffff', 
               fontWeight: 400,
               marginBottom: '36px',
               textShadow: '0 2px 4px rgba(0,0,0,0.1)'

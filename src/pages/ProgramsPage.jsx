@@ -331,7 +331,7 @@ export default function ProgramsPage() {
                 className="btn-outline-dark hover-lift" 
                 style={{ 
                   borderColor: 'rgba(255,255,255,0.3)', 
-                  color: '#11251a',
+                  color: '#ffffff',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   padding: '16px 36px',
@@ -439,7 +439,7 @@ export default function ProgramsPage() {
               </div>
 
               {/* Modal Body */}
-              <div style={{ padding: '0 48px 64px' }}>
+              <div style={{ padding: '0 48px 64px' }} className="program-modal-body">
                 
                 {/* Category & Title */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', marginTop: '-20px', position: 'relative', zIndex: 2 }}>
@@ -469,7 +469,7 @@ export default function ProgramsPage() {
                 </h2>
 
                 {/* Grid Split Content */}
-                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '48px', alignItems: 'start' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '48px', alignItems: 'start' }} className="program-modal-grid">
                   
                   {/* Left Column Description */}
                   <div>
@@ -563,10 +563,10 @@ export default function ProgramsPage() {
           transform: scale(1.05);
         }
         @media (max-width: 768px) {
-          #selectedProgram-dialog {
-            padding: 0 20px 48px !important;
+          .program-modal-body {
+            padding: 0 20px 32px !important;
           }
-          #selectedProgram-dialog > div {
+          .program-modal-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
           }

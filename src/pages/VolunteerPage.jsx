@@ -57,31 +57,6 @@ const ROLES = [
         <line x1="3" y1="10" x2="21" y2="10" />
       </svg>
     )
-  },
-  {
-    id: 'media-communication',
-    title: 'Media & Communication Support',
-    tag: 'Creative Focus',
-    location: 'Remote/Hybrid',
-    desc: 'Create inspiring designs, write social messages, take event photos, and handle communication to spread awareness.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-        <circle cx="12" cy="13" r="4" />
-      </svg>
-    )
-  },
-  {
-    id: 'community-engagement',
-    title: 'Community Engagement Programs',
-    tag: 'Relations Focus',
-    location: 'On-Field',
-    desc: 'Develop deep grassroots connections with local families, promote moral cohesion, and support elderly welfare.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    )
   }
 ];
 
@@ -503,7 +478,7 @@ export default function VolunteerPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(1.4rem, 3.5vw, 2.2rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.5, 
               fontStyle: 'italic',
               marginBottom: '36px' 
@@ -703,8 +678,6 @@ export default function VolunteerPage() {
                       <option value="educational-initiatives">Educational Initiatives</option>
                       <option value="social-outreach">Social Outreach Activities</option>
                       <option value="event-coordination">Event Coordination</option>
-                      <option value="media-communication">Media & Communication Support</option>
-                      <option value="community-engagement">Community Engagement Programs</option>
                       <option value="other">Other specialized role (specify in message)</option>
                     </select>
                   </div>
