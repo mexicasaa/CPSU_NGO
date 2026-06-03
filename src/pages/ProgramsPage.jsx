@@ -73,7 +73,7 @@ export default function ProgramsPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -244,7 +244,7 @@ export default function ProgramsPage() {
                   width: '48px', 
                   height: '48px', 
                   borderRadius: '50%', 
-                  background: '#6cdf32', 
+                  background: '#1a3a2a', 
                   color: 'var(--green-icon)', 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -278,7 +278,7 @@ export default function ProgramsPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: '#6cdf32', 
+            background: '#1a3a2a', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',
@@ -444,7 +444,7 @@ export default function ProgramsPage() {
                 {/* Category & Title */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', marginTop: '-20px', position: 'relative', zIndex: 2 }}>
                   <span style={{
-                    background: '#6cdf32',
+                    background: '#1a3a2a',
                     color: '#11251a',
                     fontSize: '0.72rem',
                     fontWeight: 600,
@@ -521,7 +521,7 @@ export default function ProgramsPage() {
 
                     {/* Volunteer Roles */}
                     <div style={{ 
-                      background: '#6cdf32', 
+                      background: '#1a3a2a', 
                       color: '#11251a', 
                       padding: '24px', 
                       borderRadius: '20px', 

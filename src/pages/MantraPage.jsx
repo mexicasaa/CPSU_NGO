@@ -31,7 +31,7 @@ export default function MantraPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
@@ -259,7 +259,7 @@ export default function MantraPage() {
       {/* Refined Philosophy Footnote banner */}
       <section style={{ 
         padding: '100px 0', 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         position: 'relative', 
         overflow: 'hidden',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)'

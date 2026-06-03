@@ -54,7 +54,7 @@ export default function StatementsPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',

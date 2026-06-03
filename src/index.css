@@ -17,8 +17,8 @@
   /* Brand Colors */
   --green-dark: #1a3a2a;
   --green-mid: #26523c;
-  --green-btn: #6cdf32;
-  --green-hover: #5ec42c;
+  --green-btn: #1a3a2a;
+  --green-hover: #26523c;
   --green-icon: #2a5c3f;
   --gold-accent: #f5c443;
   --gold-hover: #fcd764;
@@ -28,7 +28,7 @@
   --bg-main: #ffffff; /* Swapped to White */
   --bg-section: #ffffff; /* White Color */
   --bg-card: #FFFFFF;
-  --bg-footer: #6cdf32; /* Swapped to Mint */
+  --bg-footer: #1a3a2a; /* Swapped to Mint */
   --bg-cream: #ffffff; /* Swapped to White */
   --bg-ivory: #ffffff; /* Swapped to White */
   --bg-warm: #ffffff;

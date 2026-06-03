@@ -74,7 +74,7 @@ export default function MissionPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
@@ -374,7 +374,7 @@ export default function MissionPage() {
                   boxShadow: '0 0 15px rgba(245, 196, 67, 0.3)',
                   zIndex: 2
                 }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#6cdf32' }} />
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#1a3a2a' }} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '40px', alignItems: 'start' }} className="timeline-grid">

@@ -174,7 +174,7 @@ export default function VolunteerPage() {
       
       {/* 1. Cinematic Hero Section with Impact Stats */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 110px', 
         position: 'relative',
         overflow: 'hidden'
@@ -467,7 +467,7 @@ export default function VolunteerPage() {
       </section>
 
       {/* 4. Cinematic Testimonial Spotlight Section */}
-      <section style={{ padding: '120px 0', background: '#6cdf32', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '120px 0', background: '#1a3a2a', position: 'relative', overflow: 'hidden' }}>
         {/* Abstract glowing elements */}
         <div style={{ 
           position: 'absolute', 

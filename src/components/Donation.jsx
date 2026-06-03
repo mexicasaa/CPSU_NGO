@@ -166,7 +166,7 @@ export default function Donation() {
 
             {/* Premium Gold-Bordered Dark Trust Card */}
             <div className="hover-lift" style={{
-              background: '#6cdf32', 
+              background: '#1a3a2a', 
               borderRadius: '28px', 
               padding: '44px',
               border: '1px solid rgba(200, 168, 74, 0.25)',

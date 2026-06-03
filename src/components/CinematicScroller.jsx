@@ -587,7 +587,7 @@ export default function CinematicScroller() {
         .cream-transition-overlay {
           position: absolute;
           inset: 0;
-          background: #6cdf32; /* Mint Green Swatch */
+          background: #1a3a2a; /* Mint Green Swatch */
           opacity: var(--cream-overlay-opacity);
           pointer-events: none;
           z-index: 19;

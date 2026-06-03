@@ -100,7 +100,7 @@ export default function CareersPage() {
       
       {/* 1. Cinematic Hero Section */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'

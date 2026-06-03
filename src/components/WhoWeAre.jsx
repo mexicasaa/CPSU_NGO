@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 export default function WhoWeAre() {
   return (
-    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 40px' }}>
+    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 0px' }}>
       <div className="container">
-        <div style={{ marginBottom: '60px', maxWidth: '800px' }}>
+        <div style={{ marginBottom: '40px', maxWidth: '800px' }}>
           <span className="eyebrow">WHO WE ARE</span>
           <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, color: '#11251a', lineHeight: 1.1, letterSpacing: '-0.025em', margin: 0 }}>
             A serious, human-centred foundation - not a slogan.
           </h2>
         </div>
         {/* Row 1: Sh Bajrang Bagra & Text Paragraphs */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start', marginBottom: '60px' }} className="wewe-row">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start', marginBottom: '60px' }} className="wewe-row">
           
           {/* LEFT: Card 1 */}
           <div>
@@ -29,7 +29,7 @@ export default function WhoWeAre() {
               padding: '24px',
               alignItems: 'flex-start'
             }}>
-              <div style={{ width: '180px', height: '220px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
+              <div style={{ width: '240px', height: '300px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
                   src="/images/Bajrang Lal Bagra.jpg" 
                   alt="Sh Bajrang Bagra"
@@ -61,7 +61,7 @@ export default function WhoWeAre() {
         </div>
 
         {/* Row 2: Sh D C Arya & Timeline */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start' }} className="wewe-row">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start' }} className="wewe-row">
           
           {/* LEFT: Card 2 */}
           <div>
@@ -78,7 +78,7 @@ export default function WhoWeAre() {
               padding: '24px',
               alignItems: 'flex-start'
             }}>
-              <div style={{ width: '180px', height: '220px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
+              <div style={{ width: '240px', height: '300px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
                   src="/dc_arya_suit_v3.jpg" 
                   alt="Sh D.C. Arya"

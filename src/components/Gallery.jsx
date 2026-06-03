@@ -86,7 +86,7 @@ export default function Gallery() {
           position: relative;
           border-radius: 24px;
           overflow: hidden;
-          background: #6cdf32;
+          background: #1a3a2a;
           box-shadow: 0 10px 30px rgba(26,58,42,0.02);
           border: 1px solid rgba(26,58,42,0.06);
           display: flex;

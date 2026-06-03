@@ -8,7 +8,7 @@ export default function AboutPage() {
       
       {/* Immersive Editorial Hero */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 gap: '24px'
               }}
             >
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: '#6cdf32' }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '6px', background: '#1a3a2a' }} />
               
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                 <div style={{ 

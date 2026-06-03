@@ -117,8 +117,8 @@ export default function Header() {
                       top: '100%',
                       left: '50%',
                       transform: 'translateX(-50%) translateY(10px)',
-                      background: '#6cdf32',
-                      border: '1px solid rgba(17, 37, 26, 0.12)',
+                      background: '#1a3a2a',
+                      border: '1px solid rgba(255,255,255,0.12)',
                       borderRadius: '16px',
                       padding: '12px 0',
                       minWidth: '185px',
@@ -133,19 +133,19 @@ export default function Header() {
                           display: 'block',
                           padding: '10px 24px',
                           fontSize: '13px',
-                          color: 'rgba(17, 37, 26, 0.8)',
+                          color: 'rgba(255,255,255,0.8)',
                           textDecoration: 'none',
                           transition: 'all 0.2s',
                           whiteSpace: 'nowrap',
                           textAlign: 'left'
                         }}
                           onMouseEnter={e => {
-                            e.target.style.color = '#11251a';
-                            e.target.style.background = 'rgba(17, 37, 26, 0.06)';
+                            e.target.style.color = '#ffffff';
+                            e.target.style.background = 'rgba(255, 255, 255, 0.1)';
                             e.target.style.paddingLeft = '28px';
                           }}
                           onMouseLeave={e => {
-                            e.target.style.color = 'rgba(17, 37, 26, 0.8)';
+                            e.target.style.color = 'rgba(255, 255, 255, 0.8)';
                             e.target.style.background = 'transparent';
                             e.target.style.paddingLeft = '24px';
                           }}
@@ -215,7 +215,7 @@ export default function Header() {
           right: 0,
           bottom: 0,
           zIndex: 999,
-          background: '#6cdf32',
+          background: '#1a3a2a',
           padding: '24px',
           overflowY: 'auto',
           transition: 'top 0.3s ease-in-out',
@@ -223,7 +223,7 @@ export default function Header() {
           {NAV_LINKS.map(link => {
             if (link.submenu) {
               return (
-                <div key={link.label} style={{ borderBottom: '1px solid rgba(17,37,26,0.08)', padding: '12px 0' }}>
+                <div key={link.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '12px 0' }}>
                   <span style={{
                     display: 'block',
                     padding: '8px 0',
@@ -238,7 +238,7 @@ export default function Header() {
                       <Link key={sub.label} to={sub.href} onClick={() => setMenuOpen(false)} style={{
                         display: 'block',
                         padding: '10px 0',
-                        color: '#11251a',
+                        color: '#ffffff',
                         textDecoration: 'none',
                         fontSize: '16px',
                         fontWeight: 400,
@@ -251,8 +251,8 @@ export default function Header() {
             return (
               <Link key={link.label} to={link.href} onClick={() => setMenuOpen(false)} style={{
                 display: 'block', padding: '16px 0',
-                borderBottom: '1px solid rgba(17,37,26,0.08)',
-                color: '#11251a',
+                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                color: '#ffffff',
                 textDecoration: 'none',
                 fontSize: '18px',
               }}>{link.label}</Link>
@@ -268,8 +268,8 @@ export default function Header() {
             fontSize: '16px',
             fontWeight: 600,
             background: '#ffffff',
-            color: '#11251a',
-            border: '1px solid rgba(17,37,26,0.1)'
+            color: '#ffffff',
+            border: '1px solid rgba(255,255,255,0.1)'
           }}>Donate</Link>
         </div>
       )}

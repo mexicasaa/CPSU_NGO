@@ -47,7 +47,7 @@ export default function VisionPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',
@@ -224,7 +224,7 @@ export default function VisionPage() {
       {/* Cinematic Frame Quote Section */}
       <section style={{ 
         padding: '140px 0', 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         position: 'relative', 
         overflow: 'hidden',
         borderTop: '1px solid rgba(255, 255, 255, 0.05)'

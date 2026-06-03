@@ -117,7 +117,7 @@ export default function LeadershipPage() {
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#6cdf32', 
+        background: '#1a3a2a', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -241,7 +241,7 @@ export default function LeadershipPage() {
       {/* Youth Icon Spotlight Section */}
       <section style={{ 
         padding: '120px 0', 
-        background: 'linear-gradient(135deg, #6cdf32 0%, #5ec42c 100%)', 
+        background: 'linear-gradient(135deg, #1a3a2a 0%, #26523c 100%)', 
         color: '#11251a',
         position: 'relative',
         overflow: 'hidden',
@@ -554,7 +554,7 @@ export default function LeadershipPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: '#6cdf32', 
+            background: '#1a3a2a', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',
