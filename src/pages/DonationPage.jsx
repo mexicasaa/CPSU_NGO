@@ -82,7 +82,7 @@ export default function DonationPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#e6f1e2', 
+        background: '#6cdf32', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'

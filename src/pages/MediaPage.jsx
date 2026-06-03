@@ -40,7 +40,7 @@ export default function MediaPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#e6f1e2', 
+        background: '#6cdf32', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -168,7 +168,7 @@ export default function MediaPage() {
           </span>
           
           <div style={{
-            background: 'linear-gradient(145deg, #e6f1e2 0%, #d8ebd4 100%)',
+            background: 'linear-gradient(145deg, #6cdf32 0%, #5ec42c 100%)',
             borderRadius: '36px',
             border: '1px solid rgba(200, 168, 74, 0.2)',
             boxShadow: 'var(--shadow-premium)',
@@ -201,7 +201,7 @@ export default function MediaPage() {
               overflow: 'hidden',
               boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
               border: '1px solid rgba(200, 168, 74, 0.25)',
-              backgroundColor: '#e6f1e2',
+              backgroundColor: '#6cdf32',
               position: 'relative'
             }}>
               <img 
@@ -345,7 +345,7 @@ export default function MediaPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: '#e6f1e2', 
+            background: '#6cdf32', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',

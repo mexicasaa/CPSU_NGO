@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
       
       {/* Immersive Hero Header */}
       <section style={{ 
-        background: '#e6f1e2', 
+        background: '#6cdf32', 
         padding: '180px 0 120px', 
         position: 'relative',
         overflow: 'hidden',

@@ -7,7 +7,7 @@ export default function ContactPage() {
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#e6f1e2', 
+        background: '#6cdf32', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -110,7 +110,7 @@ export default function ContactPage() {
             {/* Map Container */}
             <div className="card hover-lift" style={{ 
               height: '400px', 
-              background: '#e6f1e2', 
+              background: '#6cdf32', 
               borderRadius: '28px', 
               overflow: 'hidden', 
               position: 'relative',

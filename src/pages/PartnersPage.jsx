@@ -88,7 +88,7 @@ export default function PartnersPage() {
       
       {/* Premium Hero Header */}
       <section style={{ 
-        background: '#e6f1e2', 
+        background: '#6cdf32', 
         padding: '160px 0 100px', 
         position: 'relative',
         overflow: 'hidden'
@@ -163,7 +163,7 @@ export default function PartnersPage() {
         {/* Partnership Benefits Bento Grid */}
         <div style={{ marginBottom: '100px' }} className="cinematic-reveal">
           <div style={{ 
-            background: '#e6f1e2', 
+            background: '#6cdf32', 
             borderRadius: '28px', 
             padding: '60px 48px',
             color: '#11251a',
@@ -391,7 +391,7 @@ export default function PartnersPage() {
       <section style={{ padding: '100px 0', background: 'var(--bg-section)', borderTop: '1px solid rgba(26,58,42,0.06)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="hover-lift" style={{ 
-            background: '#e6f1e2', 
+            background: '#6cdf32', 
             borderRadius: '28px', 
             padding: '60px 48px', 
             maxWidth: '850px',

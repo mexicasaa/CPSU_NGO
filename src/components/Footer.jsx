@@ -5,7 +5,7 @@ export default function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer style={{ background: '#e6f1e2', color: '#11251a', padding: '100px 0 0', borderTop: '1px solid rgba(200, 168, 74, 0.2)' }}>
+    <footer style={{ background: '#6cdf32', color: '#11251a', padding: '100px 0 0', borderTop: '1px solid rgba(200, 168, 74, 0.2)' }}>
       <div className="container">
         {/* Big headline */}
         <h2 style={{ 
@@ -99,10 +99,9 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(17,37,26,0.5)', textTransform: 'uppercase', marginBottom: '20px' }}>EXPLORE</div>
             {[
-              { label: 'About', to: '/about' },
-              { label: 'Focus areas', to: '/focus-areas' },
+              { label: 'About Us', to: '/about' },
+              { label: 'Programs & Focus Areas', to: '/programs' },
               { label: 'Leadership', to: '/leadership' },
-              { label: 'Programs', to: '/programs' },
               { label: 'Media & stories', to: '/media' }
             ].map(l => (
               <Link key={l.label} to={l.to} style={{ display: 'block', fontSize: '0.92rem', color: 'rgba(17,37,26,0.75)', textDecoration: 'none', marginBottom: '12px', transition: 'all 0.2s ease', fontFamily: "'Inter', sans-serif" }}

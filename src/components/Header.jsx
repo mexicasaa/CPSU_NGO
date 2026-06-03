@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { label: 'Our Mission', href: '/mission' },
-  { label: 'Our Vision', href: '/vision' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Leadership', href: '/leadership' },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Focus Areas', href: '/focus-areas' },
-  { label: 'Partners & CSR', href: '/partners' },
-  { label: 'Volunteer', href: '/volunteer' },
-  { label: 'Media', href: '/media' },
   { 
     label: 'About', 
     href: '/about',
     submenu: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Our Mission', href: '/mission' },
+      { label: 'Our Vision', href: '/vision' },
       { label: 'Core Statements', href: '/statements' },
       { label: 'Our Mantra', href: '/mantra' },
     ]
   },
+  { label: 'Leadership', href: '/leadership' },
+  { label: 'Programs & Focus Areas', href: '/programs' },
+  { label: 'Partners & CSR', href: '/partners' },
+  { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Media', href: '/media' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -118,7 +117,7 @@ export default function Header() {
                       top: '100%',
                       left: '50%',
                       transform: 'translateX(-50%) translateY(10px)',
-                      background: '#e6f1e2',
+                      background: '#6cdf32',
                       border: '1px solid rgba(17, 37, 26, 0.12)',
                       borderRadius: '16px',
                       padding: '12px 0',
@@ -216,7 +215,7 @@ export default function Header() {
           right: 0,
           bottom: 0,
           zIndex: 999,
-          background: '#e6f1e2',
+          background: '#6cdf32',
           padding: '24px',
           overflowY: 'auto',
           transition: 'top 0.3s ease-in-out',

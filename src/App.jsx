@@ -9,7 +9,6 @@ import MissionPage from './pages/MissionPage';
 import VisionPage from './pages/VisionPage';
 import StatementsPage from './pages/StatementsPage';
 import MantraPage from './pages/MantraPage';
-import FocusAreasPage from './pages/FocusAreasPage';
 import ContactPage from './pages/ContactPage';
 import LeadershipPage from './pages/LeadershipPage';
 import ProgramsPage from './pages/ProgramsPage';
@@ -36,7 +35,6 @@ export default function App() {
             <Route path="/vision" element={<VisionPage />} />
             <Route path="/statements" element={<StatementsPage />} />
             <Route path="/mantra" element={<MantraPage />} />
-            <Route path="/focus-areas" element={<FocusAreasPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/leadership" element={<LeadershipPage />} />
             <Route path="/programs" element={<ProgramsPage />} />
