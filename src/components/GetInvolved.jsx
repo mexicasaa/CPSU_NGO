@@ -349,9 +349,9 @@ export default function GetInvolved() {
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
           }
-          #get-involved > .container > div:first-of-type {
-            grid-template-columns: 1fr;
-            gap: 20px;
+          .get-involved-header {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
           }
         }
 

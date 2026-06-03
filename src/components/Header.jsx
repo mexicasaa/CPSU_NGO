@@ -173,7 +173,7 @@ export default function Header() {
 
           {/* CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <Link to="/donate" style={{
+            <Link to="/donate" className="hdr-donate-btn" style={{
               padding: '10px 28px',
               fontSize: '14px',
               borderRadius: '999px',
@@ -296,6 +296,7 @@ export default function Header() {
         @media (max-width: 1024px) {
           .hdr-nav { display: none !important; }
           .hdr-hamburger { display: flex !important; }
+          .hdr-donate-btn { display: none !important; }
         }
       `}</style>
     </>
