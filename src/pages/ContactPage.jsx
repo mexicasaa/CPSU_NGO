@@ -125,8 +125,8 @@ export default function ContactPage() {
                 <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="1.8"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.25rem', color: '#11251a', marginBottom: '8px', fontWeight: 400 }}>Interactive Map</h3>
-                <p style={{ fontSize: '0.85rem', color: 'rgba(17, 37, 26, 0.65)', maxWidth: '280px', margin: 0, lineHeight: 1.5, fontWeight: 300 }}>
+                <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.25rem', color: '#ffffff', marginBottom: '8px', fontWeight: 400 }}>Interactive Map</h3>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '280px', margin: 0, lineHeight: 1.5, fontWeight: 300 }}>
                   Connecting families and projects. Our field centers are active across NCR and Haryana.
                 </p>
               </div>

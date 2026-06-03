@@ -245,7 +245,7 @@ export default function ProgramsPage() {
                   height: '48px', 
                   borderRadius: '50%', 
                   background: '#1a3a2a', 
-                  color: 'var(--green-icon)', 
+                  color: '#ffffff', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center', 
@@ -289,19 +289,19 @@ export default function ProgramsPage() {
             overflow: 'hidden'
           }}>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>SUPPORT OUR INITIATIVES</span>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>SUPPORT OUR INITIATIVES</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               marginBottom: '20px',
               lineHeight: 1.25
             }}>
               Ready to drive meaningful impact?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Join us in executing these programs on the ground by volunteering your time, or support the deployment of critical resources through a donation.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -445,7 +445,7 @@ export default function ProgramsPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', marginTop: '-20px', position: 'relative', zIndex: 2 }}>
                   <span style={{
                     background: '#1a3a2a',
-                    color: '#11251a',
+                    color: '#ffffff',
                     fontSize: '0.72rem',
                     fontWeight: 600,
                     letterSpacing: '0.08em',
@@ -522,12 +522,12 @@ export default function ProgramsPage() {
                     {/* Volunteer Roles */}
                     <div style={{ 
                       background: '#1a3a2a', 
-                      color: '#11251a', 
+                      color: '#ffffff', 
                       padding: '24px', 
                       borderRadius: '20px', 
                       boxShadow: 'var(--shadow-premium)' 
                     }}>
-                      <h4 style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', marginBottom: '14px' }}>VOLUNTEER POSITIONS</h4>
+                      <h4 style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--gold-accent)', textTransform: 'uppercase', marginBottom: '14px' }}>VOLUNTEER POSITIONS</h4>
                       <ul style={{ paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
                         {selectedProgram.volunteerRoles.map((role, idx) => (
                           <li key={idx} style={{ color: 'rgba(255,255,255,0.85)', fontFamily: "'Inter', sans-serif" }}>{role}</li>
@@ -539,7 +539,7 @@ export default function ProgramsPage() {
                         style={{
                           display: 'inline-flex',
                           marginTop: '20px',
-                          color: 'var(--green-icon)',
+                          color: 'var(--gold-accent)',
                           textDecoration: 'none',
                           fontSize: '0.82rem',
                           fontWeight: 600,

@@ -388,7 +388,7 @@ export default function LeadershipPage() {
 
 
               {/* Story Details */}
-              <div style={{ fontSize: '0.98rem', color: 'rgba(17, 37, 26, 0.85)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300 }}>
+              <div style={{ fontSize: '0.98rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300 }}>
                 <p style={{ margin: '0 0 20px 0' }}>
                   <strong>Tarun</strong> is a highly distinguished finance and governance professional, holding prestigious dual qualifications as a Chartered Accountant and a Cost & Management Accountant <strong>(CMA-AIR 44)</strong>. His notable professional career includes key experience as a consultant for the <strong>Ministry of Corporate Affairs (MCA)</strong> and the <strong>Serious Fraud Investigation Office (SFIO)</strong>, where he actively contributed to corporate governance, compliance management, and complex regulatory affairs.
                 </p>
@@ -565,7 +565,7 @@ export default function LeadershipPage() {
             overflow: 'hidden'
           }}>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>JOIN OUR MISSION</span>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>JOIN OUR MISSION</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
@@ -577,7 +577,7 @@ export default function LeadershipPage() {
             }}>
               Want to lead change with us?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               We are constantly seeking dedicated individuals, field managers, ecology experts, and corporate CSR sponsors to expand our grassroots impact across India.
             </p>
             <button 

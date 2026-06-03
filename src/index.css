@@ -111,7 +111,7 @@ section {
   align-items: center;
   gap: 10px;
   background: var(--green-btn);
-  color: var(--green-dark);
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
@@ -261,6 +261,7 @@ textarea::placeholder {
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
 }
 
 .shadow-premium {

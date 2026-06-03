@@ -246,7 +246,7 @@ export default function Donation() {
                     borderRadius: '999px',
                     border: 'none',
                     background: frequency === 'one-time' ? 'var(--green-btn)' : 'transparent',
-                    color: frequency === 'one-time' ? 'var(--green-dark)' : 'var(--text-body)',
+                    color: frequency === 'one-time' ? '#ffffff' : 'var(--text-body)',
                     fontWeight: 600,
                     fontFamily: "'Inter', sans-serif",
                     fontSize: '0.88rem',

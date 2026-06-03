@@ -300,7 +300,7 @@ export default function MantraPage() {
             }}>
               Building a United, Prosperous Nation
             </h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.8, fontWeight: 300, margin: 0 }}>
               These mantras are not mere slogans inscribed on our walls; they define our criteria of recruitment, program creation, budget allocation, and transparent service to the Indian society.
             </p>
           </div>

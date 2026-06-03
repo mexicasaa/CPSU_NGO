@@ -264,7 +264,7 @@ export default function VisionPage() {
             <div style={{ position: 'absolute', bottom: '-1px', right: '40px', width: '20px', height: '3px', background: 'var(--gold-accent)' }} />
             <div style={{ position: 'absolute', bottom: '40px', right: '-1px', width: '3px', height: '20px', background: 'var(--gold-accent)' }} />
 
-            <span className="eyebrow" style={{ color: 'var(--green-icon)', marginBottom: '28px' }}>THE INTEGRAL COMPASS</span>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)', marginBottom: '28px' }}>THE INTEGRAL COMPASS</span>
             
             <p style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
@@ -281,7 +281,7 @@ export default function VisionPage() {
             
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
               <div style={{ width: '30px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />
-              <span style={{ color: 'var(--green-icon)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              <span style={{ color: 'var(--gold-accent)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
                 FOUNDATION CHARTER
               </span>
               <div style={{ width: '30px', height: '1px', background: 'rgba(255,255,255,0.2)' }} />

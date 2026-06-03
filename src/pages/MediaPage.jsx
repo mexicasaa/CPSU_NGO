@@ -252,7 +252,7 @@ export default function MediaPage() {
                   letterSpacing: '-0.01em'
                 }}>
                   Pollution Control <br />
-                  <span className="serif-italic" style={{ color: '#a57c1d' }}>Measures</span> in Delhi State
+                  <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Measures</span> in Delhi State
                 </h2>
               </div>
               
@@ -356,7 +356,7 @@ export default function MediaPage() {
             overflow: 'hidden'
           }}>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'radial-gradient(circle at 10% 90%, rgba(17, 37, 26, 0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
-            <span className="eyebrow" style={{ color: 'var(--green-icon)' }}>STAY INFORMED</span>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)' }}>STAY INFORMED</span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
@@ -368,7 +368,7 @@ export default function MediaPage() {
             }}>
               Want to follow our journey?
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'rgba(17, 37, 26, 0.75)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Subscribe to our monthly journal to receive field-reports, transparency audits, and inspiring stories directly from the communities we serve.
             </p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', maxWidth: '480px', margin: '0 auto' }}>
