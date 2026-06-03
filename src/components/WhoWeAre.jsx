@@ -29,7 +29,7 @@ export default function WhoWeAre() {
               padding: '24px',
               alignItems: 'flex-start'
             }}>
-              <div style={{ width: '130px', height: '150px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
+              <div style={{ width: '180px', height: '220px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
                   src="/images/Bajrang Lal Bagra.jpg" 
                   alt="Sh Bajrang Bagra"
@@ -78,7 +78,7 @@ export default function WhoWeAre() {
               padding: '24px',
               alignItems: 'flex-start'
             }}>
-              <div style={{ width: '130px', height: '150px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
+              <div style={{ width: '180px', height: '220px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
                   src="/dc_arya_suit_v3.jpg" 
                   alt="Sh D.C. Arya"
