@@ -88,7 +88,7 @@ export default function ProgramsPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>OUR ACTIVE WORK & FOCUS AREAS</span>
+          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>OUR ACTIVE WORK & FOCUS AREAS</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -97,16 +97,16 @@ export default function ProgramsPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px',
               maxWidth: '900px'
             }}
           >
-            Programs & <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Focus Areas</span> for citizen-led transformation.
+            Programs & <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Focus Areas</span> for citizen-led transformation.
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             The CSR & Educational India Foundation addresses pressing societal, environmental, and cultural challenges through transparent, structured, and grassroots-driven actions.
           </p>
         </div>

@@ -103,7 +103,7 @@ export default function PartnersPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CORPORATE SOCIAL RESPONSIBILITY</span>
+          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CORPORATE SOCIAL RESPONSIBILITY</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,16 +112,16 @@ export default function PartnersPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px',
               maxWidth: '900px'
             }}
           >
-            Strategic partnerships for <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>multi-generational</span> impact.
+            Strategic partnerships for <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>multi-generational</span> impact.
           </motion.h1>
-          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.1rem', maxWidth: '800px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
             CSR & Educational India Foundation welcomes collaboration with organizations, institutions, businesses, and socially responsible partners who share our vision for public welfare and community development. Through CSR partnerships and collaborative initiatives, we aim to support impactful programs in environmental awareness, education, youth empowerment, and social responsibility. We believe collective efforts and responsible partnerships are essential for creating sustainable social impact.
           </p>
         </div>

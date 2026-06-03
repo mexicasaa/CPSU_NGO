@@ -182,7 +182,7 @@ export default function Donation() {
               }} />
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '22px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   <path d="m9 12 2 2 4-4"/>
                 </svg>
@@ -190,7 +190,7 @@ export default function Donation() {
                   fontSize: '0.72rem', 
                   fontWeight: 700, 
                   letterSpacing: '0.14em', 
-                  color: 'var(--green-dark)', 
+                  color: 'var(--gold-accent)', 
                   textTransform: 'uppercase', 
                   fontFamily: "'Inter', sans-serif" 
                 }}>TRUSTED & TRANSPARENT FOUNDATION</span>
@@ -200,7 +200,7 @@ export default function Donation() {
                 fontFamily: "'Playfair Display', serif", 
                 fontStyle: 'italic', 
                 fontSize: '1.25rem', 
-                color: 'var(--green-dark)', 
+                color: '#ffffff', 
                 lineHeight: 1.7, 
                 marginBottom: '26px',
                 borderLeft: '2px solid var(--gold-accent)',
@@ -209,7 +209,7 @@ export default function Donation() {
                 "₹1,500 funds one child's monthly learning kit. ₹12,000 sponsors a full year."
               </blockquote>
               
-              <p style={{ fontSize: '0.9rem', color: 'rgba(17,37,26,0.7)', lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
                 Bank transfer, corporate rails and custom UPI gates are supported. Our dedicated support team will share detailed receipts and structural field reports on your email.
               </p>
             </div>

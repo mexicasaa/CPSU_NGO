@@ -50,7 +50,7 @@ export default function Footer() {
                     style={{ 
                       background: '#ffffff', 
                       border: '1px solid rgba(255,255,255,0.15)', 
-                      color: '#ffffff', 
+                      color: '#11251a', 
                       borderRadius: '999px', 
                       padding: '11px 16px 11px 40px', 
                       fontSize: '0.85rem', 
@@ -72,12 +72,12 @@ export default function Footer() {
                 <button style={{ 
                   background: '#c8a84a', 
                   border: 'none', 
-                  color: '#ffffff', 
+                  color: '#11251a', 
                   borderRadius: '999px', 
                   padding: '11px 24px', 
                   cursor: 'pointer', 
                   fontSize: '0.85rem', 
-                  fontWeight: 600, 
+                  fontWeight: 700, 
                   fontFamily: "'Inter', sans-serif", 
                   whiteSpace: 'nowrap',
                   transition: 'all 0.3s ease'

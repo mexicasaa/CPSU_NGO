@@ -132,7 +132,7 @@ export default function LeadershipPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
+          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>CSR & EDUCATIONAL INDIA FOUNDATION</span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export default function LeadershipPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px' 
@@ -149,7 +149,7 @@ export default function LeadershipPage() {
           >
             Our Leadership Team
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             Meet the systematic, passionate minds organizing our ground efforts to build long-term dignified self-reliance.
           </p>
         </div>

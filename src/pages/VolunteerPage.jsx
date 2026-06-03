@@ -202,7 +202,7 @@ export default function VolunteerPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: '800px' }}>
-            <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '18px', fontWeight: 600 }}>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '18px', fontWeight: 600 }}>
               JOIN THE GROUND FORCE
             </span>
             <motion.h1 
@@ -213,19 +213,19 @@ export default function VolunteerPage() {
                 fontFamily: "'Playfair Display', Georgia, serif", 
                 fontSize: 'clamp(3rem, 6vw, 4.8rem)', 
                 fontWeight: 400, 
-                color: '#11251a', 
+                color: '#ffffff', 
                 lineHeight: 1.1, 
                 letterSpacing: '-0.02em', 
                 marginBottom: '28px' 
               }}
             >
-              Become a <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Volunteer.</span>
+              Become a <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Volunteer.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontSize: '1.2rem', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.8, fontWeight: 300, marginBottom: '0' }}
+              style={{ fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.8, fontWeight: 300, marginBottom: '0' }}
             >
               Join CSR & Educational India Foundation and contribute towards meaningful social and environmental change. Volunteers play an important role in supporting awareness campaigns, educational activities, seminars, social outreach programs, and community initiatives. Whether you are a student, working professional, educator, or social contributor, your participation can help create positive impact in society.
             </motion.p>
@@ -253,7 +253,7 @@ export default function VolunteerPage() {
               { val: '100%', lbl: 'Selfless Service Driven' }
             ].map((stat, idx) => (
               <div key={idx} style={{ display: 'flex', flexDirection: 'column' }}>
-                <span className="serif-italic" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--green-icon)', fontWeight: 400, lineHeight: 1.1 }}>
+                <span className="serif-italic" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--gold-accent)', fontWeight: 400, lineHeight: 1.1 }}>
                   {stat.val}
                 </span>
                 <span style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(245,243,238,0.65)', marginTop: '8px' }}>

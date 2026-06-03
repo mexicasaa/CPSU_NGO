@@ -87,7 +87,7 @@ export default function TermsPage() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
+          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '20px', letterSpacing: '0.2em' }}>
             BOARD OF DIRECTORS CHARTER
           </span>
           
@@ -99,13 +99,13 @@ export default function TermsPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(3rem, 6vw, 5.2rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.1, 
               letterSpacing: '-0.02em', 
               marginBottom: '28px' 
             }}
           >
-            Terms & <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>Conditions</span>
+            Terms & <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Conditions</span>
           </motion.h1>
           
           <motion.p 
@@ -115,7 +115,7 @@ export default function TermsPage() {
             style={{ 
               fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', 
               maxWidth: '700px', 
-              color: 'rgba(17, 37, 26, 0.8)', 
+              color: 'rgba(255, 255, 255, 0.9)', 
               lineHeight: 1.8, 
               fontWeight: 300, 
               margin: 0 

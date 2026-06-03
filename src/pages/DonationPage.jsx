@@ -97,7 +97,7 @@ export default function DonationPage() {
           pointerEvents: 'none' 
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="eyebrow" style={{ color: 'var(--green-icon)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>
+          <span className="eyebrow" style={{ color: 'var(--gold-accent)', margin: 0, display: 'inline-block', marginBottom: '16px' }}>
             TRANSPARENT DONATION PATHWAY
           </span>
           <motion.h1 
@@ -108,15 +108,15 @@ export default function DonationPage() {
               fontFamily: "'Playfair Display', Georgia, serif", 
               fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', 
               fontWeight: 400, 
-              color: '#11251a', 
+              color: '#ffffff', 
               lineHeight: 1.15, 
               letterSpacing: '-0.02em', 
               marginBottom: '24px' 
             }}
           >
-            Invest in <span className="serif-italic" style={{ color: 'var(--green-icon)' }}>self-reliance</span> and environmental health.
+            Invest in <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>self-reliance</span> and environmental health.
           </motion.h1>
-          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(17, 37, 26, 0.8)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
+          <p style={{ fontSize: '1.15rem', maxWidth: '650px', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>
             Your support directly fuels clean air drives in Delhi, educational classrooms, and vocational toolkits. 100% of public funds reach our program execution.
           </p>
         </div>
