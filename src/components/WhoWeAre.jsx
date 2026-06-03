@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function WhoWeAre() {
   return (
-    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0' }}>
+    <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 40px' }}>
       <div className="container">
         <div style={{ marginBottom: '60px', maxWidth: '800px' }}>
           <span className="eyebrow">WHO WE ARE</span>

@@ -40,7 +40,7 @@ const FOCUS_AREAS = [
 
 export default function FocusAreas() {
   return (
-    <section id="focus-areas" style={{ background: 'var(--bg-main)', padding: '140px 0' }}>
+    <section id="focus-areas" style={{ background: 'var(--bg-main)', padding: '40px 0 140px' }}>
       <div className="container">
         
         {/* Header */}
