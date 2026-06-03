@@ -11,11 +11,11 @@ export default function WhoWeAre() {
             A serious, human-centred foundation - not a slogan.
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start' }}>
-
-          {/* LEFT: Leadership Vision */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            
+        {/* Row 1: Sh Bajrang Bagra & Text Paragraphs */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start', marginBottom: '60px' }} className="wewe-row">
+          
+          {/* LEFT: Card 1 */}
+          <div>
             {/* Leader 1: Sh Bajrang Bagra */}
             <div className="hover-lift animate-reveal" style={{ 
               background: '#ffffff',
@@ -47,7 +47,24 @@ export default function WhoWeAre() {
                 </div>
               </div>
             </div>
+          </div>
 
+          {/* RIGHT: Text Paragraphs */}
+          <div style={{ paddingTop: '10px' }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '28px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500, marginTop: 0 }}>
+              Founded in 2025, CSR & Educational India Foundation works towards addressing critical social and environmental challenges through awareness, education, and community engagement.
+            </p>
+            <p style={{ fontSize: '0.95rem', color: '#4a5568', lineHeight: 1.8, marginBottom: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+              The foundation believes that true progress is achieved when society grows not only economically, but also morally, educationally, and environmentally. Through seminars, educational initiatives, social outreach programs, and collaborative efforts, the foundation aims to create meaningful and long-term impact for individuals, families, and future generations.
+            </p>
+          </div>
+        </div>
+
+        {/* Row 2: Sh D C Arya & Timeline */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '80px', alignItems: 'start' }} className="wewe-row">
+          
+          {/* LEFT: Card 2 */}
+          <div>
             {/* Leader 2: Sh D C Arya */}
             <div className="hover-lift animate-reveal" style={{ 
               background: '#ffffff',
@@ -79,20 +96,12 @@ export default function WhoWeAre() {
                 </div>
               </div>
             </div>
-
           </div>
 
-          {/* RIGHT */}
-          <div style={{ paddingTop: '24px' }}>
-            <p style={{ fontSize: '1.05rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '28px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500 }}>
-              Founded in 2025, CSR & Educational India Foundation works towards addressing critical social and environmental challenges through awareness, education, and community engagement.
-            </p>
-            <p style={{ fontSize: '0.95rem', color: '#4a5568', lineHeight: 1.8, marginBottom: '40px', fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
-              The foundation believes that true progress is achieved when society grows not only economically, but also morally, educationally, and environmentally. Through seminars, educational initiatives, social outreach programs, and collaborative efforts, the foundation aims to create meaningful and long-term impact for individuals, families, and future generations.
-            </p>
-
+          {/* RIGHT: Timeline */}
+          <div>
             {/* Timeline */}
-            <div style={{ borderTop: '1px solid rgba(26,58,42,0.08)', paddingTop: '36px', position: 'relative', marginBottom: '40px' }}>
+            <div style={{ borderTop: '1px solid rgba(26,58,42,0.08)', paddingTop: '28px', position: 'relative', marginBottom: '40px' }}>
               <div style={{ fontSize: '1.15rem', fontFamily: "'Playfair Display', serif", fontWeight: 500, color: '#11251a', marginBottom: '28px' }}>Our Journey</div>
               
               <div style={{ position: 'relative', paddingLeft: '24px' }}>
@@ -137,15 +146,14 @@ export default function WhoWeAre() {
                 ))}
               </div>
             </div>
-
-
           </div>
+
         </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
-          #about > div > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .wewe-row { grid-template-columns: 1fr !important; gap: 40px !important; }
         }
       `}</style>
     </section>
