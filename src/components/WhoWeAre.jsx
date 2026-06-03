@@ -27,7 +27,7 @@ export default function WhoWeAre() {
               flexDirection: 'row',
               gap: '24px',
               padding: '24px',
-              alignItems: 'center'
+              alignItems: 'flex-start'
             }}>
               <div style={{ width: '130px', height: '150px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
@@ -36,7 +36,7 @@ export default function WhoWeAre() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexGrow: 1 }}>
                 <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>Sh Bajrang Bagra</div>
                 <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>Chairman</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
@@ -59,7 +59,7 @@ export default function WhoWeAre() {
               flexDirection: 'row',
               gap: '24px',
               padding: '24px',
-              alignItems: 'center'
+              alignItems: 'flex-start'
             }}>
               <div style={{ width: '130px', height: '150px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
@@ -68,7 +68,7 @@ export default function WhoWeAre() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                 />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexGrow: 1 }}>
                 <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>Sh D.C. Arya</div>
                 <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>Founder & Secretary</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
@@ -83,7 +83,7 @@ export default function WhoWeAre() {
           </div>
 
           {/* RIGHT */}
-          <div>
+          <div style={{ paddingTop: '24px' }}>
             <p style={{ fontSize: '1.05rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '28px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500 }}>
               Founded in 2025, CSR & Educational India Foundation works towards addressing critical social and environmental challenges through awareness, education, and community engagement.
             </p>
