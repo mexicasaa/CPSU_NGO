@@ -11,6 +11,7 @@ import GetInvolved from '../components/GetInvolved';
 import Donation from '../components/Donation';
 import Blog from '../components/Blog';
 import Interviews from '../components/Interviews';
+import YouthSpotlight from '../components/YouthSpotlight';
 export default function Home() {
   return (
     <>
@@ -20,6 +21,7 @@ export default function Home() {
       <FocusAreas />
 
       <Interviews />
+      <YouthSpotlight />
       <Programmes />
       <Gallery />
 

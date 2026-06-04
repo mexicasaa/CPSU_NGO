@@ -88,8 +88,8 @@ export default function SlowFrameHero() {
 
             {/* Main Headline */}
             <h1 className="hero-title">
-              Building a Healthier, Educated,<br />
-              and <span className="serif-italic" style={{ color: 'var(--gold-accent)', textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>Value-Driven</span> India
+              Towards a Greener, Healthier, Better-Educated,<br />
+              and <span className="serif-italic" style={{ color: 'var(--gold-accent)', textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>Self-Sufficient</span> India
             </h1>
 
             {/* Supporting Paragraph */}

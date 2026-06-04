@@ -70,7 +70,7 @@ export default function LeadershipPage() {
       name: "Sh Sunil Singh",
       role: "Director",
       bio: "He has held major leadership positions within the Northern India Regional Council of the Institute of Cost Accountants of India (ICMAI), notably serving consecutive terms as the Chairman of NIRC-ICMAI (2017–18 and 2018–19).",
-      image: "/images/Sunil Singh.jpg",
+      image: "/images/Sunil Singh.png",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
     }
@@ -78,7 +78,7 @@ export default function LeadershipPage() {
   const advisors = [
     {
       name: "Sh Atul Gupta",
-      role: "Advisory Board",
+      role: "Member",
       bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
       image: "/images/Atul Gupta.jpg",
       linkedin: "https://linkedin.com",
@@ -86,7 +86,7 @@ export default function LeadershipPage() {
     },
     {
       name: "Vinod Chittora",
-      role: "Advisory Board",
+      role: "Member",
       bio: "A prominent member of the Institute of Cost Accountants of India (ICMAI) who has actively served the profession as the Past Chairman of the Jaipur Chapter of ICMAI.",
       image: "/images/Vinod Chittora.jpg",
       linkedin: "https://linkedin.com",
@@ -95,20 +95,20 @@ export default function LeadershipPage() {
     {
       name: "Neeraj Kumar Pandey",
       role: "Member",
-      bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
-      image: "https://ui-avatars.com/api/?name=Neeraj+Kumar+Pandey&background=1a3a2a&color=fff&size=256"
+      bio: "He serves as a Senior Journalist at Hamara Metro Newspaper and Editor-in-Chief of NP News Metro. In his advisory role, he contributes expertise in journalism, public engagement, and community-focused communication to help advance the NGO’s mission with clarity and credibility.",
+      image: "/images/neeraj_pandey.jpg"
     },
     {
-      name: "Cheatan Sharama",
+      name: "Chetan Sharma",
       role: "Member",
-      bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
-      image: "https://ui-avatars.com/api/?name=Cheatan+Sharama&background=1a3a2a&color=fff&size=256"
+      bio: "He serves as the Editor-in-Chief of Metro Mat News Magazine and brings valuable experience in media leadership and public communication. As an advisor to the NGO, he supports strategic outreach, awareness initiatives, and meaningful storytelling that strengthens the organization’s social impact.",
+      image: "/images/cheatan_sharama.jpg"
     },
     {
       name: "Parveen Sethi",
       role: "Member",
-      bio: "An esteemed advisory board member providing strategic guidance and expertise to further the foundation's impactful initiatives.",
-      image: "https://ui-avatars.com/api/?name=Parveen+Sethi&background=1a3a2a&color=fff&size=256"
+      bio: "She serves as a Financial Consultant and has prior experience in the banking sector. As part of the NGO’s advisory team, she provides guidance on financial planning, governance, and sustainable growth to support the organization’s long-term development.",
+      image: "/images/parveen_sethi.png"
     }
   ];
 
@@ -304,7 +304,7 @@ export default function LeadershipPage() {
                 borderRadius: '28px', 
                 overflow: 'hidden',
                 boxShadow: '0 25px 60px rgba(0,0,0,0.35)',
-                border: '1px solid rgba(200, 168, 74, 0.25)',
+                border: '1px solid rgba(200, 168, 74, 0.8)',
                 background: 'rgba(255,255,255,0.05)',
                 aspectRatio: '3/4'
               }}>
@@ -326,7 +326,7 @@ export default function LeadershipPage() {
                   left: '16px', 
                   right: '16px', 
                   bottom: '16px', 
-                  border: '1px solid rgba(200, 168, 74, 0.2)', 
+                  border: '1px solid rgba(200, 168, 74, 0.6)', 
                   borderRadius: '18px',
                   pointerEvents: 'none'
                 }} />
@@ -371,8 +371,8 @@ export default function LeadershipPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: 'rgba(17, 37, 26, 0.05)',
-                border: '1px solid rgba(17, 37, 26, 0.1)',
+                background: 'rgba(17, 37, 26, 0.3)',
+                border: '1px solid rgba(200, 168, 74, 0.4)',
                 padding: '8px 16px',
                 borderRadius: '12px',
                 fontSize: '0.82rem',
@@ -511,7 +511,7 @@ export default function LeadershipPage() {
                 <div style={{ fontSize: '0.75rem', color: 'var(--green-icon)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '16px' }}>
                   {advisor.role}
                 </div>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, margin: '0 0 24px 0', fontWeight: 300, flexGrow: 1 }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, margin: '0 0 24px 0', fontWeight: 300, flexGrow: 1, textAlign: 'justify' }}>
                   {advisor.bio}
                 </p>
                 
