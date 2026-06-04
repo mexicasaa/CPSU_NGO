@@ -186,26 +186,27 @@ export default function MantraPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       padding: '36px 24px',
-                      background: 'rgba(244, 124, 32, 0.12)',
-                      border: '1px solid rgba(244, 124, 32, 0.25)',
+                      background: 'linear-gradient(135deg, #F37021 0%, #C84B16 100%)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
                       borderRadius: '24px',
                       textAlign: 'center',
-                      position: 'relative'
+                      position: 'relative',
+                      boxShadow: '0 8px 20px rgba(200, 75, 22, 0.15)'
                     }} className="mantra-sanskrit-plate">
                       {/* Traditional filigree corner dots */}
-                      <div style={{ position: 'absolute', top: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
-                      <div style={{ position: 'absolute', top: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
-                      <div style={{ position: 'absolute', bottom: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
-                      <div style={{ position: 'absolute', bottom: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: '#F47C20' }} />
+                      <div style={{ position: 'absolute', top: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255, 255, 255, 0.8)' }} />
+                      <div style={{ position: 'absolute', top: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255, 255, 255, 0.8)' }} />
+                      <div style={{ position: 'absolute', bottom: 12, left: 12, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255, 255, 255, 0.8)' }} />
+                      <div style={{ position: 'absolute', bottom: 12, right: 12, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255, 255, 255, 0.8)' }} />
                       
                       <span style={{ 
                         fontFamily: "'Playfair Display', Georgia, serif", 
                         fontSize: 'clamp(1.6rem, 2.5vw, 2.1rem)', 
-                        color: 'var(--green-dark)', 
+                        color: '#ffffff', 
                         fontWeight: 600,
                         lineHeight: 1.3,
                         letterSpacing: '0.02em',
-                        textShadow: '0 1px 2px rgba(26,58,42,0.05)'
+                        textShadow: '0 2px 4px rgba(0,0,0,0.15)'
                       }}>
                         {m.slogan}
                       </span>

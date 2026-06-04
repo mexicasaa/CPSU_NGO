@@ -77,7 +77,7 @@ export default function LeadershipPage() {
   ];
   const advisors = [
     {
-      name: "Sh Atul Gupta",
+      name: "Atul Gupta",
       role: "Member",
       bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
       image: "/images/Atul Gupta.jpg",
@@ -309,7 +309,7 @@ export default function LeadershipPage() {
                 aspectRatio: '3/4'
               }}>
                 <img 
-                  src="/images/Tarun Bidani Goyal.jpeg" 
+                  src="/images/Tarun_Bidani_Goyal_v2.jpg" 
                   alt="Tarun Bidani Goyal" 
                   style={{ 
                     width: '100%', 

@@ -98,7 +98,7 @@ const FAQS = [
   },
   {
     question: 'Do volunteers receive a certificate or recognition?',
-    answer: 'Yes. Upon completing your designated cohort program or volunteering hours, you will receive an official Certificate of Volunteer Excellence signed by D.C. Arya, Chairperson of the CSR & Educational India Foundation. It represents professional-grade experience in community-led social action.'
+    answer: 'Yes. Upon completing your designated cohort program or volunteering hours, you will receive an official Certificate of Volunteer Excellence signed by Chairperson and Secretary of the CSR & Educational India Foundation. It represents professional-grade experience in community-led social action.'
   }
 ];
 
@@ -222,8 +222,8 @@ export default function VolunteerPage() {
             className="hero-stats"
           >
             {[
-              { val: '15,000+', lbl: 'Citizens Mobilized' },
-              { val: '18,500+', lbl: 'Saplings Planted' },
+              { val: '10+', lbl: 'Citizens Mobilized' },
+              { val: '12+', lbl: 'Saplings Planted' },
               { val: '4 Pillars', lbl: 'Active Field Programs' },
               { val: '100%', lbl: 'Selfless Service Driven' }
             ].map((stat, idx) => (
@@ -468,7 +468,7 @@ export default function VolunteerPage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', justifyContent: 'center' }}>VOLUNTEER VOICES</span>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)', justifyContent: 'center' }}>JOIN THE MOVEMENT</span>
             
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(200, 168, 74, 0.4)" strokeWidth="1.5" style={{ marginTop: '24px', marginBottom: '24px' }}>
               <path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h3c-.5 2.5-2 4.5-4 5.5v2.5zm11 0c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h3c-.5 2.5-2 4.5-4 5.5v2.5z"/>
@@ -483,17 +483,8 @@ export default function VolunteerPage() {
               fontStyle: 'italic',
               marginBottom: '36px' 
             }}>
-              "Volunteering with the CSR & Educational India Foundation grounded me. Working with the primary school children at the Sankalp Center reminded me of the profound joy in simple, focused service."
+              Join our community of changemakers to turn your vision into action. Experience the profound joy of service, build lasting connections, and create a tangible impact on the ground.
             </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <span style={{ fontSize: '1rem', fontWeight: 600, color: '#ffffff', letterSpacing: '0.02em' }}>
-                Anjali Dev
-              </span>
-              <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gold-accent)', marginTop: '6px' }}>
-                Sankalp Education Volunteer
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -525,7 +516,7 @@ export default function VolunteerPage() {
                   },
                   {
                     t: 'Official Excellence Recognition',
-                    d: 'Every completed program cohort is officially recognized with a Certificate of Volunteer Excellence signed by D.C. Arya, Chairperson, honoring your grassroots leadership.'
+                    d: 'Every completed program cohort is officially recognized with a Certificate of Volunteer Excellence signed by Chairperson and Secretary, honoring your grassroots leadership.'
                   }
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export default function YouthSpotlight() {
   return (
@@ -62,7 +63,7 @@ export default function YouthSpotlight() {
               margin: '0 auto'
             }}>
               <img 
-                src="/images/Tarun Bidani Goyal.jpeg" 
+                src="/images/Tarun_Bidani_Goyal_v2.jpg" 
                 alt="Tarun Bidani Goyal" 
                 style={{ 
                   width: '100%', 
@@ -113,44 +114,71 @@ export default function YouthSpotlight() {
             style={{ gridColumn: 'span 7' }}
             className="ys-content-col"
           >
-            <span className="eyebrow" style={{ color: 'var(--gold-accent)', marginBottom: '14px', display: 'inline-block' }}>
+            <span className="eyebrow" style={{ color: 'var(--gold-accent)', marginBottom: '8px', display: 'inline-block' }}>
               Youth Inspiration
             </span>
             
             <h2 style={{ 
               fontFamily: "'Playfair Display', Georgia, serif", 
-              fontSize: 'clamp(2rem, 3.8vw, 2.8rem)', 
+              fontSize: 'clamp(2.2rem, 4.2vw, 2.8rem)', 
               fontWeight: 400, 
               color: '#ffffff', 
-              lineHeight: 1.2,
-              marginBottom: '24px'
+              lineHeight: 1.15,
+              marginBottom: '14px'
             }}>
               Tarun Bidani Goyal
             </h2>
 
+            {/* Professional Chips */}
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '22px' }}>
+              <span style={{
+                background: 'rgba(223, 189, 83, 0.1)',
+                border: '1px solid rgba(223, 189, 83, 0.25)',
+                padding: '4px 12px',
+                borderRadius: '100px',
+                fontSize: '0.78rem',
+                fontWeight: 600,
+                color: 'var(--gold-accent)',
+                letterSpacing: '0.02em'
+              }}>
+                Finance & Governance Specialist
+              </span>
+              <span style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '4px 12px',
+                borderRadius: '100px',
+                fontSize: '0.78rem',
+                fontWeight: 500,
+                color: 'rgba(255, 255, 255, 0.8)'
+              }}>
+                CA • CMA
+              </span>
+            </div>
+
             {/* Testimonial Message Callout */}
             <div style={{ 
               position: 'relative', 
-              background: 'rgba(200, 168, 74, 0.03)', 
+              background: 'rgba(255, 255, 255, 0.02)', 
               borderLeft: '3px solid var(--gold-accent)', 
-              padding: '20px 24px',
-              borderRadius: '0 16px 16px 0',
-              marginBottom: '24px'
+              padding: '16px 20px',
+              borderRadius: '0 12px 12px 0',
+              marginBottom: '20px'
             }}>
               <span style={{ 
                 fontFamily: "'Playfair Display', Georgia, serif", 
-                fontSize: '4.5rem', 
-                color: 'rgba(200, 168, 74, 0.15)', 
+                fontSize: '4rem', 
+                color: 'rgba(223, 189, 83, 0.12)', 
                 position: 'absolute', 
                 top: '-15px', 
-                left: '8px', 
+                left: '6px', 
                 lineHeight: 0 
               }}>&ldquo;</span>
               
               <p className="serif-italic" style={{ 
-                fontSize: 'clamp(1.1rem, 2vw, 1.25rem)', 
-                lineHeight: 1.6, 
-                color: '#fcfbfa',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.18rem)', 
+                lineHeight: 1.5, 
+                color: 'rgba(255, 255, 255, 0.95)',
                 position: 'relative',
                 zIndex: 1,
                 fontWeight: 400,
@@ -162,53 +190,43 @@ export default function YouthSpotlight() {
             </div>
 
             <p style={{ 
-              fontSize: '0.98rem', 
-              color: 'rgba(255, 255, 255, 0.85)', 
-              lineHeight: 1.75, 
+              fontSize: '0.96rem', 
+              color: 'rgba(255, 255, 255, 0.75)', 
+              lineHeight: 1.65, 
               fontWeight: 300, 
               marginBottom: '28px' 
             }}>
-              Tarun actively promotes sustainable living, environmental conservation, and public awareness. He believes that protecting the environment is an urgent responsibility and a duty we all share to our Earth, communities, and future generations. Through his vision, he seeks to empower India's youth to become active leaders in nation-building and environmental stewardship.
+              Tarun actively empowers India's youth to lead sustainable living, environmental conservation, and active nation-building. Combining finance and governance expertise, he inspires the next generation to protect our planet and communities.
             </p>
 
             {/* Micro Details and Action Link */}
             <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
-              justifyContent: 'space-between', 
-              flexWrap: 'wrap', 
-              gap: '20px', 
+              justifyContent: 'flex-start', 
               borderTop: '1px solid rgba(255, 255, 255, 0.08)', 
               paddingTop: '24px' 
             }}>
-              <div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#ffffff' }}>Tarun Bidani Goyal</div>
-                <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.6)', fontWeight: 400 }}>Finance & Governance Specialist • CA, CMA</div>
-              </div>
-
               <Link 
                 to="/leadership" 
-                className="btn-green hover-lift" 
+                className="btn-gold-spotlight hover-lift" 
                 style={{ 
                   background: 'var(--gold-accent)', 
                   color: 'var(--green-dark)', 
                   fontSize: '0.88rem',
                   fontWeight: 600,
-                  padding: '12px 24px',
-                  boxShadow: '0 8px 20px rgba(200,168,74,0.15)',
+                  padding: '12px 28px',
+                  borderRadius: '100px',
+                  boxShadow: '0 8px 20px rgba(223, 189, 83, 0.15)',
                   border: 'none',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={e => {
-                  e.target.style.background = 'var(--gold-hover)';
-                  e.target.style.boxShadow = '0 10px 25px rgba(200,168,74,0.25)';
-                }}
-                onMouseLeave={e => {
-                  e.target.style.background = 'var(--gold-accent)';
-                  e.target.style.boxShadow = '0 8px 20px rgba(200,168,74,0.15)';
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px'
                 }}
               >
                 Read Leadership Profile
+                <ArrowRight size={16} className="btn-arrow" style={{ transition: 'transform 0.3s ease' }} />
               </Link>
             </div>
 
@@ -217,8 +235,23 @@ export default function YouthSpotlight() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        .ys-frame-wrapper {
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s;
+        }
+        .ys-frame-wrapper:hover {
+          transform: translateY(-8px) scale(1.02);
+          border-color: rgba(223, 189, 83, 0.5) !important;
+          box-shadow: 0 30px 60px rgba(223, 189, 83, 0.15), 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+        }
         .ys-frame-wrapper:hover .ys-img {
-          transform: scale(1.05);
+          transform: scale(1.04);
+        }
+        .btn-gold-spotlight:hover {
+          background: var(--gold-hover) !important;
+          box-shadow: 0 10px 25px rgba(223, 189, 83, 0.3) !important;
+        }
+        .btn-gold-spotlight:hover .btn-arrow {
+          transform: translateX(4px);
         }
         @media (max-width: 900px) {
           .ys-grid {
