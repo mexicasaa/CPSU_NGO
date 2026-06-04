@@ -18,6 +18,15 @@ const VIDEOS = [
     duration: '18 Mins',
     desc: 'Discussions centered around vocational values, supporting under-resourced schools, and nurturing responsible citizenship to establish highly cooperative local frameworks.',
     thumbnail: 'https://img.youtube.com/vi/tE2IGhGd52c/maxresdefault.jpg'
+  },
+  {
+    id: 'QVuNMpHtwvE',
+    title: 'CMA: Backbone of the Economy',
+    category: 'EXECUTIVE ADDRESS',
+    topic: 'ECONOMY & WELFARE',
+    duration: '12 Mins',
+    desc: 'Founder Director DC Arya explains how Cost and Management Accountants (CMA) play a vital role in optimizing resource efficiency, ensuring transparency, and driving national development.',
+    thumbnail: 'https://img.youtube.com/vi/QVuNMpHtwvE/maxresdefault.jpg'
   }
 ];
 
@@ -57,7 +66,7 @@ export default function Interviews() {
           <div className="cinema-theater-col">
             <div className="theater-screen-wrapper">
               <div className="theater-ambient-glow" style={{
-                background: `radial-gradient(circle, rgba(${activeIdx === 0 ? '45,110,71' : '200,168,74'}, 0.22) 0%, transparent 70%)`
+                background: `radial-gradient(circle, rgba(${activeIdx % 2 === 0 ? '45,110,71' : '200,168,74'}, 0.22) 0%, transparent 70%)`
               }} />
               <div className="theater-frame">
                 <iframe
@@ -77,7 +86,7 @@ export default function Interviews() {
             {/* Active Details Meta Block */}
             <div className="theater-details">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                <span className={`badge-pill ${activeIdx === 0 ? 'green' : 'gold'}`}>
+                <span className={`badge-pill ${activeIdx % 2 === 0 ? 'green' : 'gold'}`}>
                   {activeVideo.category}
                 </span>
                 <span style={{ fontSize: '0.72rem', letterSpacing: '0.08em', fontWeight: 600, color: 'var(--text-muted)' }}>

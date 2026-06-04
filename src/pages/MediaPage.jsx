@@ -88,7 +88,7 @@ export default function MediaPage() {
           <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>CHAIRPERSON’S INTERVIEWS & BROADCASTS</span>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
             gap: '40px',
           }} id="youtube-interviews-grid">
             
@@ -154,6 +154,39 @@ export default function MediaPage() {
                 </h3>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
                   Discussions focused on education, social values, youth development, self-reliance, and the importance of building a responsible and value-driven society.
+                </p>
+              </div>
+            </div>
+
+            {/* Interview 3 */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/QVuNMpHtwvE"
+                  title="Chairperson D.C. Arya Interview: CMA's Role in National Economy"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>EXECUTIVE ADDRESS</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  CMA: Backbone of the Economy
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Founder Director DC Arya explains how Cost and Management Accountants (CMA) play a vital role in optimizing resource efficiency, ensuring transparency, and driving national development.
                 </p>
               </div>
             </div>
@@ -312,24 +345,24 @@ export default function MediaPage() {
 
               {/* Quote from Meeting */}
               <div style={{
-                background: 'rgba(17, 37, 26, 0.04)',
-                borderLeft: '4px solid var(--green-icon)',
+                background: 'rgba(255, 255, 255, 0.04)',
+                borderLeft: '4px solid var(--gold-accent)',
                 padding: '20px 24px',
                 borderRadius: '0 20px 24px 0',
-                marginTop: '8px',
-                border: '1px solid rgba(17,37,26,0.02)',
+                marginTop: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
                 borderLeftWidth: '4px'
               }}>
                 <p style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontStyle: 'italic', 
-                  fontSize: '1rem', 
-                  color: '#a57c1d', 
+                  fontSize: '1.05rem', 
+                  color: 'var(--gold-accent)', 
                   margin: 0,
-                  lineHeight: 1.55,
+                  lineHeight: 1.6,
                   fontWeight: 300
                 }}>
-                  "Collaborative action between state representatives and community leadership is the cornerstone of sustainable environmental restoration."
+                  Collaborative action between state representatives and community leadership is the cornerstone of sustainable environmental restoration.
                 </p>
               </div>
 
@@ -413,7 +446,7 @@ export default function MediaPage() {
 
       <style>{`
         #youtube-interviews-grid {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         }
         @media (max-width: 900px) {
           #youtube-interviews-grid {

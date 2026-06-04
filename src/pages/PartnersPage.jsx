@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PARTNERSHIP_MODELS = [
@@ -417,7 +418,8 @@ export default function PartnersPage() {
             <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 36px', fontWeight: 300 }}>
               Speak directly with our Executive Director to structure a transparent, impactful, and ISO-compliant social program for your brand.
             </p>
-            <button 
+            <Link 
+              to="/contact"
               className="btn-green hover-lift" 
               style={{ 
                 background: 'var(--gold-accent)', 
@@ -426,7 +428,9 @@ export default function PartnersPage() {
                 fontWeight: 600,
                 padding: '16px 36px',
                 border: 'none',
-                boxShadow: '0 8px 25px rgba(200,168,74,0.2)'
+                boxShadow: '0 8px 25px rgba(200,168,74,0.2)',
+                textDecoration: 'none',
+                display: 'inline-flex'
               }}
               onMouseEnter={e => {
                 e.target.style.background = 'var(--gold-hover)';
@@ -436,13 +440,9 @@ export default function PartnersPage() {
                 e.target.style.background = 'var(--gold-accent)';
                 e.target.style.boxShadow = '0 8px 25px rgba(200,168,74,0.2)';
               }}
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                document.querySelector('input[placeholder="Company / Institution Name"]')?.focus();
-              }}
             >
               Start Strategic Intake
-            </button>
+            </Link>
           </div>
         </div>
       </section>

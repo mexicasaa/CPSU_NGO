@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import FocusAreas from '../components/FocusAreas';
 
@@ -305,7 +306,8 @@ export default function ProgramsPage() {
               Join us in executing these programs on the ground by volunteering your time, or support the deployment of critical resources through a donation.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <button 
+              <Link 
+                to="/volunteer"
                 className="btn-green hover-lift" 
                 style={{ 
                   background: 'var(--gold-accent)', 
@@ -314,7 +316,8 @@ export default function ProgramsPage() {
                   fontWeight: 600,
                   padding: '16px 36px',
                   border: 'none',
-                  boxShadow: '0 8px 25px rgba(200,168,74,0.2)'
+                  boxShadow: '0 8px 25px rgba(200,168,74,0.2)',
+                  textDecoration: 'none'
                 }}
                 onMouseEnter={e => {
                   e.target.style.background = 'var(--gold-hover)';
@@ -326,8 +329,9 @@ export default function ProgramsPage() {
                 }}
               >
                 Volunteer With Us
-              </button>
-              <button 
+              </Link>
+              <Link 
+                to="/donate"
                 className="btn-outline-dark hover-lift" 
                 style={{ 
                   borderColor: 'rgba(255,255,255,0.3)', 
@@ -335,6 +339,10 @@ export default function ProgramsPage() {
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   padding: '16px 36px',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
                 onMouseEnter={e => {
                   e.target.style.background = 'rgba(255,255,255,0.1)';
@@ -346,7 +354,7 @@ export default function ProgramsPage() {
                 }}
               >
                 Make a Donation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
