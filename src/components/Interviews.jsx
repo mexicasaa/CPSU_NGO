@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 const VIDEOS = [
   {
+    id: 'x7fPbVxuK3U',
+    title: 'Plastic Ban: Protection for a Pollution-Free India',
+    category: 'ENVIRONMENT DAY ADDRESS',
+    topic: 'PLASTIC BAN & CONSERVATION',
+    duration: '10 Mins',
+    desc: 'Founder Director D.C. Arya shares an inspiring message on World Environment Day, highlighting the plastic ban as a crucial welfare-oriented step and emphasizing the regular care and irrigation of planted trees.',
+    thumbnail: 'https://img.youtube.com/vi/x7fPbVxuK3U/maxresdefault.jpg'
+  },
+  {
     id: '5Eqo64tQ5B4',
     title: 'Environmental Awareness Discussion',
     category: 'MEDIA INTERVIEW',
@@ -33,6 +42,23 @@ const VIDEOS = [
 export default function Interviews() {
   const [activeIdx, setActiveIdx] = useState(0);
   const activeVideo = VIDEOS[activeIdx];
+  const [canScrollUp, setCanScrollUp] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(true);
+  const playlistRef = React.useRef(null);
+
+  const handleScroll = () => {
+    if (!playlistRef.current) return;
+    const { scrollTop, scrollHeight, clientHeight } = playlistRef.current;
+    
+    setCanScrollUp(scrollTop > 2);
+    setCanScrollDown(Math.ceil(scrollTop + clientHeight) < scrollHeight - 2);
+  };
+
+  React.useEffect(() => {
+    // Check initially after layout renders
+    const timer = setTimeout(handleScroll, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="interviews" style={{ background: '#fbfaf8', padding: '120px 0 100px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(26,58,42,0.04)' }}>
@@ -125,37 +151,114 @@ export default function Interviews() {
                 <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 600 }}>{VIDEOS.length} EPISODES</span>
               </div>
 
-              <div className="playlist-list">
-                {VIDEOS.map((v, idx) => {
-                  const isActive = activeIdx === idx;
-                  return (
-                    <div 
-                      key={v.id} 
-                      className={`playlist-item ${isActive ? 'active' : ''}`}
-                      onClick={() => setActiveIdx(idx)}
-                    >
-                      <div className="playlist-thumb-box">
-                        <img src={v.thumbnail} alt={v.title} className="playlist-thumb" />
-                        <div className="thumb-overlay">
-                          {isActive ? (
-                            <div className="audio-wave">
-                              <span style={{ animationDelay: '0.1s' }} />
-                              <span style={{ animationDelay: '0.3s' }} />
-                              <span style={{ animationDelay: '0.5s' }} />
-                            </div>
-                          ) : (
-                            <svg className="play-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                          )}
+              <div style={{ position: 'relative' }}>
+                <div 
+                  ref={playlistRef}
+                  onScroll={handleScroll}
+                  className="playlist-list"
+                >
+                  {VIDEOS.map((v, idx) => {
+                    const isActive = activeIdx === idx;
+                    return (
+                      <div 
+                        key={v.id} 
+                        className={`playlist-item ${isActive ? 'active' : ''}`}
+                        onClick={() => setActiveIdx(idx)}
+                      >
+                        <div className="playlist-thumb-box">
+                          <img src={v.thumbnail} alt={v.title} className="playlist-thumb" />
+                          <div className="thumb-overlay">
+                            {isActive ? (
+                              <div className="audio-wave">
+                                <span style={{ animationDelay: '0.1s' }} />
+                                <span style={{ animationDelay: '0.3s' }} />
+                                <span style={{ animationDelay: '0.5s' }} />
+                              </div>
+                            ) : (
+                              <svg className="play-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            )}
+                          </div>
+                        </div>
+                        <div className="playlist-meta-box">
+                          <span className="playlist-item-tag">{v.category}</span>
+                          <h4 className="playlist-item-title">{v.title}</h4>
+                          <span className="playlist-item-duration">{v.duration}</span>
                         </div>
                       </div>
-                      <div className="playlist-meta-box">
-                        <span className="playlist-item-tag">{v.category}</span>
-                        <h4 className="playlist-item-title">{v.title}</h4>
-                        <span className="playlist-item-duration">{v.duration}</span>
-                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Scroll Controls */}
+                {(canScrollUp || canScrollDown) && (
+                  <div 
+                    style={{
+                      position: 'absolute',
+                      bottom: '0',
+                      left: '0',
+                      right: '0',
+                      height: '70px',
+                      background: 'linear-gradient(to top, #ffffff 60%, transparent 100%)',
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      justifyContent: 'center',
+                      paddingBottom: '12px',
+                      gap: '12px',
+                      borderBottomLeftRadius: '24px',
+                      borderBottomRightRadius: '24px',
+                      zIndex: 10,
+                      pointerEvents: 'none'
+                    }}
+                  >
+                    <div
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        if(canScrollUp) playlistRef.current?.scrollBy({ top: -100, behavior: 'smooth' }); 
+                      }}
+                      style={{
+                        width: '32px', height: '32px',
+                        borderRadius: '50%',
+                        background: canScrollUp ? '#ffffff' : '#f5f5f5',
+                        border: canScrollUp ? '1px solid rgba(45, 110, 71, 0.2)' : '1px solid #e0e0e0',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: canScrollUp ? 'pointer' : 'default',
+                        pointerEvents: 'auto',
+                        transition: 'all 0.3s ease',
+                        boxShadow: canScrollUp ? '0 4px 10px rgba(0, 0, 0, 0.08)' : 'none',
+                        opacity: canScrollUp ? 1 : 0.6
+                      }}
+                      className={canScrollUp ? "scroll-btn-hover" : ""}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={canScrollUp ? "var(--green-icon)" : "#a0a0a0"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
                     </div>
-                  );
-                })}
+
+                    <div
+                      onClick={(e) => { 
+                        e.stopPropagation(); 
+                        if(canScrollDown) playlistRef.current?.scrollBy({ top: 100, behavior: 'smooth' }); 
+                      }}
+                      style={{
+                        width: '32px', height: '32px',
+                        borderRadius: '50%',
+                        background: canScrollDown ? '#ffffff' : '#f5f5f5',
+                        border: canScrollDown ? '1px solid rgba(45, 110, 71, 0.2)' : '1px solid #e0e0e0',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: canScrollDown ? 'pointer' : 'default',
+                        pointerEvents: 'auto',
+                        transition: 'all 0.3s ease',
+                        boxShadow: canScrollDown ? '0 4px 10px rgba(0, 0, 0, 0.08)' : 'none',
+                        opacity: canScrollDown ? 1 : 0.6
+                      }}
+                      className={canScrollDown ? "scroll-btn-hover" : ""}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={canScrollDown ? "var(--green-icon)" : "#a0a0a0"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -273,6 +376,17 @@ export default function Interviews() {
           display: flex;
           flex-direction: column;
           gap: 16px;
+          max-height: 295px;
+          overflow-y: auto;
+          padding-right: 0px;
+          /* Hide scrollbar for Firefox, IE and Edge */
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .playlist-list::-webkit-scrollbar {
+          display: none;
         }
 
         .playlist-item {
@@ -367,6 +481,19 @@ export default function Interviews() {
         @keyframes wavePulse {
           0% { height: 4px; }
           100% { height: 16px; }
+        }
+
+        @keyframes bounceArrow {
+          0% { transform: translateY(-3px); }
+          100% { transform: translateY(3px); }
+        }
+
+        .scroll-btn-hover:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 14px rgba(45, 110, 71, 0.15) !important;
+        }
+        .scroll-btn-hover:active {
+          transform: translateY(0);
         }
 
         /* PLAYLIST TEXT DETAILS */

@@ -28,8 +28,40 @@ const MEDIA_ITEMS = [
   },
 ];
 
+const PRESS_ITEMS = [
+  {
+    id: 1,
+    title: 'Pollution-Free World: Basis of Life & Development',
+    subtitle: 'द वुमन न्यूज • News Report',
+    image: '/images/newspaper_clip_1.png',
+    desc: 'Covering D.C. Arya\'s address on environmental restoration, AQI measures in cities, and the national "Ek Ped Maa Ke Naam" campaign.'
+  },
+  {
+    id: 2,
+    title: 'Nature Protection Poster: हम हैं प्रकृति से, प्रकृति से हम',
+    subtitle: 'Public Campaign Poster by Tarun Bidani',
+    image: '/images/nature_poster.jpg',
+    desc: 'A beautiful awareness poster conveying that humanity and nature are mutually dependent, featuring environmental preservation verses.'
+  },
+  {
+    id: 3,
+    title: 'Air Quality & Civic Responsibility Editorial',
+    subtitle: 'द वुमन न्यूज • Editorial',
+    image: '/images/newspaper_clip_2.png',
+    desc: 'A focused column detailing the direct impact of air pollution on human health, and recommendations like daily Yajna and planting indigenous trees.'
+  },
+  {
+    id: 4,
+    title: 'Plantation & Irrigation Care Column',
+    subtitle: 'द वुमन न्यूज • Press Column',
+    image: '/images/newspaper_clip_3.png',
+    desc: 'Focusing on the importance of not just planting, but regularly watering and caring for trees to ensure high survival rates.'
+  }
+];
+
 export default function MediaPage() {
   const [filter, setFilter] = useState('all');
+  const [selectedImg, setSelectedImg] = useState(null);
 
   const filteredItems = filter === 'all' 
     ? MEDIA_ITEMS 
@@ -92,6 +124,39 @@ export default function MediaPage() {
             gap: '40px',
           }} id="youtube-interviews-grid">
             
+            {/* Latest Interview: Plastic Ban & Environment Day Address */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/x7fPbVxuK3U"
+                  title="Plastic Ban: Protection for a Pollution-Free India"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>ENVIRONMENT DAY ADDRESS</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Plastic Ban: A Step Towards pollution-free India
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Founder Director D.C. Arya delivers an address on World Environment Day, discussing the critical need for a plastic ban and the regular maintenance and care of newly planted saplings to sustain eco-restoration.
+                </p>
+              </div>
+            </div>
+
             {/* Interview 1 */}
             <div style={{
               background: 'var(--bg-card)',
@@ -371,6 +436,105 @@ export default function MediaPage() {
           </div>
         </div>
 
+        {/* Press Coverage & Publications Section */}
+        <div style={{ marginTop: '100px' }} className="cinematic-reveal">
+          <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
+            PRESS COVERAGE & PUBLICATIONS
+          </span>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '32px',
+          }} id="press-coverage-grid">
+            {PRESS_ITEMS.map((item) => (
+              <div 
+                key={item.id}
+                style={{
+                  background: 'var(--bg-card)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(26,58,42,0.06)',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--shadow-premium)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  cursor: 'pointer'
+                }}
+                className="hover-lift press-card"
+                onClick={() => setSelectedImg(item)}
+              >
+                <div style={{ 
+                  width: '100%', 
+                  aspectRatio: '4/3', 
+                  overflow: 'hidden', 
+                  background: '#1a3a2a',
+                  position: 'relative'
+                }}>
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      display: 'block',
+                      transition: 'transform 0.5s ease'
+                    }}
+                    className="press-thumb-img"
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(17,37,26,0.3) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  {/* Click to expand overlay */}
+                  <div className="expand-overlay" style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'rgba(26, 58, 42, 0.4)',
+                    opacity: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'opacity 0.3s ease',
+                    backdropFilter: 'blur(3px)'
+                  }}>
+                    <span style={{
+                      color: '#ffffff',
+                      background: 'var(--gold-accent)',
+                      color: 'var(--green-dark)',
+                      padding: '10px 20px',
+                      borderRadius: '30px',
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                      boxShadow: '0 4px 15px rgba(200,168,74,0.3)'
+                    }}>
+                      VIEW FULL IMAGE
+                    </span>
+                  </div>
+                </div>
+                
+                <div style={{ padding: '24px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+                      {item.subtitle}
+                    </span>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         </div>
       </section>
 
@@ -463,7 +627,101 @@ export default function MediaPage() {
             width: 100% !important;
           }
         }
+        .press-card:hover .press-thumb-img {
+          transform: scale(1.05);
+        }
+        .press-card:hover .expand-overlay {
+          opacity: 1;
+        }
       `}</style>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(13, 26, 18, 0.95)',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '24px'
+            }}
+            onClick={() => setSelectedImg(null)}
+          >
+            {/* Close Button */}
+            <button
+              style={{
+                position: 'absolute',
+                top: '24px',
+                right: '24px',
+                background: 'rgba(255,255,255,0.1)',
+                border: 'none',
+                color: '#ffffff',
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.5rem',
+                transition: 'background 0.3s'
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImg(null);
+              }}
+            >
+              ✕
+            </button>
+
+            {/* Lightbox Image Container */}
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              style={{
+                position: 'relative',
+                maxWidth: '90%',
+                maxHeight: '85vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedImg.image}
+                alt={selectedImg.title}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '75vh',
+                  borderRadius: '16px',
+                  boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                  objectFit: 'contain'
+                }}
+              />
+              <div style={{ marginTop: '20px', textAlign: 'center', color: '#ffffff' }}>
+                <h4 style={{ margin: '0 0 6px 0', fontSize: '1.25rem', fontWeight: 500, fontFamily: "'Playfair Display', Georgia, serif" }}>
+                  {selectedImg.title}
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)' }}>
+                  {selectedImg.subtitle}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
