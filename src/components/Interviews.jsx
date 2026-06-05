@@ -42,16 +42,53 @@ const VIDEOS = [
 export default function Interviews() {
   const [activeIdx, setActiveIdx] = useState(0);
   const activeVideo = VIDEOS[activeIdx];
-  const [canScrollUp, setCanScrollUp] = useState(false);
-  const [canScrollDown, setCanScrollDown] = useState(true);
+  const [arrowDirection, setArrowDirection] = useState('down'); // 'down', 'up', or null
   const playlistRef = React.useRef(null);
+  const lastScrollTop = React.useRef(0);
 
   const handleScroll = () => {
     if (!playlistRef.current) return;
     const { scrollTop, scrollHeight, clientHeight } = playlistRef.current;
+    const hasScrollableContent = scrollHeight > clientHeight;
     
-    setCanScrollUp(scrollTop > 2);
-    setCanScrollDown(Math.ceil(scrollTop + clientHeight) < scrollHeight - 2);
+    if (!hasScrollableContent) {
+      setArrowDirection(null);
+      return;
+    }
+
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 15;
+    const isAtTop = scrollTop <= 5;
+    
+    if (isAtBottom) {
+      setArrowDirection('up');
+    } else if (isAtTop) {
+      setArrowDirection('down');
+    } else {
+      const delta = scrollTop - lastScrollTop.current;
+      if (delta > 2) {
+        setArrowDirection('down');
+      } else if (delta < -2) {
+        setArrowDirection('up');
+      }
+    }
+    lastScrollTop.current = scrollTop;
+  };
+
+  const handleScrollClick = (e) => {
+    e.stopPropagation();
+    if (!playlistRef.current) return;
+    
+    if (arrowDirection === 'down') {
+      playlistRef.current.scrollBy({
+        top: 90, // scroll down by one item
+        behavior: 'smooth'
+      });
+    } else if (arrowDirection === 'up') {
+      playlistRef.current.scrollBy({
+        top: -90, // scroll up by one item
+        behavior: 'smooth'
+      });
+    }
   };
 
   React.useEffect(() => {
@@ -189,71 +226,51 @@ export default function Interviews() {
                   })}
                 </div>
 
-                {/* Scroll Controls */}
-                {(canScrollUp || canScrollDown) && (
+                {/* Subtle indicating arrow */}
+                {arrowDirection && (
                   <div 
+                    onClick={handleScrollClick}
                     style={{
                       position: 'absolute',
                       bottom: '0',
                       left: '0',
                       right: '0',
-                      height: '70px',
-                      background: 'linear-gradient(to top, #ffffff 60%, transparent 100%)',
+                      height: '50px',
+                      background: 'linear-gradient(to top, #ffffff 40%, transparent 100%)',
                       display: 'flex',
-                      alignItems: 'flex-end',
+                      alignItems: 'center',
                       justifyContent: 'center',
-                      paddingBottom: '12px',
-                      gap: '12px',
+                      cursor: 'pointer',
                       borderBottomLeftRadius: '24px',
                       borderBottomRightRadius: '24px',
-                      zIndex: 10,
-                      pointerEvents: 'none'
+                      opacity: 0.95,
+                      transition: 'opacity 0.3s ease',
+                      zIndex: 10
                     }}
                   >
                     <div
-                      onClick={(e) => { 
-                        e.stopPropagation(); 
-                        if(canScrollUp) playlistRef.current?.scrollBy({ top: -100, behavior: 'smooth' }); 
-                      }}
                       style={{
-                        width: '32px', height: '32px',
-                        borderRadius: '50%',
-                        background: canScrollUp ? '#ffffff' : '#f5f5f5',
-                        border: canScrollUp ? '1px solid rgba(45, 110, 71, 0.2)' : '1px solid #e0e0e0',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        cursor: canScrollUp ? 'pointer' : 'default',
-                        pointerEvents: 'auto',
-                        transition: 'all 0.3s ease',
-                        boxShadow: canScrollUp ? '0 4px 10px rgba(0, 0, 0, 0.08)' : 'none',
-                        opacity: canScrollUp ? 1 : 0.6
+                        animation: 'bounceArrow 1.2s infinite alternate',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
                       }}
-                      className={canScrollUp ? "scroll-btn-hover" : ""}
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={canScrollUp ? "var(--green-icon)" : "#a0a0a0"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </div>
-
-                    <div
-                      onClick={(e) => { 
-                        e.stopPropagation(); 
-                        if(canScrollDown) playlistRef.current?.scrollBy({ top: 100, behavior: 'smooth' }); 
-                      }}
-                      style={{
-                        width: '32px', height: '32px',
-                        borderRadius: '50%',
-                        background: canScrollDown ? '#ffffff' : '#f5f5f5',
-                        border: canScrollDown ? '1px solid rgba(45, 110, 71, 0.2)' : '1px solid #e0e0e0',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        cursor: canScrollDown ? 'pointer' : 'default',
-                        pointerEvents: 'auto',
-                        transition: 'all 0.3s ease',
-                        boxShadow: canScrollDown ? '0 4px 10px rgba(0, 0, 0, 0.08)' : 'none',
-                        opacity: canScrollDown ? 1 : 0.6
-                      }}
-                      className={canScrollDown ? "scroll-btn-hover" : ""}
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={canScrollDown ? "var(--green-icon)" : "#a0a0a0"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg 
+                        width="18" 
+                        height="18" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="var(--green-icon)" 
+                        strokeWidth="3" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        style={{
+                          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
+                          transform: arrowDirection === 'up' ? 'rotate(180deg)' : 'none',
+                          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
+                      >
                         <polyline points="6 9 12 15 18 9"></polyline>
                       </svg>
                     </div>
