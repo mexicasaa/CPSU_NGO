@@ -106,34 +106,6 @@ export default function DisclaimerPage() {
           >
             Legal <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Disclaimer</span>
           </motion.h1>
-
-          {/* Editorial Metadata Block */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ 
-              display: 'flex', 
-              gap: '24px', 
-              flexWrap: 'wrap', 
-              alignItems: 'center',
-              borderTop: '1px solid rgba(255, 255, 255, 0.12)', 
-              paddingTop: '24px', 
-              marginTop: '24px' 
-            }}
-          >
-            <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', letterSpacing: '0.08em' }}>
-              DOCUMENT REF: <span style={{ color: '#ffffff', fontWeight: 600 }}>CEIF-LD-2026</span>
-            </div>
-            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.3)' }} />
-            <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', letterSpacing: '0.08em' }}>
-              LAST UPDATED: <span style={{ color: '#ffffff', fontWeight: 600 }}>JUNE 8, 2026</span>
-            </div>
-            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255, 255, 255, 0.3)' }} />
-            <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)', letterSpacing: '0.08em' }}>
-              READING TIME: <span style={{ color: 'var(--gold-accent)', fontWeight: 600 }}>5 MINS</span>
-            </div>
-          </motion.div>
         </div>
       </section>
 
