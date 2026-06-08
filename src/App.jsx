@@ -20,6 +20,9 @@ import CareersPage from './pages/CareersPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import DisclaimerPage from './pages/DisclaimerPage';
+import PollutionStoryPage from './pages/PollutionStoryPage';
+import SankalpStoryPage from './pages/SankalpStoryPage';
+import HunarStoryPage from './pages/HunarStoryPage';
 import './App.css';
 
 export default function App() {
@@ -46,6 +49,9 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-conditions" element={<TermsPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/blog/pollution-awareness" element={<PollutionStoryPage />} />
+            <Route path="/blog/sankalp-2025" element={<SankalpStoryPage />} />
+            <Route path="/blog/hunar-workshops" element={<HunarStoryPage />} />
           </Routes>
         </main>
         <Footer />

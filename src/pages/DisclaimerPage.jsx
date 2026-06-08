@@ -1,57 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
-const SECTIONS = [
-  { id: "information-accuracy", title: "1. Representation & Accuracy Limits" },
-  { id: "professional-advice", title: "2. No Professional Advisory" },
-  { id: "tax-exemptions", title: "3. Tax Exemption & 80G Eligibility" },
-  { id: "field-execution", title: "4. Field Program & Operation Limits" },
-  { id: "external-resources", title: "5. External Links & Resource Limits" },
-  { id: "liability-disclaimer", title: "6. Limitation of Liability" },
-  { id: "compliance-seal", title: "7. Audit, Attestation & Governance" }
-];
-
 export default function DisclaimerPage() {
-  const [activeId, setActiveId] = useState("information-accuracy");
-
-  useEffect(() => {
-    // Scroll tracker for active section in Table of Contents
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-20% 0px -55% 0px', threshold: 0.1 }
-    );
-
-    SECTIONS.forEach((sec) => {
-      const el = document.getElementById(sec.id);
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const offset = 100; // Offset for sticky navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = el.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh', position: 'relative' }}>
@@ -113,113 +63,12 @@ export default function DisclaimerPage() {
       <section style={{ padding: '80px 0', background: 'var(--bg-main)' }}>
         <div className="container article-layout">
           
-          {/* Table of Contents - Desktop Sidebar */}
-          <aside className="article-sidebar" style={{
-            position: 'sticky',
-            top: '110px',
-            alignSelf: 'start',
-            maxHeight: 'calc(100vh - 150px)',
-            overflowY: 'auto',
-            paddingRight: '28px',
-            borderRight: '1px solid rgba(26, 58, 42, 0.08)'
-          }}>
-            <h4 style={{
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              color: 'var(--green-dark)',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              marginBottom: '20px',
-              fontFamily: "'Inter', sans-serif"
-            }}>
-              Table of Contents
-            </h4>
-            
-            <nav style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {SECTIONS.map((sec) => {
-                const isActive = activeId === sec.id;
-                return (
-                  <button
-                    key={sec.id}
-                    onClick={() => scrollToSection(sec.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      textAlign: 'left',
-                      padding: '4px 0 4px 12px',
-                      fontSize: '0.88rem',
-                      fontWeight: isActive ? 600 : 400,
-                      color: isActive ? 'var(--green-icon)' : 'var(--text-muted)',
-                      borderLeft: `2px solid ${isActive ? 'var(--gold-accent)' : 'transparent'}`,
-                      cursor: 'pointer',
-                      transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                      fontFamily: "'Inter', sans-serif"
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isActive) {
-                        e.target.style.color = 'var(--green-dark)';
-                        e.target.style.paddingLeft = '16px';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isActive) {
-                        e.target.style.color = 'var(--text-muted)';
-                        e.target.style.paddingLeft = '12px';
-                      }
-                    }}
-                  >
-                    {sec.title}
-                  </button>
-                );
-              })}
-            </nav>
-          </aside>
+
 
           {/* Long-form Article Body */}
           <article className="article-body" style={{ maxWidth: '720px', margin: '0 auto' }}>
             
-            {/* Inline TOC for Mobile Screens */}
-            <div className="mobile-toc-block" style={{
-              background: 'rgba(26, 58, 42, 0.03)',
-              border: '1px solid rgba(26, 58, 42, 0.06)',
-              borderRadius: '20px',
-              padding: '28px',
-              marginBottom: '48px',
-              display: 'none'
-            }}>
-              <h4 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '1.2rem',
-                color: 'var(--green-dark)',
-                marginBottom: '16px',
-                fontWeight: 500
-              }}>
-                On this page
-              </h4>
-              <ul style={{ listStyle: 'none', paddingLeft: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {SECTIONS.map((sec) => (
-                  <li key={sec.id}>
-                    <button
-                      onClick={() => scrollToSection(sec.id)}
-                      style={{
-                        background: 'none',
-                        border: 'none',
-                        textAlign: 'left',
-                        padding: 0,
-                        fontSize: '0.92rem',
-                        color: 'var(--green-icon)',
-                        cursor: 'pointer',
-                        textDecoration: 'underline',
-                        textUnderlineOffset: '4px',
-                        fontFamily: "'Inter', sans-serif"
-                      }}
-                    >
-                      {sec.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
 
             {/* Content Sections */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
@@ -380,10 +229,7 @@ export default function DisclaimerPage() {
       {/* Styled JSX for Premium Article Layout */}
       <style dangerouslySetInnerHTML={{ __html: `
         .article-layout {
-          display: grid;
-          grid-template-columns: 280px 1fr;
-          gap: 60px;
-          align-items: start;
+          display: block;
         }
 
         .article-h2 {

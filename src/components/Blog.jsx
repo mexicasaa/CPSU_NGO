@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BLOGS = [
   {
@@ -7,6 +8,7 @@ const BLOGS = [
     title: 'Why awareness is the first step against pollution',
     desc: 'Behavioural change begins with informed communities. Here\'s our comprehensive grassroots educational blueprint.',
     bg: '/blog_pollution.png',
+    path: '/blog/pollution-awareness'
   },
   {
     tag: 'EDUCATION',
@@ -14,6 +16,7 @@ const BLOGS = [
     title: 'From classroom to livelihood: Sankalp 2025 in numbers',
     desc: 'How 3,000+ students moved from learning foundation skills to gaining meaningful livelihood opportunities.',
     bg: '/blog_education.png',
+    path: '/blog/sankalp-2025'
   },
   {
     tag: 'SKILLS',
@@ -21,6 +24,7 @@ const BLOGS = [
     title: 'Hunar Workshops: stories of dignity through skill',
     desc: 'Three women, three trades, and one community transformed - how direct skill-empowerment builds long-term self-reliance.',
     bg: '/blog_skills.png',
+    path: '/blog/hunar-workshops'
   },
 ];
 
@@ -50,7 +54,7 @@ export default function Blog() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', position: 'relative', zIndex: 1 }}>
           {BLOGS.map((b, i) => (
-            <div key={i} className="card hover-lift blog-card" style={{ padding: 0, overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(26, 58, 42, 0.08)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <Link to={b.path} key={i} className="card hover-lift blog-card" style={{ textDecoration: 'none', color: 'inherit', padding: 0, overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(26, 58, 42, 0.08)', display: 'flex', flexDirection: 'column', height: '100%' }}>
               {/* Image area */}
               <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
                 <img 
@@ -108,7 +112,7 @@ export default function Blog() {
                   <span className="blog-arrow" style={{ fontSize: '0.9rem', color: 'var(--gold-accent)', transition: 'transform 0.2s ease', display: 'inline-block' }}>→</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

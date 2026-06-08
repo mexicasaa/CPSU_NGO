@@ -30,6 +30,13 @@ const MEDIA_ITEMS = [
 
 const PRESS_ITEMS = [
   {
+    id: 5,
+    title: 'प्रदूषण मुक्त संसार ही स्वस्थ जीवन और विकास का आधार : डी.सी. आर्य',
+    subtitle: 'स्मार्ट विजन समाचार • News Report',
+    image: '/images/newspaper_clip_4.png',
+    desc: 'D.C. Arya addresses the rising pollution challenges, emphasizing that environmental protection and pure air are essential for a healthy life and development.'
+  },
+  {
     id: 1,
     title: 'Pollution-Free World: Basis of Life & Development',
     subtitle: 'द वुमन न्यूज • News Report',
