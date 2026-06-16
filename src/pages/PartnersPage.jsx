@@ -1,73 +1,50 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { db } from '../utils/db';
 
-const PARTNERSHIP_MODELS = [
-  {
-    title: 'CSR Program Sponsorship',
-    desc: 'Deploy corporate capital directly into structured, Section-135-compliant programs. Sponsor complete water filter clusters, school upgrades, or Delhi-NCR clean-air monitoring campaigns.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    )
-  },
-  {
-    title: 'Employee Volunteering & Service',
-    desc: 'Align your workforce with meaningful grassroots action. Engage employee cohorts in plantation festivals, plastic clean-up drives, or teaching guest-lectures at our digital literacy labs.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-    )
-  },
-  {
-    title: 'Technology & Material Support',
-    desc: 'Contribute necessary industrial and technological assets. Sponsor computers, sewing machines, high-capacity water filters, air sensors, or mature sapling protective guards.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-        <line x1="8" y1="21" x2="16" y2="21"/>
-        <line x1="12" y1="17" x2="12" y2="21"/>
-      </svg>
-    )
-  },
-  {
-    title: 'Long-Term Co-Developed Initiatives',
-    desc: 'Co-design custom socio-ecological initiatives tailored to your organization’s mandate. We build custom, long-term roadmaps with continuous reporting and deep community ownership.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
-        <line x1="16" y1="8" x2="2" y2="22"/>
-        <line x1="17.5" y1="15" x2="9" y2="15"/>
-      </svg>
-    )
+const getModelIcon = (iconName) => {
+  switch (iconName) {
+    case 'shield':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      );
+    case 'users':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      );
+    case 'monitor':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+      );
+    case 'edit':
+    default:
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+          <line x1="16" y1="8" x2="2" y2="22"/>
+          <line x1="17.5" y1="15" x2="9" y2="15"/>
+        </svg>
+      );
   }
-];
-
-const BENEFIT_ITEMS = [
-  {
-    title: '80G Tax Benefits',
-    desc: 'All corporate donations are issued quick, formal tax certificates under Section 80G, maximizing tax deductions.'
-  },
-  {
-    title: 'Comprehensive Audits',
-    desc: 'Receive photographic field reports, receipt balance sheets, and impact scorecards ready for corporate audits.'
-  },
-  {
-    title: 'Section 135 Compliance',
-    desc: 'Our administrative transparency guarantees zero legal friction for statutory corporate social expenditures.'
-  },
-  {
-    title: 'Public Credibility',
-    desc: 'Prominent, tasteful co-branding placement on community water filtration setups, air sensors, and public materials.'
-  }
-];
+};
 
 export default function PartnersPage() {
+  const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+
+  const { models = [], benefits = [] } = db.getPartners(isPreview);
   const [formData, setFormData] = useState({
     companyName: '',
     contactName: '',
@@ -136,7 +113,7 @@ export default function PartnersPage() {
           <div style={{ marginBottom: '100px' }} className="cinematic-reveal">
           <h2 style={{ fontSize: '1.75rem', fontWeight: 500, color: 'var(--green-dark)', marginBottom: '36px' }}>CSR Collaboration Models</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px' }}>
-            {PARTNERSHIP_MODELS.map((model, idx) => (
+            {models.map((model, idx) => (
               <div key={idx} className="card hover-lift" style={{ 
                 background: 'var(--bg-card)', 
                 border: '1px solid rgba(26,58,42,0.06)', 
@@ -152,7 +129,7 @@ export default function PartnersPage() {
                   background: 'rgba(200, 168, 74, 0.08)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
-                  {model.icon}
+                  {getModelIcon(model.icon)}
                 </div>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--green-dark)' }}>{model.title}</h3>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6 }}>{model.desc}</p>
@@ -176,7 +153,7 @@ export default function PartnersPage() {
             </div>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px' }}>
-              {BENEFIT_ITEMS.map((item, idx) => (
+              {benefits.map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--gold-accent)', letterSpacing: '0.05em' }}>0{idx + 1} // BENEFITS</div>
                   <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#ffffff' }}>{item.title}</h4>

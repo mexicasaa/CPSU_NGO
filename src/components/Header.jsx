@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { db } from '../utils/db';
 
 const NAV_LINKS = [
   { 
@@ -25,6 +26,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+  const settings = db.getSettings(isPreview);
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function Header() {
               boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
               transition: 'all 0.3s ease'
             }}>
-              <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={settings.logo || "/logo.jpg"} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div>
               <div style={{ fontSize: '15px', fontWeight: 600, color: textColor, lineHeight: 1.2 }}>CSR & Educational</div>

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { db } from '../utils/db';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+  const settings = db.getSettings(isPreview);
   
   // Apply orange styling ONLY on the Mantra page
   const isMantraPage = location.pathname === '/mantra';
@@ -65,7 +68,7 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <Link to="/" style={{ width: 44, height: 44, borderRadius: '50%', background: t.iconBg, border: `1.5px solid ${t.iconBorder}`, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.3s ease', overflow: 'hidden' }}>
-                <img src="/logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={settings.logo || "/logo.jpg"} alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </Link>
               <div>
                 <div style={{ fontSize: '0.95rem', fontWeight: 500, color: t.textMain, letterSpacing: '0.01em' }}>CSR & Educational</div>
@@ -179,21 +182,21 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: t.textLabel, textTransform: 'uppercase', marginBottom: '20px' }}>REACH Us</div>
             {[
-              'aumdcarya@gmail.com',
-              '+91 98106 00994',
-              'B2A-102 Golflinks Residency\nSector 18 B, Dwarka New Delhi-110078',
+              settings.email || 'aumdcarya@gmail.com',
+              settings.phone || '+91 98106 00994',
+              settings.address || 'B2A-102 Golflinks Residency\nSector 18 B, Dwarka New Delhi-110078',
             ].map((l, i) => (
               <div key={i} style={{ fontSize: '0.88rem', color: t.textMuted, marginBottom: '14px', lineHeight: 1.5, whiteSpace: 'pre-line', fontFamily: "'Inter', sans-serif" }}>{l}</div>
             ))}
             {/* Social icons */}
             <div style={{ display: 'flex', gap: '10px', marginTop: '24px' }}>
               {[
-                <path key="ig" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>,
-                <path key="fb" d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>,
-                <path key="li" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>,
-                <polygon key="yt" points="23 7 16 12 23 17 23 7"/>,
-              ].map((icon, i) => (
-                <a key={i} href="#" style={{ width: 38, height: 38, borderRadius: '50%', background: t.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', border: `1px solid ${t.iconBorder}` }}
+                { url: settings.socials?.instagram || '#', icon: <path key="ig" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/> },
+                { url: settings.socials?.facebook || '#', icon: <path key="fb" d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/> },
+                { url: settings.socials?.linkedin || '#', icon: <path key="li" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/> },
+                { url: settings.socials?.youtube || '#', icon: <polygon key="yt" points="23 7 16 12 23 17 23 7"/> },
+              ].map((s, i) => (
+                <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" style={{ width: 38, height: 38, borderRadius: '50%', background: t.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.3s ease', border: `1px solid ${t.iconBorder}` }}
                   onMouseEnter={e => {
                     e.currentTarget.style.background = t.iconBgHover;
                     e.currentTarget.style.borderColor = t.accent;
@@ -202,7 +205,7 @@ export default function Footer() {
                     e.currentTarget.style.background = t.iconBg;
                     e.currentTarget.style.borderColor = t.iconBorder;
                   }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={t.svgIcon} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{icon}</svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={t.svgIcon} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{s.icon}</svg>
                 </a>
               ))}
             </div>
@@ -224,6 +227,9 @@ export default function Footer() {
             <Link to="/disclaimer" style={{ fontSize: '0.82rem', color: t.textLabel, textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
               onMouseEnter={e => e.target.style.color = t.accent}
               onMouseLeave={e => e.target.style.color = t.textLabel}>Disclaimer</Link>
+            <Link to={isPreview ? "/admin?preview=true" : "/admin"} style={{ fontSize: '0.82rem', color: t.textLabel, textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}
+              onMouseEnter={e => e.target.style.color = t.accent}
+              onMouseLeave={e => e.target.style.color = t.textLabel}>Admin Portal</Link>
           </div>
         </div>
       </div>

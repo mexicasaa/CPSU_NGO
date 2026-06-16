@@ -1,78 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const MEDIA_ITEMS = [
-  {
-    id: 0,
-    title: 'Pollution Control Measures in Delhi State',
-    category: 'seminar',
-    date: 'May 2026',
-    image: '/images/ngo_policy_meeting.jpg',
-    desc: 'Meeting with Sh. Ashok Goel MLA, Model Town, regarding advancing Pollution Control Measures in Delhi.'
-  },
-  {
-    id: 7,
-    title: 'Clean Solar Light Distribution Drive',
-    category: 'field-work',
-    date: 'February 2026',
-    image: '/images/solar_light.png',
-    desc: 'Distributed over 150 solar-powered home lighting kits in off-grid urban settlements to enhance safety and educational facilities.'
-  },
-  {
-    id: 8,
-    title: 'Delhi Youth Environmental Policy Forum',
-    category: 'press',
-    date: 'April 2026',
-    image: '/images/youth_forum.png',
-    desc: 'Organized an environmental policy roundtable with 200+ students from Delhi schools, presenting climate action models to municipal leaders.'
-  },
-];
-
-const PRESS_ITEMS = [
-  {
-    id: 5,
-    title: 'प्रदूषण मुक्त संसार ही स्वस्थ जीवन और विकास का आधार : डी.सी. आर्य',
-    subtitle: 'स्मार्ट विजन समाचार • News Report',
-    image: '/images/newspaper_clip_4.png',
-    desc: 'D.C. Arya addresses the rising pollution challenges, emphasizing that environmental protection and pure air are essential for a healthy life and development.'
-  },
-  {
-    id: 1,
-    title: 'Pollution-Free World: Basis of Life & Development',
-    subtitle: 'द वुमन न्यूज • News Report',
-    image: '/images/newspaper_clip_1.png',
-    desc: 'Covering D.C. Arya\'s address on environmental restoration, AQI measures in cities, and the national "Ek Ped Maa Ke Naam" campaign.'
-  },
-  {
-    id: 2,
-    title: 'Nature Protection Poster: हम हैं प्रकृति से, प्रकृति से हम',
-    subtitle: 'Public Campaign Poster by Tarun Bidani',
-    image: '/images/nature_poster.jpg',
-    desc: 'A beautiful awareness poster conveying that humanity and nature are mutually dependent, featuring environmental preservation verses.'
-  },
-  {
-    id: 3,
-    title: 'Air Quality & Civic Responsibility Editorial',
-    subtitle: 'द वुमन न्यूज • Editorial',
-    image: '/images/newspaper_clip_2.png',
-    desc: 'A focused column detailing the direct impact of air pollution on human health, and recommendations like daily Yajna and planting indigenous trees.'
-  },
-  {
-    id: 4,
-    title: 'Plantation & Irrigation Care Column',
-    subtitle: 'द वुमन न्यूज • Press Column',
-    image: '/images/newspaper_clip_3.png',
-    desc: 'Focusing on the importance of not just planting, but regularly watering and caring for trees to ensure high survival rates.'
-  }
-];
+import { useLocation } from 'react-router-dom';
+import { db } from '../utils/db';
 
 export default function MediaPage() {
-  const [filter, setFilter] = useState('all');
+  const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+
+  const mediaItems = db.getMediaItems(isPreview);
+  const pressItems = db.getPressItems(isPreview);
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const filteredItems = filter === 'all' 
-    ? MEDIA_ITEMS 
-    : MEDIA_ITEMS.filter(item => item.category === filter);
+  const featuredItem = mediaItems.find(item => item.id === 'media-0' || item.id === 0) || mediaItems[0] || {
+    title: 'Pollution Control Measures in Delhi State',
+    image: '/images/ngo_policy_meeting.jpg',
+    desc: 'Meeting with Sh. Ashok Goel MLA, Model Town, regarding advancing Pollution Control Measures in Delhi.'
+  };
 
   return (
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
@@ -131,6 +74,39 @@ export default function MediaPage() {
             gap: '40px',
           }} id="youtube-interviews-grid">
             
+            {/* Latest Interview: Ending Unemployment & Swarozgar */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/2QtwD3R_bZQ"
+                  title="Ending Unemployment: The Path of Self-Reliance & Swarozgar"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>EXECUTIVE DIALOGUE</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Ending Unemployment: The Path of Self-Reliance & Swarozgar
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Founder Director D.C. Arya shares insights on ending unemployment by moving towards self-employment and entrepreneurship (Swarozgar) instead of just seeking jobs, fostering self-reliance.
+                </p>
+              </div>
+            </div>
+
             {/* Latest Interview: Plastic Ban & Environment Day Address */}
             <div style={{
               background: 'var(--bg-card)',
@@ -266,6 +242,8 @@ export default function MediaPage() {
           </div>
         </div>
 
+
+
         {/* Leadership & Policy Initiatives Section */}
         <div style={{ marginTop: '100px' }} className="cinematic-reveal">
           <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
@@ -310,13 +288,13 @@ export default function MediaPage() {
               position: 'relative'
             }}>
               <img 
-                src="/images/ashok_goel_meeting.jpg" 
-                alt="Meeting with Sh Ashok Goel MLA" 
+                src={featuredItem.image} 
+                alt={featuredItem.title} 
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  objectPosition: 'center 8%', // Crops out the casual dining table at the bottom and focuses on the faces and the paper!
+                  objectPosition: 'center 8%',
                   display: 'block',
                   transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
@@ -356,7 +334,7 @@ export default function MediaPage() {
                   margin: 0,
                   letterSpacing: '-0.01em'
                 }}>
-                  Pollution Control <br />
+                  Pollution Control<br />
                   <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>Measures</span> in Delhi State
                 </h2>
               </div>
@@ -368,25 +346,26 @@ export default function MediaPage() {
                 opacity: 0.8 
               }} />
               
-              <p style={{ 
-                fontSize: '1.08rem', 
-                color: 'rgba(255, 255, 255, 0.85)', 
-                lineHeight: 1.75,
-                fontWeight: 300,
-                margin: 0
-              }}>
-                A high-level consultative meeting was held with <strong>Sh. Ashok Goel, Honorable MLA from Model Town, New Delhi</strong>, to address and advance key environmental policy frameworks and active pollution control measures across Delhi State.
-              </p>
-
-              <p style={{ 
-                fontSize: '0.94rem', 
-                color: 'rgba(255, 255, 255, 0.72)', 
-                lineHeight: 1.7,
-                fontWeight: 300,
-                margin: 0
-              }}>
-                The discussion focused on regional grassroots mobilization, implementation of modern filtration mechanisms, and fostering public-private-civic synergies to combat environmental degradation in high-risk zones. The alignment ensures a consolidated front for policy implementation, civic engagement, and actionable reforms.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <p style={{ 
+                  fontSize: '0.98rem', 
+                  color: 'rgba(255, 255, 255, 0.95)', 
+                  lineHeight: 1.75,
+                  fontWeight: 300,
+                  margin: 0
+                }}>
+                  A high-level consultative meeting was held with <strong>Sh. Ashok Goel, Honorable MLA from Model Town, New Delhi</strong>, to address and advance key environmental policy frameworks and active pollution control measures across Delhi State.
+                </p>
+                <p style={{ 
+                  fontSize: '0.92rem', 
+                  color: 'rgba(255, 255, 255, 0.8)', 
+                  lineHeight: 1.7,
+                  fontWeight: 300,
+                  margin: 0
+                }}>
+                  The discussion focused on regional grassroots mobilization, implementation of modern filtration mechanisms, and fostering public-private-civic synergies to combat environmental degradation in high-risk zones. The alignment ensures a consolidated front for policy implementation, civic engagement, and actionable reforms.
+                </p>
+              </div>
               
               {/* Highlight Points */}
               <div style={{
@@ -454,7 +433,7 @@ export default function MediaPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '32px',
           }} id="press-coverage-grid">
-            {PRESS_ITEMS.map((item) => (
+            {pressItems.map((item) => (
               <div 
                 key={item.id}
                 style={{

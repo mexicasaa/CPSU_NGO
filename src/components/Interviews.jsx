@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 const VIDEOS = [
   {
+    id: '2QtwD3R_bZQ',
+    title: 'Ending Unemployment: The Path of Self-Reliance & Swarozgar',
+    category: 'EXECUTIVE DIALOGUE',
+    topic: 'UNEMPLOYMENT & SELF-RELIANCE',
+    duration: '3 Mins',
+    desc: 'Founder Director D.C. Arya shares insights on ending unemployment by moving towards self-employment and entrepreneurship (Swarozgar) instead of just seeking jobs, fostering self-reliance.',
+    thumbnail: 'https://img.youtube.com/vi/2QtwD3R_bZQ/maxresdefault.jpg'
+  },
+  {
     id: 'x7fPbVxuK3U',
     title: 'Plastic Ban: Protection for a Pollution-Free India',
     category: 'ENVIRONMENT DAY ADDRESS',
@@ -38,6 +47,7 @@ const VIDEOS = [
     thumbnail: 'https://img.youtube.com/vi/QVuNMpHtwvE/maxresdefault.jpg'
   }
 ];
+
 
 export default function Interviews() {
   const [activeIdx, setActiveIdx] = useState(0);

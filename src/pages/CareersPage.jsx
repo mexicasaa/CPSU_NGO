@@ -1,83 +1,71 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import { db } from '../utils/db';
 
-const opportunityOptions = [
-  "Volunteer Programs",
-  "Internship Opportunities",
-  "Community Outreach Support",
-  "Social Media & Communication Assistance",
-  "Event Coordination",
-  "Research & Awareness Initiatives"
-];
-
-const OPPORTUNITIES = [
-  {
-    title: 'Volunteer Programs',
-    desc: 'Engage on the ground in our environmental campaigns, educational initiatives, or community outreach drives.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    )
-  },
-  {
-    title: 'Internship Opportunities',
-    desc: 'Gain practical experience in social sector operations, field coordination, and community engagement structures.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-      </svg>
-    )
-  },
-  {
-    title: 'Community Outreach Support',
-    desc: 'Work directly with resident associations and local leaders to organize social welfare and value-driven initiatives.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
-    )
-  },
-  {
-    title: 'Social Media & Communication Assistance',
-    desc: 'Help write compelling copy, design visual posts, capture event photography, and amplify public awareness campaigns.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-        <circle cx="12" cy="13" r="4" />
-      </svg>
-    )
-  },
-  {
-    title: 'Event Coordination',
-    desc: 'Structure, coordinate, and execute environmental seminars, vocational workshops, and public outreach events.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    )
-  },
-  {
-    title: 'Research & Awareness Initiatives',
-    desc: 'Conduct surveys and research on pollution control, educational requirements, and social values to inform our strategy.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-    )
+const getCareerIcon = (iconName) => {
+  switch (iconName) {
+    case 'volunteer':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      );
+    case 'internship':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+        </svg>
+      );
+    case 'outreach':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      );
+    case 'media':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+          <circle cx="12" cy="13" r="4" />
+        </svg>
+      );
+    case 'event':
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      );
+    case 'research':
+    default:
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      );
   }
-];
+};
 
 export default function CareersPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', opportunityType: 'Volunteer Programs', resumeLink: '', coverLetter: '' });
+  const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+
+  const allCareers = db.getCareers(isPreview);
+  const careers = isPreview 
+    ? allCareers 
+    : allCareers.filter(c => c.visible !== false);
+
+  const opportunityOptions = careers.map(c => c.title);
+
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', opportunityType: opportunityOptions[0] || 'Volunteer Programs', resumeLink: '', coverLetter: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -85,6 +73,12 @@ export default function CareersPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (opportunityOptions.length > 0 && !opportunityOptions.includes(formData.opportunityType)) {
+      setFormData(prev => ({ ...prev, opportunityType: opportunityOptions[0] }));
+    }
+  }, [careers]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -155,7 +149,7 @@ export default function CareersPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '32px'
           }} className="cinematic-reveal">
-            {OPPORTUNITIES.map((opp, idx) => (
+            {careers.map((opp, idx) => (
               <div key={idx} className="card hover-lift" style={{ 
                 background: 'var(--bg-card)', 
                 border: '1px solid rgba(26,58,42,0.06)', 
@@ -172,7 +166,7 @@ export default function CareersPage() {
                   color: 'var(--green-icon)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
-                  {opp.icon}
+                  {getCareerIcon(opp.icon)}
                 </div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)' }}>{opp.title}</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0 }}>{opp.desc}</p>

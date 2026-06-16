@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { db } from '../utils/db';
 
-export default function SlowFrameHero() {
+export default function SlowFrameHero({ isPreview }) {
+  const data = db.getHomeSection('hero', isPreview);
+
   return (
     <>
       <section
@@ -24,7 +27,7 @@ export default function SlowFrameHero() {
             LAYER 1: FULLSCREEN BACKGROUND VIDEO
             ======================================================== */}
         <video
-          src="/download.mp4"
+          src={data.videoUrl || "/download.mp4"}
           autoPlay
           loop
           muted
@@ -83,48 +86,53 @@ export default function SlowFrameHero() {
           >
             {/* Tagline eyebrow */}
             <span className="eyebrow-hero" style={{ marginBottom: '20px', letterSpacing: '0.24em' }}>
-              INDIA | REGISTERED IN 2025 | A NON-PROFIT FOUNDATION
+              {data.eyebrow}
             </span>
 
             {/* Main Headline */}
             <h1 className="hero-title">
-              Towards a Greener, Healthier, Better-Educated,<br />
-              and <span className="serif-italic" style={{ color: 'var(--gold-accent)', textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>Self-Sufficient</span> India
+              {data.titleLine1}
+              <span className="serif-italic" style={{ color: 'var(--gold-accent)', textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}> {data.titleItalic} </span>
+              {data.titleLine2}
             </h1>
 
             {/* Supporting Paragraph */}
             <p className="hero-description">
-              We inspire communities to build a cleaner environment, empower youth through education, and strengthen society through ethical values.
+              {data.description}
             </p>
 
             {/* Centered CTA Buttons */}
             <div className="hero-actions">
-              <Link 
-                to="/donate" 
-                className="btn-green hero-btn-donate"
-                style={{
-                  boxShadow: '0 12px 32px rgba(31,71,51,0.2)',
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '4px' }}>
-                  <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 4.009 2 6.585 2c2.35 0 4.13 1.344 5.415 3.559C13.285 3.344 15.065 2 17.415 2 19.991 2 23 3.518 23 7.191c0 4.105-5.371 8.863-11 14.402z"/>
-                </svg>
-                Donate Now
-              </Link>
+              {data.primaryCtaText && (
+                <Link 
+                  to={data.primaryCtaUrl || "/donate"} 
+                  className="btn-green hero-btn-donate"
+                  style={{
+                    boxShadow: '0 12px 32px rgba(31,71,51,0.2)',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '4px' }}>
+                    <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 4.009 2 6.585 2c2.35 0 4.13 1.344 5.415 3.559C13.285 3.344 15.065 2 17.415 2 19.991 2 23 3.518 23 7.191c0 4.105-5.371 8.863-11 14.402z"/>
+                  </svg>
+                  {data.primaryCtaText}
+                </Link>
+              )}
 
-              <Link 
-                to="/volunteer" 
-                className="btn-outline-dark hero-btn-volunteer"
-                style={{
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ marginRight: '4px' }}>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-                Join as Volunteer
-              </Link>
+              {data.secondaryCtaText && (
+                <Link 
+                  to={data.secondaryCtaUrl || "/volunteer"} 
+                  className="btn-outline-dark hero-btn-volunteer"
+                  style={{
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" style={{ marginRight: '4px' }}>
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  {data.secondaryCtaText}
+                </Link>
+              )}
             </div>
 
 

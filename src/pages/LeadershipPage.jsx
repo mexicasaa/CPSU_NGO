@@ -1,116 +1,21 @@
+import React from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import { db } from '../utils/db';
 
 export default function LeadershipPage() {
-  const leaders = [
-    {
-      name: "Sh Bajrang Bagra",
-      role: "Chairman",
-      bio: "He served as the former Chairman and Managing Director (CMD) of the public sector undertaking, National Aluminium Company Limited (NALCO), and is the General Secretary (Mahamantri) of the Vishva Hindu Parishad (VHP).",
-      image: "/images/Bajrang Lal Bagra.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Sh D C Arya",
-      role: "Founder & Secretary",
-      bio: "A visionary leader dedicated to environmental awareness, education, and social responsibility. He has actively served as an elected Council Member and Former Chairman of the NIRC of the Institute of Cost Accountants of India (ICMAI).",
-      image: "/dc_arya_suit_v3.jpg",
-      linkedin: "https://linkedin.com",
-      email: "dcarya@csreduindia.org"
-    },
-    {
-      name: "Sh H N Sharma",
-      role: "Director",
-      bio: "He served as the trusted political secretary and advisor to the former Prime Minister of India, Chandra Shekhar, bringing decades of high-level social, political, and administrative expertise to the foundation.",
-      image: "/images/HN Sharma.png",
-      linkedin: "https://linkedin.com",
-      email: "hnsharma@csreduindia.org"
-    },
-    {
-      name: "Sh Balwinder Singh",
-      role: "Director",
-      bio: "He served as the President of the Institute of Cost Accountants of India (ICMAI). He regularly interfaces with senior union ministries and regulatory bodies in India to advocate for Cost Accountants in national audits and CSR spending social audits.",
-      image: "/images/Dr. Bawindar Singh.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Sh C S Nanda",
-      role: "Director",
-      bio: "He serves as the 73rd President of the Institute of Chartered Accountants of India (ICAI) for the 2025–26 term. He actively supports Indian regulatory bodies, serving as a Board Member of IRDAI and a member of SEBI's Primary Market Advisory Committee.",
-      image: "/images/CS Nanda.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Sh A K Tiwari",
-      role: "Director",
-      bio: "Shri Anjani Kumar Tiwari, currently serving as Member of the Petroleum and Natural Gas Regulatory Board (PNGRB), previously held the board-level position of Director (Finance) at GAIL (India) Limited, where he oversaw corporate financial strategy, investor relations, and overall fiscal management",
-      image: "/images/A K Tiwari.png",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Sh Y P Bhola",
-      role: "Director",
-      bio: "A distinguished corporate leader who served as the Director of Finance at National Fertilizers Limited (NFL), a prominent Navratna CPSE under the Government of India, culminating a distinguished corporate career spanning nearly four decades.",
-      image: "/images/Y P Bhola.jpg",
-      linkedin: "https://linkedin.com",
-      email: "ypbhola@csreduindia.org"
-    },
-    {
-      name: "Sh Subhash Agrawal",
-      role: "Director",
-      bio: "A renowned RTI activist who previously served as a Director of Finance for the Cement Corporation of India, combining corporate financial governance with strong advocacy for organizational transparency and accountability.",
-      image: "/images/Subhash C Agrawal.jpg",
-      linkedin: "https://linkedin.com",
-      email: "subhashagrawal@csreduindia.org"
-    },
-    {
-      name: "Sh Sunil Singh",
-      role: "Director",
-      bio: "He has held major leadership positions within the Northern India Regional Council of the Institute of Cost Accountants of India (ICMAI), notably serving consecutive terms as the Chairman of NIRC-ICMAI (2017–18 and 2018–19).",
-      image: "/images/Sunil Singh.png",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    }
-  ];
-  const advisors = [
-    {
-      name: "Atul Gupta",
-      role: "Member",
-      bio: "He served as the President of the Institute of Chartered Accountants of India (ICAI) for the 2020–21 term and has served on multiple high-level government advisory bodies, including the Government Accounting Standards Advisory Board (GASAB) and the Audit Advisory Board.",
-      image: "/images/Atul Gupta.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Vinod Chittora",
-      role: "Member",
-      bio: "A prominent member of the Institute of Cost Accountants of India (ICMAI) who has actively served the profession as the Past Chairman of the Jaipur Chapter of ICMAI.",
-      image: "/images/Vinod Chittora.jpg",
-      linkedin: "https://linkedin.com",
-      email: "contact@csreduindia.org"
-    },
-    {
-      name: "Neeraj Kumar Pandey",
-      role: "Member",
-      bio: "He serves as a Senior Journalist at Hamara Metro Newspaper and Editor-in-Chief of NP News Metro. In his advisory role, he contributes expertise in journalism, public engagement, and community-focused communication to help advance the NGO’s mission with clarity and credibility.",
-      image: "/images/neeraj_pandey.jpg"
-    },
-    {
-      name: "Chetan Sharma",
-      role: "Member",
-      bio: "He serves as the Editor-in-Chief of Metro Mat News Magazine and brings valuable experience in media leadership and public communication. As an advisor to the NGO, he supports strategic outreach, awareness initiatives, and meaningful storytelling that strengthens the organization’s social impact.",
-      image: "/images/cheatan_sharama.jpg"
-    },
-    {
-      name: "Parveen Sethi",
-      role: "Member",
-      bio: "She serves as a Financial Consultant and has prior experience in the banking sector. As part of the NGO’s advisory team, she provides guidance on financial planning, governance, and sustainable growth to support the organization’s long-term development.",
-      image: "/images/parveen_sethi.png"
-    }
-  ];
+  const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+
+  const { leaders: allLeaders = [], advisors: allAdvisors = [] } = db.getLeadership(isPreview);
+
+  const leaders = isPreview 
+    ? allLeaders 
+    : allLeaders.filter(l => l.visible !== false);
+
+  const advisors = isPreview 
+    ? allAdvisors 
+    : allAdvisors.filter(a => a.visible !== false);
 
   return (
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>

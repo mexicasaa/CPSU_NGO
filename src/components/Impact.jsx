@@ -1,15 +1,9 @@
 import React from 'react';
+import { db } from '../utils/db';
 
-const STATS = [
-  { num: '—', label: 'People reached across programs' },
-  { num: '—', label: 'Students supported in learning' },
-  { num: '—', label: 'Awareness sessions conducted' },
-  { num: '—', label: 'Communities engaged' },
-  { num: '—', label: 'Trees planted' },
-  { num: '—', label: 'Overhead on field donations' },
-];
-
-export default function Impact() {
+export default function Impact({ isPreview = false }) {
+  const data = db.getHomeSection('stats', isPreview);
+  const stats = data.items || [];
   return (
     <section id="impact" style={{ position: 'relative', padding: 0, background: 'var(--bg-main)' }}>
       {/* Full-bleed image with overlay */}
@@ -46,7 +40,7 @@ export default function Impact() {
           <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
             <div>
               <span className="eyebrow" style={{ color: '#c8a84a', display: 'block', marginBottom: '20px' }}>
-                MEASURED IMPACT
+                {data.eyebrow || 'MEASURED IMPACT'}
               </span>
               
               <div style={{
@@ -57,16 +51,16 @@ export default function Impact() {
                 marginBottom: '64px'
               }}>
                 <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.8rem)', fontWeight: 400, color: '#fff', lineHeight: 1.1, letterSpacing: '-0.025em', maxWidth: '750px', margin: 0 }}>
-                  Impact Updates
+                  {data.title || 'Impact Updates'}
                 </h2>
                 <p style={{ fontSize: '1.02rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, maxWidth: '520px', margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
-                  The foundation’s measurable impact data will be updated as programs and initiatives continue to expand. This section will showcase the outcomes, reach, and community impact created through our environmental, educational, and social initiatives.
+                  {data.description || 'The foundation’s measurable impact data will be updated as programs and initiatives continue to expand. This section will showcase the outcomes, reach, and community impact created through our environmental, educational, and social initiatives.'}
                 </p>
               </div>
 
               {/* Stats Grid */}
               <div className="impact-stats-grid">
-                {STATS.map((s, i) => (
+                {stats.map((s, i) => (
                   <div 
                     key={i} 
                     className="hover-lift" 

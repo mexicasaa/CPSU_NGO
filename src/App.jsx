@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
@@ -20,43 +20,47 @@ import CareersPage from './pages/CareersPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import DisclaimerPage from './pages/DisclaimerPage';
-import PollutionStoryPage from './pages/PollutionStoryPage';
-import SankalpStoryPage from './pages/SankalpStoryPage';
-import HunarStoryPage from './pages/HunarStoryPage';
+import DynamicStoryPage from './pages/DynamicStoryPage';
 import './App.css';
+
+function AppContent() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
+  return (
+    <SmoothScroll>
+      {!isAdminRoute && <Header />}
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/mission" element={<MissionPage />} />
+          <Route path="/vision" element={<VisionPage />} />
+          <Route path="/statements" element={<StatementsPage />} />
+          <Route path="/mantra" element={<MantraPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/leadership" element={<LeadershipPage />} />
+          <Route path="/programs" element={<ProgramsPage />} />
+          <Route path="/donate" element={<DonationPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/media" element={<MediaPage />} />
+          <Route path="/volunteer" element={<VolunteerPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-conditions" element={<TermsPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/blog/:id" element={<DynamicStoryPage />} />
+        </Routes>
+      </main>
+      {!isAdminRoute && <Footer />}
+    </SmoothScroll>
+  );
+}
 
 export default function App() {
   return (
     <Router>
-      <SmoothScroll>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/mission" element={<MissionPage />} />
-            <Route path="/vision" element={<VisionPage />} />
-            <Route path="/statements" element={<StatementsPage />} />
-            <Route path="/mantra" element={<MantraPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/leadership" element={<LeadershipPage />} />
-            <Route path="/programs" element={<ProgramsPage />} />
-            <Route path="/donate" element={<DonationPage />} />
-            <Route path="/partners" element={<PartnersPage />} />
-            <Route path="/media" element={<MediaPage />} />
-            <Route path="/volunteer" element={<VolunteerPage />} />
-            <Route path="/careers" element={<CareersPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms-conditions" element={<TermsPage />} />
-            <Route path="/disclaimer" element={<DisclaimerPage />} />
-            <Route path="/blog/pollution-awareness" element={<PollutionStoryPage />} />
-            <Route path="/blog/sankalp-2025" element={<SankalpStoryPage />} />
-            <Route path="/blog/hunar-workshops" element={<HunarStoryPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </SmoothScroll>
+      <AppContent />
     </Router>
   );
 }
-

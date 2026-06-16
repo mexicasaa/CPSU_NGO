@@ -1,16 +1,25 @@
 import React from 'react';
+import { db } from '../utils/db';
 
-const GALLERY_ITEMS = [
-  { img: '/images/community.png', label: 'Empowered Grassroots Collectives' },
-  { img: '/images/education.png', label: 'Bridging Slum Tuition Circles' },
-  { img: '/images/environment.png', label: 'Eco-Clubs Waste Segregation' },
-  { img: '/images/family.png', label: 'Parivar Samvad Value Dialogues' },
-  { img: '/images/seminar.png', label: 'Civic Environmental Seminars' },
-  { img: '/skill_workshop.png', label: 'Hunar Skill Repair Workshops' },
-  { img: '/environment_cleanup.png', label: 'Water Preservation Planting Drives' },
-];
+export default function Gallery({ isPreview = false }) {
+  const mediaItems = db.getMediaItems(isPreview);
 
-export default function Gallery() {
+  // Transform mediaItems to matching structure
+  const dynamicItems = mediaItems.map(item => ({
+    img: item.image,
+    label: item.title
+  }));
+
+  // Fallback if there are not enough media items
+  const items = dynamicItems.length >= 6 ? dynamicItems : [
+    { img: '/images/community.png', label: 'Empowered Grassroots Collectives' },
+    { img: '/images/education.png', label: 'Bridging Slum Tuition Circles' },
+    { img: '/images/environment.png', label: 'Eco-Clubs Waste Segregation' },
+    { img: '/images/family.png', label: 'Parivar Samvad Value Dialogues' },
+    { img: '/images/seminar.png', label: 'Civic Environmental Seminars' },
+    { img: '/skill_workshop.png', label: 'Hunar Skill Repair Workshops' },
+    { img: '/environment_cleanup.png', label: 'Water Preservation Planting Drives' },
+  ];
   return (
     <section id="gallery" style={{ background: 'var(--bg-main)', padding: '140px 0', borderTop: '1px solid rgba(26,58,42,0.05)' }}>
       <div className="container">
@@ -31,44 +40,44 @@ export default function Gallery() {
           
           {/* Item 0: Big left card - spans 2 rows */}
           <div className="gallery-card card-large-left">
-            <img src={GALLERY_ITEMS[0].img} alt={GALLERY_ITEMS[0].label} className="gallery-card__img" />
+            <img src={items[0].img} alt={items[0].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[0].label}</span>
+            <span className="gallery-card__label">{items[0].label}</span>
           </div>
           
           {/* Item 1: Middle top left */}
           <div className="gallery-card card-small">
-            <img src={GALLERY_ITEMS[1].img} alt={GALLERY_ITEMS[1].label} className="gallery-card__img" />
+            <img src={items[1].img} alt={items[1].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[1].label}</span>
+            <span className="gallery-card__label">{items[1].label}</span>
           </div>
 
           {/* Item 2: Middle top right */}
           <div className="gallery-card card-small">
-            <img src={GALLERY_ITEMS[2].img} alt={GALLERY_ITEMS[2].label} className="gallery-card__img" />
+            <img src={items[2].img} alt={items[2].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[2].label}</span>
+            <span className="gallery-card__label">{items[2].label}</span>
           </div>
           
           {/* Item 3: Big right card - spans 2 rows */}
           <div className="gallery-card card-large-right">
-            <img src={GALLERY_ITEMS[3].img} alt={GALLERY_ITEMS[3].label} className="gallery-card__img" />
+            <img src={items[3].img} alt={items[3].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[3].label}</span>
+            <span className="gallery-card__label">{items[3].label}</span>
           </div>
           
           {/* Item 4: Bottom middle left */}
           <div className="gallery-card card-small">
-            <img src={GALLERY_ITEMS[4].img} alt={GALLERY_ITEMS[4].label} className="gallery-card__img" />
+            <img src={items[4].img} alt={items[4].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[4].label}</span>
+            <span className="gallery-card__label">{items[4].label}</span>
           </div>
 
           {/* Item 5: Bottom middle right */}
           <div className="gallery-card card-small">
-            <img src={GALLERY_ITEMS[5].img} alt={GALLERY_ITEMS[5].label} className="gallery-card__img" />
+            <img src={items[5].img} alt={items[5].label} className="gallery-card__img" />
             <div className="gallery-card__overlay" />
-            <span className="gallery-card__label">{GALLERY_ITEMS[5].label}</span>
+            <span className="gallery-card__label">{items[5].label}</span>
           </div>
 
         </div>

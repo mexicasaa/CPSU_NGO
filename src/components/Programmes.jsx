@@ -1,47 +1,5 @@
 import React from 'react';
-
-const PROGRAMMES = [
-  { 
-    tag: 'ENVIRONMENT', 
-    color: '#26523c', // Deep Forest Green
-    status: 'ONGOING', 
-    title1: 'ENVIRONMENTAL',
-    title2: 'SEMINARS',
-    desc: 'Organizing seminars and campaigns focused on pollution control, clean air, and water conservation.',
-    image: '/environment_cleanup.png',
-    gradient: 'linear-gradient(to bottom, rgba(26, 58, 42, 0.25) 0%, rgba(17, 37, 26, 0.75) 60%, rgba(10, 24, 17, 0.98) 100%)'
-  },
-  { 
-    tag: 'EDUCATION', 
-    color: '#c8a84a', // Warm Gold
-    status: 'ONGOING', 
-    title1: 'EDUCATIONAL',
-    title2: 'INITIATIVES',
-    desc: 'Supporting programs that encourage learning, practical education, and knowledge sharing.',
-    image: '/education_classroom.png',
-    gradient: 'linear-gradient(to bottom, rgba(30, 25, 13, 0.25) 0%, rgba(54, 45, 20, 0.75) 60%, rgba(36, 30, 12, 0.98) 100%)'
-  },
-  { 
-    tag: 'SKILLS & LIVELIHOOD', 
-    color: '#102a43', // Deep Slate Blue
-    status: 'ONGOING', 
-    title1: 'SKILL',
-    title2: 'DEVELOPMENT',
-    desc: 'Promoting vocational and professional training initiatives aimed at improving self-reliance.',
-    image: '/skill_workshop.png',
-    gradient: 'linear-gradient(to bottom, rgba(16, 42, 67, 0.25) 0%, rgba(12, 30, 50, 0.75) 60%, rgba(8, 20, 36, 0.98) 100%)'
-  },
-  { 
-    tag: 'COMMUNITY OUTREACH', 
-    color: '#dd6b20', // Rust Terracotta
-    status: 'ONGOING', 
-    title1: 'COMMUNITY',
-    title2: 'OUTREACH',
-    desc: 'Engaging with communities through social initiatives, awareness drives, and positive impact.',
-    image: '/family_community.png',
-    gradient: 'linear-gradient(to bottom, rgba(48, 24, 10, 0.25) 0%, rgba(36, 18, 6, 0.75) 60%, rgba(24, 12, 3, 0.98) 100%)'
-  },
-];
+import { db } from '../utils/db';
 
 const STATUS_STYLE = {
   ONGOING: { bg: 'rgba(255, 255, 255, 0.12)', color: '#ffffff', dotColor: '#52c41a', className: 'status-ongoing' },
@@ -49,7 +7,35 @@ const STATUS_STYLE = {
   RECRUITING: { bg: 'rgba(255, 255, 255, 0.12)', color: '#ffffff', dotColor: '#d42459', className: 'status-recruiting' },
 };
 
-export default function Programmes() {
+export default function Programmes({ isPreview }) {
+  const rawPrograms = db.getPrograms(isPreview);
+  
+  const styleMap = {
+    'Environment': { tag: 'ENVIRONMENT', color: '#26523c', gradient: 'linear-gradient(to bottom, rgba(26, 58, 42, 0.25) 0%, rgba(17, 37, 26, 0.75) 60%, rgba(10, 24, 17, 0.98) 100%)' },
+    'Education': { tag: 'EDUCATION', color: '#c8a84a', gradient: 'linear-gradient(to bottom, rgba(30, 25, 13, 0.25) 0%, rgba(54, 45, 20, 0.75) 60%, rgba(36, 30, 12, 0.98) 100%)' },
+    'Skills & Livelihood': { tag: 'SKILLS & LIVELIHOOD', color: '#102a43', gradient: 'linear-gradient(to bottom, rgba(16, 42, 67, 0.25) 0%, rgba(12, 30, 50, 0.75) 60%, rgba(8, 20, 36, 0.98) 100%)' },
+    'Community Outreach': { tag: 'COMMUNITY OUTREACH', color: '#dd6b20', gradient: 'linear-gradient(to bottom, rgba(48, 24, 10, 0.25) 0%, rgba(36, 18, 6, 0.75) 60%, rgba(24, 12, 3, 0.98) 100%)' }
+  };
+
+  const programs = rawPrograms.filter(p => p.visible !== false).map(p => {
+    const categoryStyle = styleMap[p.category] || styleMap['Education'];
+    const titleWords = p.title.split(' ');
+    const title1 = titleWords.slice(0, Math.ceil(titleWords.length / 2)).join(' ');
+    const title2 = titleWords.slice(Math.ceil(titleWords.length / 2)).join(' ');
+
+    return {
+      id: p.id,
+      tag: categoryStyle.tag,
+      color: categoryStyle.color,
+      status: 'ONGOING',
+      title1: title1.toUpperCase(),
+      title2: title2.toUpperCase(),
+      desc: p.shortDesc,
+      image: p.image,
+      gradient: categoryStyle.gradient
+    };
+  });
+
   return (
     <section id="programs" style={{ background: '#fcfbfa', padding: '140px 0', borderTop: '1px solid rgba(26,58,42,0.05)', position: 'relative', overflow: 'hidden' }}>
       
@@ -71,7 +57,7 @@ export default function Programmes() {
         </div>
 
         <div className="programmes-grid">
-          {PROGRAMMES.map((p, i) => (
+          {programs.map((p, i) => (
             <div 
               key={i} 
               className="programme-card"

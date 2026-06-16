@@ -1,56 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { db } from '../utils/db';
 
-const WAYS = [
-  {
-    num: '01',
-    title: 'Donate',
-    desc: "Fund a child's education, support a skill workshop, or sponsor a forest plantation drive.",
-    cta: 'Donate Now',
-    link: '/donate',
-    image: '/education_classroom.png',
-    svg: (
+const getWayIcon = (idx) => {
+  if (idx === 0) {
+    return (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
       </svg>
-    )
-  },
-  {
-    num: '02',
-    title: 'Volunteer',
-    desc: 'Join us on the ground. Teach children, facilitate workshops, or join environmental cleanup drives.',
-    cta: 'Volunteer',
-    link: '/volunteer',
-    image: '/environment_cleanup.png',
-    svg: (
+    );
+  }
+  if (idx === 1) {
+    return (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
-    )
-  },
-  {
-    num: '03',
-    title: 'Corporate CSR',
-    desc: 'Align your CSR mandate with transparent, measurable on-the-ground rural programs.',
-    cta: 'Partner Us',
-    link: '/partners',
-    image: '/skill_workshop.png',
-    svg: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18" />
-        <path d="M21 21V10a2 2 0 0 0-2-2h-6v13" />
-        <path d="M9 21V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v15" />
-        <path d="M14 12h2" />
-        <path d="M14 16h2" />
-      </svg>
-    )
+    );
   }
-];
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18" />
+      <path d="M21 21V10a2 2 0 0 0-2-2h-6v13" />
+      <path d="M9 21V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v15" />
+      <path d="M14 12h2" />
+      <path d="M14 16h2" />
+    </svg>
+  );
+};
 
-export default function GetInvolved() {
+export default function GetInvolved({ isPreview = false }) {
+  const data = db.getHomeSection('involved', isPreview);
+  const ways = data.ways || [];
+
   return (
     <section id="get-involved" style={{ background: 'var(--bg-main)', padding: '140px 0', position: 'relative', overflow: 'hidden' }}>
       
@@ -77,7 +61,7 @@ export default function GetInvolved() {
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <span className="eyebrow">GET INVOLVED</span>
+        <span className="eyebrow">{data.eyebrow || 'GET INVOLVED'}</span>
         
         <div style={{
           display: 'grid',
@@ -94,19 +78,20 @@ export default function GetInvolved() {
             letterSpacing: '-0.025em',
             margin: 0
           }}>
-            Three clear ways to <span className="serif-italic" style={{ color: 'var(--gold-accent)' }}>join</span> the work.
+            {data.title || 'Three clear ways to join the work.'}
           </h2>
           <div>
             <p style={{ fontSize: '1.08rem', color: 'var(--text-body)', lineHeight: 1.7, maxWidth: '500px', margin: 0, fontWeight: 300 }}>
-              Whether you have an hour, a specific skill, material resources, or a matching CSR budget—there is a direct path designed to match your potential.
+              {data.description || 'Whether you have an hour, a specific skill, material resources, or a matching CSR budget—there is a direct path designed to match your potential.'}
             </p>
           </div>
         </div>
 
         {/* 3 Compact Interactive Tiles */}
         <div className="involvement-grid">
-          {WAYS.map((w, idx) => {
+          {ways.map((w, idx) => {
             const isExternalOrHash = w.link.startsWith('#') || w.link.startsWith('http');
+            const icon = getWayIcon(idx);
             const innerCardContent = (
               <>
                 {/* Image background layer (opacity 0 default, scale zoom on hover) */}
@@ -117,7 +102,7 @@ export default function GetInvolved() {
                   {/* Top: Icon Box & Number */}
                   <div className="involvement-card__top">
                     <div className="involvement-card__icon-box">
-                      {w.svg}
+                      {icon}
                     </div>
                     <span className="involvement-card__num">{w.num}</span>
                   </div>

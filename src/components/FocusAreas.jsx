@@ -1,44 +1,8 @@
 import React from 'react';
+import { db } from '../utils/db';
 
-const FOCUS_AREAS = [
-  {
-    num: '01',
-    tag: 'ENVIRONMENT',
-    title: 'Environment Protection',
-    desc: 'Promoting awareness regarding pollution, clean air, water conservation, and sustainable living practices.',
-    image: '/environment_cleanup.png'
-  },
-  {
-    num: '02',
-    tag: 'EDUCATION',
-    title: 'Education & Awareness',
-    desc: 'Supporting initiatives that encourage knowledge, awareness, practical learning, and character development.',
-    image: '/education_classroom.png'
-  },
-  {
-    num: '03',
-    tag: 'LIVELIHOOD',
-    title: 'Skill Development',
-    desc: 'Encouraging vocational and professional training programs that build self-reliance and career readiness.',
-    image: '/skill_workshop.png'
-  },
-  {
-    num: '04',
-    tag: 'SOCIAL REFORM',
-    title: 'Social Reform & Values',
-    desc: 'Working towards a value-driven society by promoting ethics, social harmony, and positive family values.',
-    image: '/family_community.png'
-  },
-  {
-    num: '05',
-    tag: 'YOUTH EMPOWERMENT',
-    title: 'Youth Empowerment',
-    desc: 'Guiding young individuals towards leadership, responsibility, discipline, and community contribution.',
-    image: '/images/seminar.png'
-  }
-];
-
-export default function FocusAreas() {
+export default function FocusAreas({ isPreview }) {
+  const focusAreas = db.getFocusAreas(isPreview);
   return (
     <section id="focus-areas" style={{ background: 'var(--bg-main)', padding: '80px 0 140px' }}>
       <div className="container">
@@ -71,7 +35,7 @@ export default function FocusAreas() {
 
         {/* Uniform 5-Column Grid */}
         <div className="focus-grid">
-          {FOCUS_AREAS.map((area, idx) => (
+          {focusAreas.map((area, idx) => (
             <div
               key={idx}
               className="focus-grid-card"

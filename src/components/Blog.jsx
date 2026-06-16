@@ -1,34 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { db } from '../utils/db';
 
-const BLOGS = [
-  {
-    tag: 'ENVIRONMENT',
-    date: '22 Jan 2026',
-    title: 'Why awareness is the first step against pollution',
-    desc: 'Behavioural change begins with informed communities. Here\'s our comprehensive grassroots educational blueprint.',
-    bg: '/blog_pollution.png',
-    path: '/blog/pollution-awareness'
-  },
-  {
-    tag: 'EDUCATION',
-    date: '09 Jan 2026',
-    title: 'From classroom to livelihood: Sankalp 2025 in numbers',
-    desc: 'How 3,000+ students moved from learning foundation skills to gaining meaningful livelihood opportunities.',
-    bg: '/blog_education.png',
-    path: '/blog/sankalp-2025'
-  },
-  {
-    tag: 'SKILLS',
-    date: '18 Dec 2025',
-    title: 'Hunar Workshops: stories of dignity through skill',
-    desc: 'Three women, three trades, and one community transformed - how direct skill-empowerment builds long-term self-reliance.',
-    bg: '/blog_skills.png',
-    path: '/blog/hunar-workshops'
-  },
-];
+export default function Blog({ isPreview = false }) {
+  const allStories = db.getStories(isPreview);
+  const stories = isPreview 
+    ? allStories 
+    : allStories.filter(s => s.visible !== false);
 
-export default function Blog() {
+  // Take latest 3 stories
+  const recentStories = stories.slice(0, 3);
   return (
     <section id="blog" style={{ background: 'var(--bg-main)', padding: '140px 0 120px' }}>
       <div className="container" style={{ position: 'relative' }}>
@@ -53,12 +34,12 @@ export default function Blog() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', position: 'relative', zIndex: 1 }}>
-          {BLOGS.map((b, i) => (
-            <Link to={b.path} key={i} className="card hover-lift blog-card" style={{ textDecoration: 'none', color: 'inherit', padding: 0, overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(26, 58, 42, 0.08)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          {recentStories.map((b, i) => (
+            <Link to={`/blog/${b.id}${isPreview ? '?preview=true' : ''}`} key={i} className="card hover-lift blog-card" style={{ textDecoration: 'none', color: 'inherit', padding: 0, overflow: 'hidden', cursor: 'pointer', border: '1px solid rgba(26, 58, 42, 0.08)', display: 'flex', flexDirection: 'column', height: '100%' }}>
               {/* Image area */}
               <div style={{ height: '240px', overflow: 'hidden', position: 'relative' }}>
                 <img 
-                  src={b.bg} 
+                  src={b.image} 
                   alt={b.title} 
                   style={{
                     width: '100%',
@@ -79,11 +60,11 @@ export default function Blog() {
                 }} />
                 <span style={{
                   position: 'absolute', top: '16px', left: '16px',
-                  background: b.tag === 'ENVIRONMENT' ? 'var(--green-dark)' : b.tag === 'EDUCATION' ? 'var(--blue-accent)' : 'var(--gold-accent)',
+                  background: b.category === 'Environment' ? 'var(--green-dark)' : b.category === 'Education' ? 'var(--blue-accent)' : 'var(--gold-accent)',
                   color: '#fff', fontSize: '0.65rem', fontWeight: 600,
                   letterSpacing: '0.12em', padding: '6px 14px', borderRadius: '999px',
                   boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
-                }}>{b.tag}</span>
+                }}>{b.category}</span>
               </div>
               {/* Content */}
               <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
@@ -103,7 +84,7 @@ export default function Blog() {
                   {b.title}
                 </h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-body)', lineHeight: 1.6, marginBottom: '24px', flexGrow: 1 }}>
-                  {b.desc}
+                  {b.summary}
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', borderTop: '1px solid rgba(26,58,42,0.06)', paddingTop: '20px', width: '100%' }}>
                   <span className="blog-link" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--green-dark)', transition: 'color 0.2s ease, transform 0.2s ease' }}>

@@ -1,72 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import FocusAreas from '../components/FocusAreas';
-
-const PROGRAMS_DATA = [
-  {
-    id: 'environmental-awareness',
-    title: 'Environmental Awareness Seminars',
-    category: 'Environment',
-    image: '/environment_cleanup.png',
-    shortDesc: 'The foundation organizes seminars and awareness campaigns focused on pollution control, environmental responsibility, public health, and sustainable living.',
-    longDesc: 'Our Environmental Awareness Seminars are designed to address critical issues of air and water pollution, conservation, and health. We actively conduct awareness sessions, community discussions, and distribute practical guides to promote green living and sustainable habits across schools, resident associations, and public spaces.',
-    focus: 'Pollution Control, Environmental Responsibility, Public Health, Sustainable Living.',
-    metrics: [
-      { label: 'Seminars Conducted', value: '—' },
-      { label: 'Participants Reached', value: '—' }
-    ],
-    volunteerRoles: ['Seminar Coordinator', 'Community Outreach Lead', 'Environmental Educator'],
-    fundingNeed: 'Funds support educational materials, seminar venue organization, and awareness brochures.'
-  },
-  {
-    id: 'educational-initiatives',
-    title: 'Educational Initiatives',
-    category: 'Education',
-    image: '/education_classroom.png',
-    shortDesc: 'We support programs that encourage learning, awareness, practical education, and knowledge sharing for individuals and communities.',
-    longDesc: 'Education is the cornerstone of societal development. We partner with local institutions to run supplementary educational support sessions, distribute books and study aids, and emphasize value-driven learning that empowers both the mind and the character of students.',
-    focus: 'Practical Learning, Character Building, Student Empowerment, Knowledge Sharing.',
-    metrics: [
-      { label: 'Students Enrolled', value: '—' },
-      { label: 'Support Centers', value: '—' }
-    ],
-    volunteerRoles: ['After-School Educator', 'Reading Mentor', 'Curriculum Assistant'],
-    fundingNeed: 'Covers costs of school supplies, books, learning aids, and classroom organization.'
-  },
-  {
-    id: 'skill-development',
-    title: 'Skill Development Programs',
-    category: 'Skills & Livelihood',
-    image: '/skill_workshop.png',
-    shortDesc: 'The foundation promotes vocational and professional training initiatives aimed at improving employability and self-reliance.',
-    longDesc: 'We believe true empowerment is built upon self-reliance. Our vocational training focus is dedicated to delivering professional and technical skills—ranging from digital literacy to vocational crafts—which help youth and women secure local employment or launch self-sustained initiatives.',
-    focus: 'Vocational Training, Digital Literacy, Professional Readiness, Economic Self-Reliance.',
-    metrics: [
-      { label: 'Vocational Cohorts', value: '—' },
-      { label: 'Self-Reliant Graduates', value: '—' }
-    ],
-    volunteerRoles: ['Vocational Trainer', 'Resume Coach', 'Tech Skills Instructor'],
-    fundingNeed: 'Covers training equipment, digital tools, certifications, and career counseling sessions.'
-  },
-  {
-    id: 'community-outreach',
-    title: 'Community Outreach Activities',
-    category: 'Community Outreach',
-    image: '/family_community.png',
-    shortDesc: 'We engage with communities through awareness drives, social initiatives, discussions, and collaborative programs that encourage positive social impact.',
-    longDesc: 'Our community outreach programs bring together individuals, resident welfare groups, and local leaders to collaborate on community-led challenges. From health and hygiene drives to eldercare assistance, we foster family harmony, ethical values, and mutual support across all neighborhoods.',
-    focus: 'Social Harmony, Family Values, Eldercare Assistance, Collaborative Action.',
-    metrics: [
-      { label: 'Outreach Drives', value: '—' },
-      { label: 'Communities Served', value: '—' }
-    ],
-    volunteerRoles: ['Community Coordinator', 'Eldercare Assistant', 'Event Organizer'],
-    fundingNeed: 'Underwrites costs of local gatherings, outreach materials, health resources, and neighborhood campaign tools.'
-  }
-];
+import { db } from '../utils/db';
 
 export default function ProgramsPage() {
+  const location = useLocation();
+  const isPreview = new URLSearchParams(location.search).get('preview') === 'true';
+
+  const allPrograms = db.getPrograms(isPreview);
+  const programs = isPreview 
+    ? allPrograms 
+    : allPrograms.filter(p => p.visible !== false);
+
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   return (
@@ -114,7 +60,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Focus Areas Bento Grid */}
-      <FocusAreas />
+      <FocusAreas isPreview={isPreview} />
 
       {/* Programs Content */}
       <section style={{ padding: '100px 0 120px', background: 'var(--bg-main)' }}>
@@ -125,7 +71,7 @@ export default function ProgramsPage() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '40px'
           }} className="cinematic-reveal">
-          {PROGRAMS_DATA.map((prog, index) => (
+          {programs.map((prog, index) => (
             <motion.div
               key={prog.id}
               onClick={() => setSelectedProgram(prog)}

@@ -1,22 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { db } from '../utils/db';
 
-export default function WhoWeAre() {
+export default function WhoWeAre({ isPreview }) {
+  const data = db.getHomeSection('about', isPreview);
+
+  const leader1 = data.leaders && data.leaders[0] ? data.leaders[0] : {
+    name: 'Sh Bajrang Bagra',
+    role: 'Chairman',
+    image: '/images/Bajrang Lal Bagra.jpg',
+    bio: 'True development in India is achieved by blending professional and industrial excellence with deep-rooted cultural values, integrity, and cooperative social responsibility.',
+    subtitle: 'Former CMD, NALCO • General Secretary, VHP'
+  };
+
+  const leader2 = data.leaders && data.leaders[1] ? data.leaders[1] : {
+    name: 'Sh D.C. Arya',
+    role: 'Founder & Secretary',
+    image: '/dc_arya_suit_v3.jpg',
+    bio: 'True progress is built on pure air, clean minds, and ethical values. We must address not only environmental pollution, but also moral and social challenges.',
+    subtitle: 'Former Chairman, NIRC-ICMAI • Former Director (Finance), IRFC'
+  };
+
+  const timeline = data.timeline || [
+    { year: '2025', title: 'Foundation Established', desc: 'Registered as a Section 8 non-profit with core ecological, educational, and livelihood focus areas aligned.' },
+    { year: '2025', title: 'Sankalp & Hunar Pilot Initiatives', desc: 'Launched first grassroots student coaching centers and vocational livelihood modules.' },
+    { year: '2026', title: 'Operations Scale-up', desc: 'Expansion of digital literacy libraries, local trade workshops, and Parivar Samvad dialogue circles.' }
+  ];
+
   return (
     <section id="about" style={{ background: 'var(--bg-main)', padding: '140px 0 80px' }}>
       <div className="container">
         <div style={{ marginBottom: '40px', maxWidth: '800px' }}>
-          <span className="eyebrow">WHO WE ARE</span>
+          <span className="eyebrow">{data.eyebrow}</span>
           <h2 style={{ fontSize: 'clamp(2.2rem, 3.5vw, 3.5rem)', fontWeight: 400, color: '#11251a', lineHeight: 1.1, letterSpacing: '-0.025em', margin: 0 }}>
-            A serious, human-centred foundation - not a slogan.
+            {data.title}
           </h2>
         </div>
-        {/* Row 1: Sh Bajrang Bagra & Text Paragraphs */}
+        {/* Row 1: Chairman & Text Paragraphs */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start', marginBottom: '60px' }} className="wewe-row">
           
           {/* LEFT: Card 1 */}
           <div>
-            {/* Leader 1: Sh Bajrang Bagra */}
             <div className="hover-lift animate-reveal wewe-leader-card" style={{ 
               background: '#ffffff',
               borderRadius: '24px', 
@@ -31,19 +55,19 @@ export default function WhoWeAre() {
             }}>
               <div style={{ width: '240px', height: '300px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
-                  src="/images/Bajrang Lal Bagra.jpg" 
-                  alt="Sh Bajrang Bagra"
+                  src={leader1.image} 
+                  alt={leader1.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexGrow: 1 }}>
-                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>Sh Bajrang Bagra</div>
-                <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>Chairman</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>{leader1.name}</div>
+                <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>{leader1.role}</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
-                  "True development in India is achieved by blending professional and industrial excellence with deep-rooted cultural values, integrity, and cooperative social responsibility."
+                  "{leader1.bio}"
                 </p>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '8px', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
-                  Former CMD, NALCO • General Secretary, VHP
+                  {leader1.subtitle}
                 </div>
               </div>
             </div>
@@ -52,20 +76,19 @@ export default function WhoWeAre() {
           {/* RIGHT: Text Paragraphs */}
           <div style={{ paddingTop: '10px' }}>
             <p style={{ fontSize: '1.05rem', color: 'var(--green-dark)', lineHeight: 1.8, marginBottom: '28px', fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', fontWeight: 500, marginTop: 0 }}>
-              Founded in 2025, CSR & Educational India Foundation works towards addressing critical social and environmental challenges through awareness, education, and community engagement.
+              {data.descParagraph1}
             </p>
             <p style={{ fontSize: '0.95rem', color: '#4a5568', lineHeight: 1.8, marginBottom: 0, fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
-              The foundation believes that true progress is achieved when society grows not only economically, but also morally, educationally, and environmentally. Through seminars, educational initiatives, social outreach programs, and collaborative efforts, the foundation aims to create meaningful and long-term impact for individuals, families, and future generations.
+              {data.descParagraph2}
             </p>
           </div>
         </div>
 
-        {/* Row 2: Sh D C Arya & Timeline */}
+        {/* Row 2: Founder & Timeline */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start' }} className="wewe-row">
           
           {/* LEFT: Card 2 */}
           <div>
-            {/* Leader 2: Sh D C Arya */}
             <div className="hover-lift animate-reveal wewe-leader-card" style={{ 
               background: '#ffffff',
               borderRadius: '24px', 
@@ -80,20 +103,19 @@ export default function WhoWeAre() {
             }}>
               <div style={{ width: '240px', height: '300px', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid rgba(26,58,42,0.08)' }}>
                 <img 
-                  src="/dc_arya_suit_v3.jpg" 
-                  alt="Sh D.C. Arya"
+                  src={leader2.image} 
+                  alt={leader2.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', flexGrow: 1 }}>
-                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>Sh D.C. Arya</div>
-                <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>Founder & Secretary</div>
-                <div style={{ fontSize: '0.95rem', color: 'var(--green-dark)', fontWeight: 600, marginBottom: '6px', fontStyle: 'italic', fontFamily: "'Playfair Display', serif" }}>Samaj ka Vikas - Hamara Pryas</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--green-dark)', marginBottom: '2px' }}>{leader2.name}</div>
+                <div style={{ fontSize: '0.75rem', color: '#c8a84a', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '8px' }}>{leader2.role}</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontStyle: 'italic', fontWeight: 300, fontFamily: "'Playfair Display', serif" }}>
-                  "True progress is built on pure air, clean minds, and ethical values. We must address not only environmental pollution, but also moral and social challenges."
+                  "{leader2.bio}"
                 </p>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '8px', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
-                  Former Chairman, NIRC-ICMAI • Former Director (Finance), IRFC
+                  {leader2.subtitle}
                 </div>
               </div>
             </div>
@@ -101,7 +123,6 @@ export default function WhoWeAre() {
 
           {/* RIGHT: Timeline */}
           <div>
-            {/* Timeline */}
             <div style={{ borderTop: '1px solid rgba(26,58,42,0.08)', paddingTop: '28px', position: 'relative', marginBottom: '40px' }}>
               <div style={{ fontSize: '1.15rem', fontFamily: "'Playfair Display', serif", fontWeight: 500, color: '#11251a', marginBottom: '28px' }}>Our Journey</div>
               
@@ -116,25 +137,21 @@ export default function WhoWeAre() {
                   background: 'linear-gradient(to bottom, #1a3a2a, rgba(26, 58, 42, 0.1))' 
                 }} />
 
-                {[
-                  { year: '2025', title: 'Foundation Established', desc: 'Registered as a Section 8 non-profit with core ecological, educational, and livelihood focus areas aligned.' },
-                  { year: '2025', title: 'Sankalp & Hunar Pilot Initiatives', desc: 'Launched first grassroots student coaching centers and vocational livelihood modules.' },
-                  { year: '2026', title: 'Operations Scale-up', desc: 'Expansion of digital literacy libraries, local trade workshops, and Parivar Samvad dialogue circles.' },
-                ].map((item, i) => (
+                {timeline.map((item, i) => (
                   <div key={i} style={{ position: 'relative', marginBottom: '28px' }}>
                     {/* Glowing Node */}
                     <div style={{ 
-                      position: 'absolute', 
-                      left: '-24px', 
-                      top: '6px', 
-                      width: '10px', 
-                      height: '10px', 
-                      borderRadius: '50%', 
-                      background: '#c8a84a', 
-                      border: '2px solid var(--bg-main)',
-                      boxShadow: '0 0 0 2px #1a3a2a',
-                      zIndex: 2 
-                    }} />
+                       position: 'absolute', 
+                       left: '-24px', 
+                       top: '6px', 
+                       width: '10px', 
+                       height: '10px', 
+                       borderRadius: '50%', 
+                       background: '#c8a84a', 
+                       border: '2px solid var(--bg-main)',
+                       boxShadow: '0 0 0 2px #1a3a2a',
+                       zIndex: 2 
+                     }} />
                     
                     <div>
                       <div style={{ fontSize: '0.98rem', fontWeight: 600, color: '#11251a', marginBottom: '4px' }}>

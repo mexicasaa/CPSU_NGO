@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { db } from '../utils/db';
 
-export default function YouthSpotlight() {
+export default function YouthSpotlight({ isPreview }) {
+  const data = db.getHomeSection('testimonial', isPreview);
   return (
     <section id="youth-spotlight" style={{ 
       padding: '120px 0', 
@@ -63,8 +65,8 @@ export default function YouthSpotlight() {
               margin: '0 auto'
             }}>
               <img 
-                src="/images/Tarun_Bidani_Goyal_v2.jpg" 
-                alt="Tarun Bidani Goyal" 
+                src={data.image} 
+                alt={data.title} 
                 style={{ 
                   width: '100%', 
                   height: '100%', 
@@ -100,7 +102,7 @@ export default function YouthSpotlight() {
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}>
-                Youth Icon
+                {data.badge || 'Youth Icon'}
               </div>
             </div>
           </motion.div>
@@ -115,7 +117,7 @@ export default function YouthSpotlight() {
             className="ys-content-col"
           >
             <span className="eyebrow" style={{ color: 'var(--gold-accent)', marginBottom: '8px', display: 'inline-block' }}>
-              Youth Inspiration
+              {data.eyebrow}
             </span>
             
             <h2 style={{ 
@@ -126,34 +128,25 @@ export default function YouthSpotlight() {
               lineHeight: 1.15,
               marginBottom: '14px'
             }}>
-              Tarun Bidani Goyal
+              {data.title}
             </h2>
-
+ 
             {/* Professional Chips */}
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '22px' }}>
-              <span style={{
-                background: 'rgba(223, 189, 83, 0.1)',
-                border: '1px solid rgba(223, 189, 83, 0.25)',
-                padding: '4px 12px',
-                borderRadius: '100px',
-                fontSize: '0.78rem',
-                fontWeight: 600,
-                color: 'var(--gold-accent)',
-                letterSpacing: '0.02em'
-              }}>
-                Finance & Governance Specialist
-              </span>
-              <span style={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                padding: '4px 12px',
-                borderRadius: '100px',
-                fontSize: '0.78rem',
-                fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.8)'
-              }}>
-                CA • CMA
-              </span>
+              {data.roleChips && data.roleChips.map((chip, i) => (
+                <span key={i} style={{
+                  background: i === 0 ? 'rgba(223, 189, 83, 0.1)' : 'rgba(255, 255, 255, 0.05)',
+                  border: i === 0 ? '1px solid rgba(223, 189, 83, 0.25)' : '1px solid rgba(255, 255, 255, 0.1)',
+                  padding: '4px 12px',
+                  borderRadius: '100px',
+                  fontSize: '0.78rem',
+                  fontWeight: i === 0 ? 600 : 500,
+                  color: i === 0 ? 'var(--gold-accent)' : 'rgba(255, 255, 255, 0.8)',
+                  letterSpacing: i === 0 ? '0.02em' : 'none'
+                }}>
+                  {chip}
+                </span>
+              ))}
             </div>
 
             {/* Testimonial Message Callout */}
@@ -185,7 +178,7 @@ export default function YouthSpotlight() {
                 margin: 0,
                 paddingLeft: '16px'
               }}>
-                "Young people are not just the future of the nation—they are the driving force behind positive change."
+                "{data.quote}"
               </p>
             </div>
 
@@ -196,7 +189,7 @@ export default function YouthSpotlight() {
               fontWeight: 300, 
               marginBottom: '28px' 
             }}>
-              Tarun actively empowers India's youth to lead sustainable living, environmental conservation, and active nation-building. Combining finance and governance expertise, he inspires the next generation to protect our planet and communities.
+              {data.description}
             </p>
 
             {/* Micro Details and Action Link */}
@@ -208,7 +201,7 @@ export default function YouthSpotlight() {
               paddingTop: '24px' 
             }}>
               <Link 
-                to="/leadership" 
+                to={data.ctaUrl || "/leadership"} 
                 className="btn-gold-spotlight hover-lift" 
                 style={{ 
                   background: 'var(--gold-accent)', 
@@ -225,7 +218,7 @@ export default function YouthSpotlight() {
                   gap: '8px'
                 }}
               >
-                Read Leadership Profile
+                {data.ctaText || "Read Leadership Profile"}
                 <ArrowRight size={16} className="btn-arrow" style={{ transition: 'transform 0.3s ease' }} />
               </Link>
             </div>
