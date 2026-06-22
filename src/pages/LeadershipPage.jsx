@@ -109,6 +109,14 @@ export default function LeadershipPage() {
       role: "Member",
       bio: "She serves as a Financial Consultant and has prior experience in the banking sector. As part of the NGO’s advisory team, she provides guidance on financial planning, governance, and sustainable growth to support the organization’s long-term development.",
       image: "/images/parveen_sethi.png"
+    },
+    {
+      name: "Neha S Gupta",
+      role: "Member",
+      bio: "Neha S Gupta is a Chartered Accountant, Entrepreneurship Mentor, and Principal Finance Consultant with 20+ years of experience across academia, industry consulting, executive training, and curriculum development. She has been associated with premier institutions including IITs, NIFM, ICAI, ICSI, IIC, and leading universities, delivering programs in Management, Entrepreneurship, Leadership, Financial Literacy, and Campus-to-Corporate readiness. Her expertise lies in bridging academia and industry through employability enhancement, innovation, entrepreneurship development, and capacity-building initiatives.",
+      image: "/images/neha_s_gupta.png",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
     }
   ];
 
