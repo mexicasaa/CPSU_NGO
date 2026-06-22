@@ -73,6 +73,14 @@ export default function LeadershipPage() {
       image: "/images/Sunil Singh.png",
       linkedin: "https://linkedin.com",
       email: "contact@csreduindia.org"
+    },
+    {
+      name: "Sh Raj Chawla",
+      role: "Director",
+      bio: "He has served as a Central Council Member of the Institute of Chartered Accountants of India (ICAI) for the 2022–2025 term, and previously served as the Chairman of the Northern India Regional Council (NIRC) of ICAI.",
+      image: "/images/Raj Chawla.jpg",
+      linkedin: "https://linkedin.com",
+      email: "contact@csreduindia.org"
     }
   ];
   const advisors = [
