@@ -212,7 +212,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 0', flexWrap: 'wrap', gap: '16px' }}>
           <span style={{ fontSize: '0.82rem', color: t.textLabel, fontFamily: "'Inter', sans-serif" }}>
-            © 2026 CSR & Educational India Foundation. All rights reserved.
+            © 2026 CSR & Educational India Foundation. All rights reserved. | Created By Umang Pandey
           </span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <Link to="/privacy-policy" style={{ fontSize: '0.82rem', color: t.textLabel, textDecoration: 'none', transition: 'color 0.2s', fontFamily: "'Inter', sans-serif" }}

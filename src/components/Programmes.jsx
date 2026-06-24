@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PROGRAMMES = [
   { 
@@ -102,9 +103,9 @@ export default function Programmes() {
               {/* Bottom Section: Description & CTA */}
               <div className="programme-card__bottom">
                 <p className="programme-card__desc">{p.desc}</p>
-                <a href="#contact" className="programme-card__cta">
+                <Link to="/contact" className="programme-card__cta">
                   Inquire Details <span className="programme-card__cta-arrow">↗</span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
