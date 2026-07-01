@@ -444,13 +444,13 @@ export default function MediaPage() {
         </div>
 
         {/* Greetings Section */}
-        <div style={{ marginTop: '100px', textAlign: 'center' }} className="cinematic-reveal">
+        <div style={{ marginTop: '100px' }} className="cinematic-reveal">
           <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
             GREETINGS & WISHES
           </span>
           <div style={{
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             alignItems: 'center',
             padding: '20px 0'
           }}>
