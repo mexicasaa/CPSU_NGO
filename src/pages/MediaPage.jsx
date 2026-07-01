@@ -66,6 +66,17 @@ const PRESS_ITEMS = [
   }
 ];
 
+const GREETINGS_ITEMS = [
+  {
+    id: 201,
+    title: 'Heartiest Congratulations & Good Wishes',
+    subtitle: 'Special Occasions',
+    image: '/images/greetings.jpg',
+    desc: 'Extending warm greetings on Chartered Accountants Day, GST Day, Doctors Day, National Postal Workers Day, International Joke Day, Van Mahotsav Week, and Happy SBI Day.'
+  }
+];
+
+
 export default function MediaPage() {
   const [filter, setFilter] = useState('all');
   const [selectedImg, setSelectedImg] = useState(null);
@@ -437,9 +448,106 @@ export default function MediaPage() {
                   Collaborative action between state representatives and community leadership is the cornerstone of sustainable environmental restoration.
                 </p>
               </div>
-
             </div>
             
+          </div>
+        </div>
+
+        {/* Greetings Section */}
+        <div style={{ marginTop: '100px' }} className="cinematic-reveal">
+          <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
+            GREETINGS & WISHES
+          </span>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '32px',
+          }} id="greetings-grid">
+            {GREETINGS_ITEMS.map((item) => (
+              <div 
+                key={item.id}
+                style={{
+                  background: 'var(--bg-card)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(26,58,42,0.06)',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--shadow-premium)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  cursor: 'pointer'
+                }}
+                className="hover-lift press-card"
+                onClick={() => setSelectedImg(item)}
+              >
+                <div style={{ 
+                  width: '100%', 
+                  aspectRatio: '4/5', 
+                  overflow: 'hidden', 
+                  background: '#1a3a2a',
+                  position: 'relative'
+                }}>
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      display: 'block',
+                      transition: 'transform 0.5s ease'
+                    }}
+                    className="press-thumb-img"
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to bottom, transparent 60%, rgba(17,37,26,0.3) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  <div className="expand-overlay" style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'rgba(26, 58, 42, 0.4)',
+                    opacity: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'opacity 0.3s ease',
+                    backdropFilter: 'blur(3px)'
+                  }}>
+                    <span style={{
+                      color: '#ffffff',
+                      background: 'var(--gold-accent)',
+                      color: 'var(--green-dark)',
+                      padding: '10px 20px',
+                      borderRadius: '30px',
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                      boxShadow: '0 4px 15px rgba(200,168,74,0.3)'
+                    }}>
+                      VIEW FULL IMAGE
+                    </span>
+                  </div>
+                </div>
+                
+                <div style={{ padding: '24px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--gold-accent)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+                      {item.subtitle}
+                    </span>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
