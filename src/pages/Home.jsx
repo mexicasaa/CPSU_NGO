@@ -12,6 +12,7 @@ import Donation from '../components/Donation';
 import Blog from '../components/Blog';
 import Interviews from '../components/Interviews';
 import YouthSpotlight from '../components/YouthSpotlight';
+
 export default function Home() {
   return (
     <>

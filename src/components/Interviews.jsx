@@ -3,39 +3,66 @@ import React, { useState } from 'react';
 const VIDEOS = [
   {
     id: 'x7fPbVxuK3U',
-    title: 'Plastic Ban: A Crucial Step for Pollution-Free India',
+    title: 'Plastic Ban: Protection for a Pollution-Free India',
     category: 'ENVIRONMENT DAY ADDRESS',
-    topic: 'PLASTIC BAN & ECOLOGY',
+    topic: 'PLASTIC BAN & CONSERVATION',
     duration: '10 Mins',
-    desc: 'Founder Director D.C. Arya addresses World Environment Day, emphasizing that the government plastic ban is a vital protective measure. He calls for active citizen participation in continuous tree planting, regular watering, and sapling care for sustainable eco-restoration.',
+    desc: 'Founder Director D.C. Arya shares an inspiring message on World Environment Day, highlighting the plastic ban as a crucial welfare-oriented step and emphasizing the regular care and irrigation of planted trees.',
     thumbnail: 'https://img.youtube.com/vi/x7fPbVxuK3U/maxresdefault.jpg'
   },
   {
-    id: 'wXD9THb7SbM',
-    title: "From Farmer's Son to Director (Finance): The Inspiring Journey of D.C. Arya",
-    category: 'BIOGRAPHICAL FEATURE',
-    topic: 'LEADERSHIP & SERVICE',
-    duration: '14 Mins',
-    desc: 'An inspiring feature highlighting D.C. Arya’s life from a humble agricultural family in Haryana to becoming Director of Finance at IRFC and former Chairman of NIRC-ICMAI, giving new direction to cost accounting and national governance.',
-    thumbnail: 'https://img.youtube.com/vi/wXD9THb7SbM/maxresdefault.jpg'
-  },
-  {
-    id: 'zL1Nvl0UlZE',
-    title: 'Environmental Seminar: Civic Responsibility & Air Purity Reforms',
-    category: 'ENVIRONMENTAL SEMINAR',
-    topic: 'SUSTAINABLE REFORM',
-    duration: '20 Mins',
-    desc: 'A dedicated environmental policy seminar detailing key measures for improving urban air quality, promoting indigenous plantation drives, and strengthening public-private cooperation for long-term climate action.',
-    thumbnail: 'https://img.youtube.com/vi/zL1Nvl0UlZE/maxresdefault.jpg'
-  },
-  {
     id: 'Ao0dtIZOfFs',
-    title: 'Public Dialogue: Grassroots Environmental Initiatives & Youth Action',
+    title: 'Community Environmental Initiatives',
     category: 'PUBLIC DIALOGUE',
     topic: 'COMMUNITY REFORM',
     duration: '15 Mins',
-    desc: 'An interactive public dialogue bringing together community leaders, students, and experts to discuss grassroots solutions for plastic reduction, clean water conservation, and value-driven civic engagement.',
+    desc: 'Discussion on community-led environmental initiatives and grassroots efforts for a cleaner future.',
     thumbnail: 'https://img.youtube.com/vi/Ao0dtIZOfFs/maxresdefault.jpg'
+  },
+  {
+    id: 'zL1Nvl0UlZE',
+    title: 'Environmental Seminar & Reform',
+    category: 'SEMINAR',
+    topic: 'SUSTAINABILITY',
+    duration: '20 Mins',
+    desc: 'An insightful seminar detailing the importance of sustainability and reform in environmental practices.',
+    thumbnail: 'https://img.youtube.com/vi/zL1Nvl0UlZE/maxresdefault.jpg'
+  },
+  {
+    id: 'wXD9THb7SbM',
+    title: 'Public Dialogue on Environmental Conservation',
+    category: 'PUBLIC DIALOGUE',
+    topic: 'ENVIRONMENTAL SEMINAR',
+    duration: '14 Mins',
+    desc: 'Public dialogue focusing on environmental conservation and community efforts.',
+    thumbnail: 'https://img.youtube.com/vi/wXD9THb7SbM/maxresdefault.jpg'
+  },
+  {
+    id: '5Eqo64tQ5B4',
+    title: 'Environmental Awareness Discussion',
+    category: 'MEDIA INTERVIEW',
+    topic: 'AIR PURITY & CLIMATE',
+    duration: '22 Mins',
+    desc: 'Founder Director DC Arya shares his vision on air pollution levels, environmental responsibility, public health hazards, and inspiring civic actions across schools and community hubs.',
+    thumbnail: 'https://img.youtube.com/vi/5Eqo64tQ5B4/maxresdefault.jpg'
+  },
+  {
+    id: 'tE2IGhGd52c',
+    title: 'Social & Educational Awareness',
+    category: 'FIELD DIALOGUE',
+    topic: 'GRASSROOTS REFORM',
+    duration: '18 Mins',
+    desc: 'Discussions centered around vocational values, supporting under-resourced schools, and nurturing responsible citizenship to establish highly cooperative local frameworks.',
+    thumbnail: 'https://img.youtube.com/vi/tE2IGhGd52c/maxresdefault.jpg'
+  },
+  {
+    id: 'QVuNMpHtwvE',
+    title: 'CMA: Backbone of the Economy',
+    category: 'EXECUTIVE ADDRESS',
+    topic: 'ECONOMY & WELFARE',
+    duration: '12 Mins',
+    desc: 'Founder Director DC Arya explains how Cost and Management Accountants (CMA) play a vital role in optimizing resource efficiency, ensuring transparency, and driving national development.',
+    thumbnail: 'https://img.youtube.com/vi/QVuNMpHtwvE/maxresdefault.jpg'
   }
 ];
 
