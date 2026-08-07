@@ -299,6 +299,104 @@ export default function MediaPage() {
               </div>
             </div>
 
+            {/* Interview 4 */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/wXD9THb7SbM"
+                  title="Public Dialogue on Environmental Conservation"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>PUBLIC DIALOGUE</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Public Dialogue on Environmental Conservation
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Public dialogue focusing on environmental conservation and community efforts.
+                </p>
+              </div>
+            </div>
+
+            {/* Interview 5 */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/zL1Nvl0UlZE"
+                  title="Environmental Seminar & Reform"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>SEMINAR</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Environmental Seminar & Reform
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  An insightful seminar detailing the importance of sustainability and reform in environmental practices.
+                </p>
+              </div>
+            </div>
+
+            {/* Interview 6 */}
+            <div style={{
+              background: 'var(--bg-card)',
+              borderRadius: '28px',
+              border: '1px solid rgba(26,58,42,0.06)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-premium)',
+              display: 'flex',
+              flexDirection: 'column'
+            }} className="hover-lift">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#000' }}>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/Ao0dtIZOfFs"
+                  title="Community Environmental Initiatives"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ border: 'none', display: 'block' }}
+                ></iframe>
+              </div>
+              <div style={{ padding: '32px' }}>
+                <span style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', color: 'var(--green-icon)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>PUBLIC DIALOGUE</span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 500, color: 'var(--green-dark)', lineHeight: 1.3, marginBottom: '12px' }}>
+                  Community Environmental Initiatives
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>
+                  Discussion on community-led environmental initiatives and grassroots efforts for a cleaner future.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
