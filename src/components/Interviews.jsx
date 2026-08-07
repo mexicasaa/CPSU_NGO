@@ -11,6 +11,33 @@ const VIDEOS = [
     thumbnail: 'https://img.youtube.com/vi/x7fPbVxuK3U/maxresdefault.jpg'
   },
   {
+    id: 'Ao0dtIZOfFs',
+    title: 'Community Environmental Initiatives',
+    category: 'PUBLIC DIALOGUE',
+    topic: 'COMMUNITY REFORM',
+    duration: '15 Mins',
+    desc: 'Discussion on community-led environmental initiatives and grassroots efforts for a cleaner future.',
+    thumbnail: 'https://img.youtube.com/vi/Ao0dtIZOfFs/maxresdefault.jpg'
+  },
+  {
+    id: 'zL1Nvl0UlZE',
+    title: 'Environmental Seminar & Reform',
+    category: 'SEMINAR',
+    topic: 'SUSTAINABILITY',
+    duration: '20 Mins',
+    desc: 'An insightful seminar detailing the importance of sustainability and reform in environmental practices.',
+    thumbnail: 'https://img.youtube.com/vi/zL1Nvl0UlZE/maxresdefault.jpg'
+  },
+  {
+    id: 'wXD9THb7SbM',
+    title: 'Public Dialogue on Environmental Conservation',
+    category: 'PUBLIC DIALOGUE',
+    topic: 'ENVIRONMENTAL SEMINAR',
+    duration: '14 Mins',
+    desc: 'Public dialogue focusing on environmental conservation and community efforts.',
+    thumbnail: 'https://img.youtube.com/vi/wXD9THb7SbM/maxresdefault.jpg'
+  },
+  {
     id: '5Eqo64tQ5B4',
     title: 'Environmental Awareness Discussion',
     category: 'MEDIA INTERVIEW',
@@ -36,33 +63,6 @@ const VIDEOS = [
     duration: '12 Mins',
     desc: 'Founder Director DC Arya explains how Cost and Management Accountants (CMA) play a vital role in optimizing resource efficiency, ensuring transparency, and driving national development.',
     thumbnail: 'https://img.youtube.com/vi/QVuNMpHtwvE/maxresdefault.jpg'
-  },
-  {
-    id: 'wXD9THb7SbM',
-    title: 'Public Dialogue on Environmental Conservation',
-    category: 'PUBLIC DIALOGUE',
-    topic: 'ENVIRONMENTAL SEMINAR',
-    duration: '14 Mins',
-    desc: 'Public dialogue focusing on environmental conservation and community efforts.',
-    thumbnail: 'https://img.youtube.com/vi/wXD9THb7SbM/maxresdefault.jpg'
-  },
-  {
-    id: 'zL1Nvl0UlZE',
-    title: 'Environmental Seminar & Reform',
-    category: 'SEMINAR',
-    topic: 'SUSTAINABILITY',
-    duration: '20 Mins',
-    desc: 'An insightful seminar detailing the importance of sustainability and reform in environmental practices.',
-    thumbnail: 'https://img.youtube.com/vi/zL1Nvl0UlZE/maxresdefault.jpg'
-  },
-  {
-    id: 'Ao0dtIZOfFs',
-    title: 'Community Environmental Initiatives',
-    category: 'PUBLIC DIALOGUE',
-    topic: 'COMMUNITY REFORM',
-    duration: '15 Mins',
-    desc: 'Discussion on community-led environmental initiatives and grassroots efforts for a cleaner future.',
-    thumbnail: 'https://img.youtube.com/vi/Ao0dtIZOfFs/maxresdefault.jpg'
   }
 ];
 
