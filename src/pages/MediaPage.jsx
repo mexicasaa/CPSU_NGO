@@ -63,6 +63,41 @@ const PRESS_ITEMS = [
     subtitle: 'द वुमन न्यूज • Press Column',
     image: '/images/newspaper_clip_3.png',
     desc: 'Focusing on the importance of not just planting, but regularly watering and caring for trees to ensure high survival rates.'
+  },
+  {
+    id: 9,
+    title: 'MSME PM Cost Management Scheme',
+    subtitle: 'द वुमन न्यूज • News Report',
+    image: '/images/media_1786100016450.png',
+    desc: 'D.C. Arya appeals to the government to implement PM Cost Management Scheme for MSMEs.'
+  },
+  {
+    id: 10,
+    title: 'CMA Prakoshth Formation Suggested',
+    subtitle: 'हमारा मेट्रो • News Report',
+    image: '/images/media_1786100026389.jpg',
+    desc: 'D.C. Arya gives new direction to the voice of CMA professionals by suggesting the formation of CMA Prakoshth.'
+  },
+  {
+    id: 11,
+    title: 'Director Finance Journey of a Farmers Son',
+    subtitle: 'हमारा मेट्रो • Feature Interview',
+    image: '/images/media_1786100034115.png',
+    desc: 'Special interview with Central Council Election Candidate D.C. Arya on his journey and giving new direction to the CMA profession.'
+  },
+  {
+    id: 12,
+    title: 'Journey from Farmers Son to Director Finance (Cont.)',
+    subtitle: 'हमारा मेट्रो • Feature Interview',
+    image: '/images/media_1786100063740.png',
+    desc: 'Continuation of the special interview detailing D.C. Aryas vision and dedication to the CMA profession.'
+  },
+  {
+    id: 13,
+    title: 'Hindu Samaj Wont Forgive Chanda Chori',
+    subtitle: 'द वुमन न्यूज • News Report',
+    image: '/images/media_1786100117536.png',
+    desc: 'Bajrang Lal Bagra speaks on retirement planning and states Hindu samaj will never forgive those who steal donations, with inputs from D.C. Arya.'
   }
 ];
 
